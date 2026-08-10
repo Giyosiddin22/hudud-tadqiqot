@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loyiha haqida — So'rovnoma Portali</title>
+<meta name="description" content="Hududiy Tadqiqotlar Markazi — TerDU va Surxondaryo viloyati hokimligi hamkorligida ishga tushirilgan raqamli so'rov platformasi haqida.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="So'rovnoma Portali">
+<meta property="og:title" content="Loyiha haqida — So'rovnoma Portali">
+<meta property="og:description" content="Hududiy Tadqiqotlar Markazi — TerDU va Surxondaryo viloyati hokimligi hamkorligida ishga tushirilgan raqamli so'rov platformasi.">
+<meta property="og:image" content="/og-image.jpg">
+<meta property="og:locale" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+#util-lang .ls-btn{color:#a9b6c9;font-weight:400}
+#util-lang .ls-btn.ls-on{color:#fff;font-weight:600}
+:root{
+  --bg:#ffffff;--bg-2:#f6f7f9;--surface:#ffffff;--surface-2:#eef1f5;
+  --white:#ffffff;--text:#182233;--text2:#5b6472;--text3:#6b7480;
+  --border:#dde1e7;--border2:#dde1e7;--line:#dde1e7;
+  --green:#1c3f66;--green2:#2563a1;--gbg:#eaf0f7;
+  --gold:#1c3f66;--gold-bright:#2563a1;--teal:#2f7a52;--ink:#182233;--muted:#5b6472;--danger:#b3261e;
+  --shadow:none;
+  --shadow-lg:none;
+  --nav-h:64px;--serif:'PT Serif',serif;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
+a{text-decoration:none;color:inherit}
+button{font-family:'Noto Sans',system-ui,sans-serif;cursor:pointer}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:300;height:var(--nav-h);background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 24px;gap:10px;max-width:100vw}
+.nav-brand{display:flex;align-items:center;gap:10px;flex-shrink:1;min-width:0;overflow:hidden}
+.nav-brand-name{min-width:0;overflow:hidden}
+.nav-brand-name strong,.nav-brand-name span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-logo{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));border-radius:9px;display:grid;place-items:center;font-size:16px;box-shadow:0 2px 10px rgba(30,58,138,.35)}
+.nav-brand-name strong{font-size:13.5px;font-weight:800;display:block;color:var(--text)}
+.nav-brand-name span{font-size:11px;color:var(--text3);font-weight:500}
+.nav-center{display:flex;align-items:center;gap:2px;margin:0 auto}
+.nav-it{position:relative}
+.nav-link{display:flex;align-items:center;gap:5px;padding:7px 13px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--text2);background:none;border:none;transition:all .15s;white-space:nowrap;cursor:pointer}
+.nav-link:hover,.nav-it:hover>.nav-link{color:var(--gold-bright);background:var(--gbg)}
+.nav-link.cur{color:var(--gold-bright);background:var(--gbg)}
+.nav-caret{font-size:9px;transition:transform .2s}
+.nav-it:hover .nav-caret{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:5px;min-width:200px;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .15s,transform .15s;z-index:200}
+.nav-it:hover .nav-drop{opacity:1;transform:translateY(0);pointer-events:auto}
+.dd-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--text2);transition:all .12s}
+.dd-item:hover{color:var(--gold-bright);background:var(--surface-2)}
+.dd-icon{font-size:13px;width:18px;text-align:center}
+.dd-hr{height:1px;background:var(--line);margin:4px 8px}
+.nav-burger{display:none;flex-direction:column;gap:4.5px;background:none;border:none;padding:11px 10px;margin-left:auto;flex-shrink:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+.nav-mob{display:none;position:fixed;top:116px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:14px 16px;z-index:299;flex-direction:column;gap:3px;box-shadow:var(--shadow-lg);max-height:calc(100vh - 116px);overflow-y:auto}
+.nav-mob.open{display:flex}
+.mob-link{display:flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:9px;font-size:14px;font-weight:600;color:var(--text2)}
+.mob-link:hover{color:var(--gold-bright);background:var(--surface-2)}
+.mob-link.cur{color:var(--gold-bright);background:var(--surface-2)}
+.mob-group-label{font-size:10.5px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;padding:8px 14px 3px}
+.mob-sub{padding-left:10px}
+.mob-cta{margin-top:8px;padding:13px 11px;min-height:44px;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#ffffff;font-size:14px;font-weight:700;border:none;width:100%}
+
+/* LANG SWITCHER */
+.lang-sw{display:flex;align-items:center;gap:3px;flex-shrink:0}
+.ls-script{border:1.5px solid var(--gold);color:var(--gold-bright);background:transparent;border-radius:6px;padding:4px 10px;font-size:11.5px;font-weight:700;font-family:'Noto Sans',sans-serif;letter-spacing:.3px;cursor:pointer;transition:all .15s}
+.ls-script:hover{background:var(--gbg)}
+.ls-btn{border:none;background:transparent;color:var(--text2);padding:5px 11px;font-size:11.5px;font-weight:700;font-family:'Noto Sans',sans-serif;letter-spacing:.3px;cursor:pointer;transition:all .15s;border-radius:6px}
+.ls-btn.ls-on{background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#ffffff}
+.ls-btn:hover:not(.ls-on){color:var(--text);background:var(--surface-2)}
+
+/* BREADCRUMB */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3);font-weight:500;margin-bottom:14px}
+.breadcrumb a{color:var(--gold-bright)}
+
+/* ABOUT PAGE CONTENT */
+.about-main{flex:1}
+.about-hero{
+  padding:40px 24px 36px;
+  background:var(--bg-2);
+  border-bottom:1px solid var(--line);
+}
+.about-sec{padding:44px 0 56px}
+.about-wrap{max-width:1180px;margin:0 auto}
+.about-head{max-width:60ch}
+.about-eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.about-eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);display:inline-block}
+.about-title{font-family:var(--serif);font-size:clamp(24px,3.6vw,32px);font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:14px;line-height:1.25}
+.about-lede{font-size:15px;color:var(--text2);line-height:1.7}
+
+.about-hero-stats{display:flex;gap:0;flex-wrap:wrap;margin-top:28px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.about-hero-stat{flex:1 1 140px;padding:16px 18px;border-right:1px solid var(--line);text-align:center}
+.about-hero-stat:last-child{border-right:none}
+.about-hero-stat b{display:block;font-size:22px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.about-hero-stat span{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+@media(max-width:600px){.about-hero-stat{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--line)}}
+
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.about-grid{grid-template-columns:1fr}}
+.about-card{
+  background:var(--surface);
+  padding:28px;
+}
+.about-card-ic{width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px;color:var(--gold)}
+.about-card h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.about-card p{font-size:13px;color:var(--text2);line-height:1.65}
+
+/* FOOTER */
+footer{background:var(--bg-2);border-top:1px solid var(--line)}
+.ft-top{max-width:1320px;margin:0 auto;padding:44px 24px 28px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+.ft-brand{display:flex;flex-direction:column;gap:12px}
+.ft-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--ink)}
+.ft-logo .ft-logo-ic{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex:none}
+.ft-desc{font-size:12.5px;line-height:1.65;color:var(--text3);max-width:34ch}
+.ft-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--text2);font-weight:800;margin:0 0 14px}
+.ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ft-col a{font-size:13px;color:var(--text3);text-decoration:none;transition:.15s}
+.ft-col a:hover{color:var(--gold)}
+.ft-contact li{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--text3);line-height:1.5}
+.ft-contact .ic{flex:none;opacity:.8}
+@media(max-width:860px){.ft-top{grid-template-columns:1fr 1fr;gap:28px 20px}}
+@media(max-width:520px){.ft-top{grid-template-columns:1fr}}
+.ft-bottom{border-top:1px solid var(--line)}
+.ft-bottom-in{max-width:1320px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft-bottom span,.ft-bottom a{font-size:12px;color:var(--text3)}
+
+/* RESPONSIVE NAV */
+@media(max-width:860px){
+  .nav-center{display:none}
+  .nav-burger{display:flex}
+  nav{padding:0 14px}
+  .about-main{padding:20px 14px 0}
+}
+@media(max-width:600px){
+  .lang-sw{gap:1px}
+  .ls-script{padding:4px 7px;font-size:11px}
+  .ls-btn{padding:5px 8px;font-size:11px}
+}
+@media(max-width:480px){
+  html,body{overflow-x:hidden}
+  .nav-brand-name{max-width:120px}
+  .nav-brand-name span{display:none}
+  .nav-link{padding:11px 13px;min-height:44px}
+  .mob-link{padding:12px 14px}
+  .ft-contact li,.ft-col a{word-break:break-word}
+}
+@media(max-width:360px){
+  nav{padding:0 10px;gap:6px}
+  .nav-logo{width:32px;height:32px}
+}
+
+/* ── VOICE ASSISTANT (accessibility — same as index.html/surveys.html/survey.html) ── */
+.va-btn{position:fixed;right:20px;bottom:20px;z-index:9999;width:56px;height:56px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#fff;font-size:24px;display:grid;place-items:center;
+  box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .15s,box-shadow .15s;}
+.va-btn:hover{transform:scale(1.08)}
+.va-btn:active{transform:scale(.96)}
+.va-btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.va-btn.listening{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,.6);animation:va-pulse 1.4s infinite}
+@keyframes va-pulse{
+  0%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,.55)}
+  70%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 14px rgba(15,143,130,0)}
+  100%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,0)}
+}
+@media(prefers-reduced-motion:reduce){.va-btn.listening{animation:none}}
+.va-status{position:fixed;right:20px;bottom:82px;z-index:9999;max-width:220px;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:6px 11px;font-size:11.5px;font-weight:600;color:var(--text2);
+  box-shadow:var(--shadow-lg);display:none}
+.va-status.show{display:block}
+.gov-nav-link{padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);border-right:1px solid var(--border)}
+.gov-nav-link:hover{color:var(--gold-bright)}
+@media(max-width:900px){.gov-nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<!-- TOP 3-COLOR STRIPE -->
+<div style="display:flex;height:4px;flex-shrink:0">
+  <div style="flex:1;background:var(--gold)"></div>
+  <div style="flex:1;background:var(--surface-2)"></div>
+  <div style="flex:1;background:var(--teal)"></div>
+</div>
+
+<!-- UTILITY BAR -->
+<div style="background:#0f2740">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <span style="font-size:12px;color:#a9b6c9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Surxondaryo viloyati ijtimoiy tadqiqotlar tizimi</span>
+    <span style="font-size:12px;color:#a9b6c9;display:flex;gap:8px;flex-shrink:0">
+      <a href="#" class="ls-btn" data-lang="uz-lat" onclick="LANG.set('uz-lat');return false">UZ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="uz-cyr" onclick="LANG.set('uz-cyr');return false">ЎЗ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="ru" onclick="LANG.set('ru');return false">RU</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="en" onclick="LANG.set('en');return false">EN</a>
+    </span>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header style="position:sticky;top:0;z-index:300;background:#fff">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px;border-bottom:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:12px;min-width:0">
+      <div style="width:42px;height:42px;border-radius:3px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+      </div>
+      <div style="min-width:0">
+        <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);white-space:nowrap">So'rovnoma Portali</div>
+        <div style="font-size:12px;color:var(--text2);white-space:nowrap">TerDU · Surxondaryo viloyati hokimligi</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <button type="button" onclick="location.href='surveys.html'" aria-label="Qidirish" style="width:38px;height:38px;border-radius:3px;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-burger" onclick="toggleMob()" style="border-radius:3px;border:1px solid var(--border)"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="gov-nav-links" style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)">
+    <a href="surveys.html" class="gov-nav-link">So'rovnomalar</a>
+    <a href="index.html#docs" class="gov-nav-link">Me'yoriy hujjatlar</a>
+    <a href="about.html" class="gov-nav-link" style="color:var(--gold-bright)">Loyiha haqida</a>
+    <a href="index.html" class="gov-nav-link">Yangiliklar</a>
+    <a href="index.html#aloqa" class="gov-nav-link" style="border-right:none">Aloqa</a>
+  </nav>
+</header>
+
+<div class="nav-mob" id="nav-mob">
+  <a href="surveys.html" class="mob-link" onclick="closeMob()">So'rovnomalar</a>
+  <a href="index.html#docs" class="mob-link" onclick="closeMob()">Me'yoriy hujjatlar</a>
+  <a href="about.html" class="mob-link cur" onclick="closeMob()">Loyiha haqida</a>
+  <a href="index.html" class="mob-link" onclick="closeMob()">Yangiliklar</a>
+  <a href="index.html#aloqa" class="mob-link" onclick="closeMob()">Aloqa</a>
+</div>
+
+<main class="about-main">
+  <div class="about-hero">
+    <div class="about-wrap">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="bc_home">Bosh sahifa</a>
+        <span>/</span>
+        <span data-i18n="about_title">Loyiha haqida</span>
+      </div>
+      <div class="about-head">
+        <div class="about-eyebrow" data-i18n="about_label">Nima uchun?</div>
+        <h1 class="about-title" data-i18n="about_title">Loyiha haqida</h1>
+        <p class="about-lede" data-i18n="about_lede">Hududiy Tadqiqotlar Markazi — Termiz Davlat Universiteti va Surxondaryo viloyati hokimligi hamkorligida ishga tushirilgan raqamli so'rov platformasi.</p>
+        <div class="about-hero-stats">
+          <div class="about-hero-stat"><b>15</b><span data-i18n="about_s1">Tuman va shahar</span></div>
+          <div class="about-hero-stat"><b id="stat-surveys-num">—</b><span data-i18n="about_s2">Faol so'rovnoma</span></div>
+          <div class="about-hero-stat"><b>04</b><span data-i18n="about_s3">Til varianti</span></div>
+          <div class="about-hero-stat"><b>100%</b><span data-i18n="about_s4">Anonim ishtirok</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="about-sec" id="about">
+    <div class="about-wrap">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-ic">🔬</div>
+          <h4 data-i18n="about_1_h">Ilmiy asoslilik</h4>
+          <p data-i18n="about_1_p">Barcha so'rovnomalar TerDU ilmiy kengashi tomonidan tasdiqlangan metodologiya asosida tuzilgan.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-ic">🔒</div>
+          <h4 data-i18n="about_2_h">Maxfiylik kafolati</h4>
+          <p data-i18n="about_2_p">Javoblar to'liq anonim saqlanadi. Shaxsiy ma'lumotlar hech qanday shaklda to'planmaydi.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-ic">📈</div>
+          <h4 data-i18n="about_3_h">Amaliy natija</h4>
+          <p data-i18n="about_3_p">Tadqiqot natijalari viloyat hokimligi uchun tavsiyalar ishlab chiqishda bevosita qo'llaniladi.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-ic">⚡</div>
+          <h4 data-i18n="about_4_h">Real vaqt tahlili</h4>
+          <p data-i18n="about_4_p">Barcha javoblar avtomatik tarzda yig'ilib, real vaqtda statistik ko'rsatkichlarga aylantiriladi.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-ic">🗺️</div>
+          <h4 data-i18n="about_5_h">Keng qamrovlilik</h4>
+          <p data-i18n="about_5_p">Barcha 15 tuman va shahar aholisi qatnashishi mumkin. So'rovnoma o'zbek tilida, tushunarli va qulay formatda.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-ic">📱</div>
+          <h4 data-i18n="about_6_h">Qulay foydalanish</h4>
+          <p data-i18n="about_6_p">Platforma mobil va kompyuter qurilmalarida to'liq ishlaydi. Har bir so'rovnoma atigi 5 daqiqa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#0f2740;color:#c3cddb">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 24px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <div style="width:32px;height:32px;border-radius:3px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div>
+        <span style="font-family:var(--serif);font-size:15px;font-weight:700;color:#fff">Hududiy Tadqiqotlar Markazi</span>
+      </div>
+      <p style="font-size:13px;line-height:1.7;color:#a8b3c4;max-width:280px;margin:0">Surxondaryo viloyati aholisi o'rtasida o'tkaziladigan ilmiy-ijtimoiy so'rovnomalar uchun yagona raqamli platforma.</p>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#8695ab;text-transform:uppercase;margin-bottom:16px">Tezkor havolalar</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="index.html" style="font-size:14px;color:#c3cddb">Bosh sahifa</a>
+        <a href="surveys.html" style="font-size:14px;color:#c3cddb">So'rovnomalar</a>
+        <a href="about.html" style="font-size:14px;color:#c3cddb">Loyiha haqida</a>
+        <a href="index.html#docs" style="font-size:14px;color:#c3cddb">Me'yoriy hujjatlar</a>
+        <a href="index.html" style="font-size:14px;color:#c3cddb">Yangiliklar</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#8695ab;text-transform:uppercase;margin-bottom:16px">Yordam</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="faq.html" style="font-size:14px;color:#c3cddb">Tez-tez so'raladigan savollar</a>
+        <a href="methodology.html" style="font-size:14px;color:#c3cddb">Metodologiya</a>
+        <a href="privacy.html" style="font-size:14px;color:#c3cddb">Maxfiylik siyosati</a>
+        <a href="index.html#aloqa" style="font-size:14px;color:#c3cddb">Bog'lanish</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#8695ab;text-transform:uppercase;margin-bottom:16px">Aloqa</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#c3cddb">
+        <span>📍 Termiz shahri, "Barkamol avlod" ko'chasi 43-uy</span>
+        <span>📞 76 221 74 55 — Ishonch telefoni</span>
+        <span>📞 76 221 76 90</span>
+        <span>✉️ info@tersu.uz</span>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.12)">
+    <div style="max-width:1200px;margin:0 auto;padding:20px 24px;font-size:13px;color:#8695ab">© 2026 So'rovnoma Portali. Barcha huquqlar himoyalangan.</div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+function toggleMob(){document.getElementById('nav-mob').classList.toggle('open')}
+function closeMob(){document.getElementById('nav-mob').classList.remove('open')}
+document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.closest('#nav-mob'))closeMob()})
+
+// Real survey count (was a hardcoded fake "05")
+(async function(){
+  const el=document.getElementById('stat-surveys-num');
+  if(!el) return;
+  try{
+    const r=await fetch('/api/surveys');
+    const list=r.ok?await r.json():[];
+    el.textContent=String(list.length);
+  }catch(e){ el.textContent='—'; }
+})();
+</script>
+
+<!-- VOICE ASSISTANT (accessibility) — reads the page content aloud; index.html,
+     surveys.html and survey.html already have one, this closes the gap so a
+     blind visitor gets the same aid on this page. -->
+<button type="button" class="va-btn" id="va-btn" aria-label="Ovozli yordamchi">🎙️</button>
+<div class="va-status" id="va-status" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const btn = document.getElementById('va-btn');
+  const statusEl = document.getElementById('va-status');
+  let active = false, recognizer = null, errorCount = 0;
+
+  function setStatus(msg){
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('show', !!msg);
+  }
+  function pickVoice(){
+    try{
+      const voices = window.speechSynthesis.getVoices() || [];
+      return voices.find(v=>/^uz/i.test(v.lang)) || voices.find(v=>/^(ru|tr)/i.test(v.lang)) || null;
+    }catch(e){ return null; }
+  }
+  let currentAudio = null;
+  function speakBrowser(text, onend){
+    try{
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v){ u.voice = v; u.lang = v.lang; }
+      let done = false;
+      const finish = function(){ if (done) return; done = true; if (onend) onend(); };
+      u.onend = finish;
+      u.onerror = finish;
+      if (window.speechSynthesis.speaking || window.speechSynthesis.pending){
+        window.speechSynthesis.cancel();
+      }
+      try{ window.speechSynthesis.resume(); }catch(e2){}
+      setTimeout(function(){ window.speechSynthesis.speak(u); }, 50);
+    }catch(e){ if (onend) onend(); }
+  }
+  function speak(text, onend){
+    if (currentAudio){ try{ currentAudio.pause(); }catch(e){} currentAudio = null; }
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    fetch('/api/speak', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ text })
+    }).then(function(r){ if (!r.ok) throw new Error('tts-failed'); return r.blob(); })
+      .then(function(blob){
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        currentAudio = audio;
+        audio.onended = function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; if (onend) onend(); };
+        audio.onerror = function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; speakBrowser(text, onend); };
+        audio.play().catch(function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; speakBrowser(text, onend); });
+      })
+      .catch(function(){ speakBrowser(text, onend); });
+  }
+  function stopAll(){
+    active = false;
+    btn.classList.remove('listening');
+    setStatus('');
+    if (currentAudio){ try{ currentAudio.pause(); }catch(e){} currentAudio = null; }
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    if (recognizer) { try{ recognizer.stop(); }catch(e){} }
+  }
+  function startListening(){
+    if (!SR){ setStatus("Bu brauzerda ovozli buyruq qo'llab-quvvatlanmaydi"); return; }
+    errorCount = 0;
+    recognizer = new SR();
+    recognizer.lang = 'uz-UZ';
+    recognizer.continuous = false;
+    recognizer.interimResults = false;
+    recognizer.onresult = function(e){
+      const said = (e.results[0][0].transcript || '').toLowerCase();
+      handleCommand(said);
+    };
+    recognizer.onerror = function(ev){
+      if (ev && (ev.error === 'no-speech' || ev.error === 'aborted')) return;
+      errorCount++;
+    };
+    recognizer.onend = function(){
+      if (active && errorCount < 8){ try{ recognizer.start(); }catch(e){} return; }
+      if (active){
+        active = false;
+        btn.classList.remove('listening');
+        setStatus("Ovoz aniqlanmadi. Mikrofon tugmasini qayta bosing.");
+      }
+    };
+    setStatus('Tinglayapman...');
+    try{ recognizer.start(); }catch(e){}
+  }
+
+  function pageSummary(){
+    const parts = ["Bu loyiha haqida sahifasi."];
+    document.querySelectorAll('.about-card').forEach(c=>{
+      const h = c.querySelector('h4');
+      if (h) parts.push(h.textContent);
+    });
+    parts.push("Bosh sahifaga qaytish uchun 'bosh sahifa' deng, so'rovnomalarni ko'rish uchun 'so'rovnoma' deng.");
+    return parts.join(' ');
+  }
+
+  function handleCommand(said){
+    if (said.includes("to'xta") || said.includes('to‘xta') || said.includes('tuxta') || said.includes('yop')){
+      stopAll();
+      return;
+    }
+    if (said.includes('bosh sahifa') || said.includes('bosh sahifaga')){
+      speak("Bosh sahifaga o'tyapman");
+      stopAll();
+      location.href = 'index.html';
+      return;
+    }
+    if (said.includes("so'rovnoma") || said.includes('so‘rovnoma') || said.includes('sorovnoma')){
+      speak("So'rovnomalar sahifasiga o'tyapman");
+      stopAll();
+      location.href = 'surveys.html';
+    }
+  }
+
+  btn.addEventListener('click', function(){
+    if (active){ stopAll(); return; }
+    active = true;
+    btn.classList.add('listening');
+    setStatus("O'qiyapman...");
+    speak(pageSummary(), function(){ if (active) startListening(); });
+  });
+})();
+</script>
+</body>
+</html>

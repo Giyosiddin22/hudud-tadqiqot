@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So'rovnoma — So'rovnoma Portali</title>
+<meta name="description" content="So'rovnomaga anonim ravishda ishtirok eting — bir necha daqiqa vaqt oladi.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="So'rovnoma Portali">
+<meta property="og:title" content="So'rovnoma — So'rovnoma Portali">
+<meta property="og:description" content="So'rovnomaga anonim ravishda ishtirok eting — bir necha daqiqa vaqt oladi.">
+<meta property="og:image" content="/og-image.jpg">
+<meta property="og:locale" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+#util-lang .ls-btn{color:#a9b6c9;font-weight:400}
+#util-lang .ls-btn.ls-on{color:#fff;font-weight:600}
+:root{
+  --bg: #ffffff;
+  --bg-2: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --line: #dde1e7;
+  --gold: #1c3f66;
+  --gold-bright: #2563a1;
+  --teal: #2f7a52;
+  --ink: #182233;
+  --muted: #5b6472;
+  --danger: #b3261e;
+
+  --accent:var(--teal);--accent-bg:#eaf3ee;
+  --white:#fff;
+  --text:var(--ink);--text2:var(--muted);--text3:#6b7480;
+  --border:var(--line);--border2:var(--line);
+  --shadow:none;
+  --r:4px;
+  --serif:'PT Serif',serif;
+}
+body{
+  font-family:'Noto Sans',system-ui,sans-serif;color:var(--text);min-height:100vh;
+  background:var(--bg);
+}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.hdr{
+  position:sticky;top:76px;z-index:100;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  height:52px;display:flex;align-items:center;
+  padding:0 16px;gap:10px;
+}
+.hdr-count{font-size:11.5px;font-weight:700;color:var(--text3);white-space:nowrap;font-variant-numeric:tabular-nums;flex-shrink:0}
+.hdr-back{
+  display:flex;align-items:center;gap:5px;
+  font-size:13px;font-weight:600;color:var(--text2);
+  flex-shrink:0;transition:color .15s;
+}
+.hdr-back:hover{color:var(--gold-bright)}
+.hdr-icon{
+  font-size:16px;flex-shrink:0;width:26px;height:26px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--accent-bg,rgba(15,143,130,.12));
+}
+.hdr-name{
+  font-size:13px;font-weight:700;color:var(--text);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.hdr-progress-track{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--line)}
+.hdr-progress-fill{height:100%;width:0%;background:var(--gold);transition:width .3s ease}
+
+/* ── FORM ── */
+.form-wrap{max-width:600px;margin:0 auto;padding:24px 16px 100px}
+
+.already-bar{
+  display:none;align-items:center;gap:8px;
+  background:var(--accent-bg);border:1px solid var(--teal);
+  border-radius:var(--r);padding:10px 14px;margin-bottom:20px;
+  font-size:13px;font-weight:600;color:var(--teal);
+}
+
+/* question block */
+.q-block{
+  min-width:0;
+  margin-bottom:14px;border-radius:var(--r);padding:18px 16px;
+  background:#fff;
+  border:1px solid var(--line);border-left:4px solid var(--line);
+  transition:border-color .2s;
+}
+.q-header{min-width:0;padding:0}
+.q-block:hover{border-left-color:var(--gold)}
+.q-block.answered{border-left-color:var(--teal)}
+.q-block.err{border-color:var(--danger);border-left-color:var(--danger);background:#fdf1ef}
+.q-err-msg{display:none;font-size:12.5px;font-weight:700;color:var(--danger);margin-top:8px}
+.q-block.err .q-err-msg{display:block}
+#submit-err{display:none;max-width:600px;margin:0 auto 14px;padding:12px 14px;border-radius:var(--r);background:#fdf1ef;border:1px solid var(--danger);color:var(--danger);font-size:13.5px;font-weight:600}
+#submit-err .hint{color:var(--text2);font-weight:500;margin-top:4px}
+#submit-err button{margin-top:10px;background:var(--gold);color:#fff;border:none;padding:9px 16px;border-radius:6px;font-weight:700;cursor:pointer;font-size:13px}
+#submit-err button:hover{background:var(--gold-bright)}
+.q-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:13px}
+.q-num{
+  font-size:11px;font-weight:800;color:#fff;
+  background:var(--gold);
+  border-radius:4px;
+  padding:2px 8px;flex-shrink:0;margin-top:2px;
+  transition:background .2s;display:flex;align-items:center;gap:4px;
+}
+.q-block.answered .q-num{background:var(--teal)}
+.q-block.err .q-num{background:var(--danger);color:#fff}
+.q-text{font-size:14px;font-weight:600;line-height:1.55;color:var(--text)}
+
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:9px;
+  cursor:pointer;transition:background .15s, border-color .15s, transform .1s;
+  border:1.5px solid transparent;
+}
+.opt:hover{background:rgba(20,15,5,.04)}
+.opt:active{transform:scale(.99)}
+.opt.sel{background:rgba(15,143,130,.08);border-color:rgba(15,143,130,.45)}
+.opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.opt:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
+.opt-dot{
+  width:18px;height:18px;border-radius:50%;
+  border:2px solid rgba(20,15,5,.18);flex-shrink:0;
+  position:relative;transition:all .15s;background:rgba(20,15,5,.02);
+}
+.opt.sel .opt-dot{border-color:var(--teal);background:var(--teal);box-shadow:0 0 0 4px rgba(15,143,130,.15)}
+.opt.sel .opt-dot::after{content:'';position:absolute;inset:4px;border-radius:50%;background:#fff}
+.opt:has(input[type="checkbox"]) .opt-dot{border-radius:5px}
+.opt:has(input[type="checkbox"]) .opt-dot::after{border-radius:2px}
+.opt-text{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
+.opt.sel .opt-text{color:var(--teal);font-weight:600}
+.opt-free{
+  width:100%;margin:2px 0 4px 28px;max-width:calc(100% - 28px);
+  padding:9px 12px;border-radius:8px;border:1.5px solid rgba(15,143,130,.4);
+  font-size:13px;font-family:inherit;color:var(--text);background:var(--surface,#fff);
+  outline:none;transition:border-color .15s;
+}
+.opt-free:focus{border-color:var(--teal)}
+.opt-hint{font-size:11px;color:var(--muted);margin-top:6px;font-style:italic}
+
+/* ── SUBMIT BAR ── */
+.submit-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:10px 16px;z-index:50;
+}
+.btn-submit{
+  width:100%;max-width:600px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--gold);color:#fff;
+  font-family:'Noto Sans',sans-serif;font-size:15px;font-weight:700;
+  padding:13px;border-radius:var(--r);border:none;cursor:pointer;
+  transition:background .15s;
+}
+.btn-submit:hover{background:var(--gold-bright)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed}
+
+/* ── SUCCESS ── */
+.success-wrap{
+  min-height:100vh;display:flex;align-items:center;
+  justify-content:center;padding:24px;
+  display:none;
+}
+.success-inner{
+  text-align:center;max-width:380px;
+  background:#fff;
+  border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r);
+  padding:40px 28px;
+}
+.suc-icon{
+  font-size:44px;display:flex;align-items:center;justify-content:center;
+  width:88px;height:88px;margin:0 auto 20px;border-radius:50%;
+  background:var(--accent-bg);
+  border:1px solid var(--line);
+}
+.success-inner h2{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.2px;margin-bottom:8px;color:var(--gold)}
+.success-inner p{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:26px}
+.suc-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.suc-main{
+  background:var(--gold);color:#fff;
+  font-family:'Noto Sans',sans-serif;font-size:14px;font-weight:700;
+  padding:11px 22px;border-radius:var(--r);border:none;cursor:pointer;
+  transition:background .15s;
+}
+.suc-main:hover{background:var(--gold-bright)}
+.suc-out{
+  background:transparent;color:var(--text2);
+  font-family:'Noto Sans',sans-serif;font-size:14px;font-weight:600;
+  padding:11px 18px;border-radius:var(--r);
+  border:1.5px solid var(--line);cursor:pointer;transition:background .15s,color .15s;
+}
+.suc-out:hover{background:var(--surface-2);color:var(--text)}
+
+/* ── ERROR / LOADING ── */
+.center-page{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.center-page h2{font-size:1.4rem;font-weight:800;margin-bottom:8px;color:var(--ink)}
+.center-page p{color:var(--text2);font-size:14px;margin-bottom:18px}
+.loading-text{color:var(--text3);font-size:14px}
+
+@media(max-width:600px){
+  .form-wrap{padding:16px 10px 128px}
+  .q-block{padding:16px 12px}
+  .q-text{font-size:14.5px;line-height:1.6}
+  .opts{gap:8px}
+  .opt{padding:13px 12px;min-height:44px}
+  .opt-text{font-size:13.5px}
+  .submit-bar{padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px))}
+  .btn-submit{padding:15px;font-size:15px}
+  .va-btn{right:14px;bottom:92px;width:52px;height:52px;font-size:22px}
+  .va-status{right:14px;left:14px;bottom:152px;max-width:none}
+  .success-inner{padding:30px 20px;max-width:100%}
+  .suc-btns{flex-direction:column}
+  .suc-main,.suc-out{width:100%}
+}
+
+@media(max-width:380px){
+  .hdr{
+    flex-wrap:wrap;height:auto;min-height:52px;
+    padding:8px 12px;row-gap:6px;
+  }
+  .hdr-back{order:1}
+  .hdr-icon{order:2}
+  .hdr-name{white-space:normal;overflow:visible;text-overflow:clip;flex:1 1 100%;order:4}
+  .hdr-count{order:5}
+  .lang-sw{order:3;margin-left:auto}
+}
+
+/* ── LANG SWITCHER ── */
+.lang-sw{display:flex;align-items:center;background:rgba(20,15,5,.04);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px;margin-left:auto}
+.ls-sep{width:1px;height:14px;background:var(--line);flex-shrink:0;margin:0 2px}
+.ls-btn{padding:3px 8px;border-radius:5px;border:none;font-family:'Noto Sans',sans-serif;font-size:11px;font-weight:700;color:var(--text3);background:transparent;cursor:pointer;transition:all .15s;letter-spacing:.3px}
+.ls-btn.ls-on{background:var(--gold);color:#fff}
+.ls-btn:hover:not(.ls-on){color:var(--text)}
+.ls-script{padding:2px 7px;border-radius:4px;border:none;font-family:'Noto Sans',sans-serif;font-size:10px;font-weight:700;color:var(--gold);background:transparent;cursor:pointer;transition:all .15s}
+.ls-script:hover{background:rgba(30,58,138,.10)}
+
+/* ── VOICE ASSISTANT ── */
+.va-btn{position:fixed;right:20px;bottom:76px;z-index:9999;width:56px;height:56px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#fff;font-size:24px;display:grid;place-items:center;
+  box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .15s,box-shadow .15s;}
+.va-btn:hover{transform:scale(1.08)}
+.va-btn:active{transform:scale(.96)}
+.va-btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.va-btn.listening{animation:va-pulse 1.4s infinite}
+@keyframes va-pulse{
+  0%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,.55)}
+  70%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 14px rgba(15,143,130,0)}
+  100%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,0)}
+}
+@media(prefers-reduced-motion:reduce){.va-btn.listening{animation:none}}
+.va-status{position:fixed;right:20px;bottom:138px;z-index:9999;max-width:220px;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:6px 11px;font-size:11.5px;font-weight:600;color:var(--text2);
+  box-shadow:var(--shadow);display:none}
+.va-status.show{display:block}
+</style>
+</head>
+<body>
+
+<!-- TOP 3-COLOR STRIPE -->
+<div style="display:flex;height:4px;flex-shrink:0">
+  <div style="flex:1;background:var(--gold)"></div>
+  <div style="flex:1;background:var(--surface-2)"></div>
+  <div style="flex:1;background:var(--teal)"></div>
+</div>
+
+<!-- UTILITY BAR -->
+<div style="background:#0f2740">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <span style="font-size:12px;color:#a9b6c9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Surxondaryo viloyati ijtimoiy tadqiqotlar tizimi</span>
+    <span style="font-size:12px;color:#a9b6c9;display:flex;gap:8px;flex-shrink:0">
+      <a href="#" class="ls-btn" data-lang="uz-lat" onclick="LANG.set('uz-lat');return false">UZ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="uz-cyr" onclick="LANG.set('uz-cyr');return false">ЎЗ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="ru" onclick="LANG.set('ru');return false">RU</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="en" onclick="LANG.set('en');return false">EN</a>
+    </span>
+  </div>
+</div>
+
+<!-- MAIN HEADER (index.html bilan bir xil) -->
+<header style="position:sticky;top:0;z-index:300;background:#fff">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px;border-bottom:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:12px;min-width:0">
+      <div style="width:42px;height:42px;border-radius:3px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+      </div>
+      <div style="min-width:0">
+        <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);white-space:nowrap">So'rovnoma Portali</div>
+        <div style="font-size:12px;color:var(--text2);white-space:nowrap">TerDU · Surxondaryo viloyati hokimligi</div>
+      </div>
+    </div>
+    <a href="surveys.html" style="width:38px;height:38px;border-radius:3px;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0" aria-label="Orqaga" data-i18n-title="back_surveys">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- SURVEY INFO / PROGRESS SUB-BAR -->
+<div class="hdr" style="position:relative">
+  <span class="hdr-icon" id="hdr-icon">📋</span>
+  <span class="hdr-name" id="hdr-name" data-i18n="loading">Yuklanmoqda…</span>
+  <span class="hdr-count" id="hdr-count" aria-live="polite"></span>
+  <div class="hdr-progress-track" id="hdr-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="So'rovnoma bajarilish darajasi"><div class="hdr-progress-fill" id="hdr-progress-fill"></div></div>
+</div>
+
+<!-- FORM -->
+<div id="main-form" style="display:none">
+  <form id="survey-form" novalidate>
+    <div class="form-wrap">
+      <div class="already-bar" id="already-bar" data-i18n="already_msg">✓ Siz bu so'rovnomada qatnashgansiz — qayta topshirishingiz mumkin</div>
+      <div class="already-bar" id="draft-restored-msg" style="display:none">✓ Oldingi javoblaringiz tiklandi.</div>
+      <div id="q-list"></div>
+    </div>
+    <div class="submit-bar">
+      <div id="submit-err" role="alert" style="max-width:600px;margin-left:auto;margin-right:auto"></div>
+      <button type="submit" class="btn-submit" id="btn-submit" data-i18n="submit_btn">Yuborish →</button>
+    </div>
+  </form>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-wrap" id="success-wrap">
+  <div class="success-inner">
+    <span class="suc-icon" id="suc-icon">✅</span>
+    <h2 data-i18n="success_title">Rahmat!</h2>
+    <p data-i18n="success_msg">Javoblaringiz muvaffaqiyatli saqlandi.<br>Ishtirokingiz ilmiy tadqiqotga muhim hissa bo'ladi.</p>
+    <div class="suc-btns">
+      <button class="suc-main" onclick="location.href='surveys.html'" data-i18n="btn_other">Boshqa so'rovnomalar →</button>
+      <button class="suc-out" onclick="location.href='index.html'" data-i18n="btn_home">Bosh sahifa</button>
+    </div>
+  </div>
+</div>
+
+<!-- ERROR -->
+<div class="center-page" id="error-wrap" style="display:none">
+  <div>
+    <div style="font-size:44px;margin-bottom:14px">😕</div>
+    <h2 data-i18n="err_title">So'rovnoma topilmadi</h2>
+    <p data-i18n="err_msg">Bunday so'rovnoma mavjud emas yoki havolada xatolik bor.</p>
+    <a href="surveys.html" style="display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:white;padding:11px 22px;border-radius:4px;font-size:14px;font-weight:700" data-i18n="err_back">← Qaytish</a>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div class="center-page" id="loading-wrap">
+  <p class="loading-text" data-i18n="loading">Yuklanmoqda…</p>
+</div>
+
+<script src="i18n.js"></script>
+<script src="data.js"></script>
+<script>
+let survey = null;
+
+const rawId = new URLSearchParams(location.search).get('id');
+const surveyId = rawId && rawId.startsWith('c_') ? rawId : parseInt(rawId);
+if (!surveyId || (typeof surveyId === 'number' && isNaN(surveyId))) showErr(); else loadSurvey();
+
+async function loadSurvey() {
+  try {
+    survey = await window.DB.get(surveyId);
+    if (!survey) { showErr(); return; }
+    document.title = survey.title + ' — So\'rovnoma';
+    document.documentElement.style.setProperty('--accent', survey.color);
+    document.documentElement.style.setProperty('--accent-bg', survey.bg);
+    document.getElementById('hdr-icon').textContent = survey.icon;
+    const hdrName = document.getElementById('hdr-name');
+    hdrName.removeAttribute('data-i18n');
+    hdrName.textContent = survey.title;
+    renderForm();
+  } catch(e) { showErr(); }
+}
+
+// Options like "Boshqa", "Boshqa (o'zingiz yozing)", "O'z fikringizni qoldiring"
+// mean the respondent should type their own answer instead of just picking
+// the label as-is.
+function isOpenOption(opt) {
+  const n = String(opt).toLowerCase().replace(/[ʻ‘’']/g, "'");
+  return /o'zingiz yozing|fikringizni qoldiring|^boshqa$|^boshqa\s*\(/.test(n);
+}
+
+function renderForm() {
+  // Already done?
+  if (localStorage.getItem('s' + survey.id + '_done') === '1') {
+    document.getElementById('already-bar').style.display = 'flex';
+  } else {
+    // Tell the server someone opened this form — anonymous (no answers, no
+    // identity), just a count + timestamp — so the admin panel's completion
+    // rate reflects real respondents instead of only the admin's own browser.
+    // Guarded by sessionStorage so a reload within the same tab doesn't
+    // double-count the same visit.
+    const pingedKey = 's' + survey.id + '_started_ping';
+    if (!sessionStorage.getItem(pingedKey)) {
+      fetch(`/api/surveys/${survey.id}/started`, {
+        method: 'POST',
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      }).catch(() => {});
+      try { sessionStorage.setItem(pingedKey, '1'); } catch(e) {}
+    }
+  }
+
+  const list = document.getElementById('q-list');
+  list.innerHTML = survey.questions.map((q, i) => `
+    <fieldset class="q-block" id="qb_${q.id}" data-qid="${q.id}">
+      <legend class="q-header">
+        <span class="q-num">${i + 1}</span>
+        <span class="q-text">${esc(q.text)}${q.required === false ? ' <span style="font-weight:400;color:var(--text3);font-size:12px">(ixtiyoriy)</span>' : ''}</span>
+      </legend>
+      <div class="opts">
+        ${q.options.map(opt => {
+          const open = isOpenOption(opt);
+          const inputType = q.type === 'checkbox' ? 'checkbox' : 'radio';
+          return `
+          <label class="opt">
+            <input type="${inputType}" name="q_${q.id}" value="${esc(opt)}"${open ? ' data-open="1"' : ''}>
+            <span class="opt-dot"></span>
+            <span class="opt-text">${esc(opt)}</span>
+          </label>
+          ${open ? `<input type="text" class="opt-free" placeholder="Javobingizni shu yerga yozing..." style="display:none">` : ''}
+        `;
+        }).join('')}
+      </div>
+      ${q.type === 'checkbox' ? '<div class="opt-hint">Bir nechta variantni tanlashingiz mumkin</div>' : ''}
+      <div class="q-err-msg">Bu savolga javob bering</div>
+    </fieldset>
+  `).join('');
+
+  // Selected highlight on click
+  list.addEventListener('change', e => {
+    if (e.target.type !== 'radio' && e.target.type !== 'checkbox') return;
+    const block = e.target.closest('.q-block');
+    block.classList.remove('err');
+
+    if (e.target.type === 'radio') {
+      block.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+      e.target.closest('.opt').classList.add('sel');
+      block.querySelectorAll('.opt-free').forEach(f => { f.style.display = 'none'; });
+      // "Boshqa (o'zingiz yozing)"-style options reveal a free-text field
+      // right under them so the respondent can type their own answer.
+      if (e.target.dataset.open === '1') {
+        const free = e.target.closest('.opt').nextElementSibling;
+        if (free && free.classList.contains('opt-free')) {
+          free.style.display = 'block';
+          free.focus();
+        }
+      }
+      block.classList.add('answered');
+    } else {
+      e.target.closest('.opt').classList.toggle('sel', e.target.checked);
+      if (e.target.dataset.open === '1') {
+        const free = e.target.closest('.opt').nextElementSibling;
+        if (free && free.classList.contains('opt-free')) {
+          free.style.display = e.target.checked ? 'block' : 'none';
+          if (e.target.checked) free.focus();
+        }
+      }
+      block.classList.toggle('answered', block.querySelectorAll('input[type="checkbox"]:checked').length > 0);
+    }
+    updateProgress();
+  });
+  list.addEventListener('input', e => {
+    if (!e.target.classList.contains('opt-free')) return;
+    e.target.closest('.q-block').classList.remove('err');
+    updateProgress();
+  });
+
+  // Restore any in-progress draft saved before an accidental reload/close.
+  restoreDraft();
+  list.addEventListener('change', saveDraft);
+  list.addEventListener('input', e => { if (e.target.classList.contains('opt-free')) saveDraft(); });
+
+  document.getElementById('survey-form').addEventListener('submit', e => {
+    e.preventDefault();
+    submitSurvey();
+  });
+
+  hide('loading-wrap');
+  document.getElementById('main-form').style.display = '';
+  updateProgress();
+}
+
+function saveDraft() {
+  if (!survey) return;
+  const draft = {};
+  survey.questions.forEach(q => {
+    const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)].map(el => el.value);
+    if (checked.length) draft[q.id] = checked;
+    const free = document.querySelector(`#qb_${q.id} .opt-free`);
+    if (free && free.value.trim()) draft[q.id + '_free'] = free.value;
+  });
+  try { localStorage.setItem('s' + survey.id + '_draft', JSON.stringify(draft)); } catch(e) {}
+}
+
+function restoreDraft() {
+  let draft;
+  try { draft = JSON.parse(localStorage.getItem('s' + survey.id + '_draft') || 'null'); } catch(e) { draft = null; }
+  if (!draft) return;
+  Object.keys(draft).forEach(key => {
+    if (key.endsWith('_free')) return;
+    const values = draft[key];
+    values.forEach(v => {
+      const input = document.querySelector(`input[name="q_${key}"][value="${CSS.escape(v)}"]`);
+      if (input) { input.checked = true; input.dispatchEvent(new Event('change', { bubbles: true })); }
+    });
+    const freeVal = draft[key + '_free'];
+    if (freeVal) {
+      const free = document.querySelector(`#qb_${key} .opt-free`);
+      if (free) { free.value = freeVal; free.style.display = 'block'; }
+    }
+  });
+  const banner = document.getElementById('draft-restored-msg');
+  if (banner) banner.style.display = 'block';
+}
+
+function updateProgress() {
+  if (!survey || !survey.questions) return;
+  const total = survey.questions.length;
+  const answered = survey.questions.filter(q => {
+    const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)];
+    if (!checked.length) return false;
+    return checked.every(el => {
+      if (el.dataset.open !== '1') return true;
+      const free = el.closest('.opt').nextElementSibling;
+      return !!(free && free.classList.contains('opt-free') && free.value.trim());
+    });
+  }).length;
+  const pct = total ? Math.round(answered / total * 100) : 0;
+  const fill = document.getElementById('hdr-progress-fill');
+  if (fill) fill.style.width = pct + '%';
+  const track = document.getElementById('hdr-progress');
+  if (track) track.setAttribute('aria-valuenow', String(pct));
+  const count = document.getElementById('hdr-count');
+  if (count) count.textContent = answered + '/' + total;
+}
+
+async function submitSurvey() {
+  // Collect answers
+  const answers = {};
+  let firstErr = null;
+  let errCount = 0;
+
+  survey.questions.forEach(q => {
+    const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)];
+    const block = document.getElementById('qb_' + q.id);
+    if (!checked.length) {
+      if (q.required === false) { block.classList.remove('err'); return; }
+      block.classList.add('err');
+      block.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', 'true'));
+      errCount++;
+      if (!firstErr) firstErr = block;
+      return;
+    }
+    const values = [];
+    let missingFreeText = false;
+    checked.forEach(el => {
+      if (el.dataset.open === '1') {
+        const free = el.closest('.opt').nextElementSibling;
+        const typed = (free && free.classList.contains('opt-free') ? free.value : '').trim();
+        if (!typed) { missingFreeText = true; return; }
+        values.push(el.value + ' — ' + typed);
+      } else {
+        values.push(el.value);
+      }
+    });
+    if (missingFreeText) {
+      block.classList.add('err');
+      errCount++;
+      if (!firstErr) firstErr = block;
+      return;
+    }
+    answers[q.id] = q.type === 'checkbox' ? values : values[0];
+    block.classList.remove('err');
+    block.querySelectorAll('input').forEach(i => i.removeAttribute('aria-invalid'));
+  });
+
+  const submitErr = document.getElementById('submit-err');
+  if (firstErr) {
+    submitErr.innerHTML = `<p>${errCount} ta savol javobsiz qoldi. Ular qizil rang bilan belgilandi.</p>`;
+    submitErr.style.display = 'block';
+    firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  submitErr.style.display = 'none';
+
+  const T = k => typeof LANG !== 'undefined' ? LANG.t(k) : k;
+  const btn = document.getElementById('btn-submit');
+  btn.disabled = true;
+  btn.textContent = T('submitting');
+
+  try {
+    const r = await fetch(`/api/surveys/${survey.id}/responses`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ answers })
+    });
+    if (!r.ok) {
+      const j = await r.json().catch(() => ({}));
+      // The server itself already rejected this as a duplicate (fingerprint
+      // check) — no point offering "retry", it'll just 409 again.
+      if (r.status === 409) {
+        try { localStorage.setItem('s' + survey.id + '_done', '1'); } catch(e) {}
+        document.getElementById('already-bar').style.display = 'flex';
+        btn.style.display = 'none';
+        submitErr.style.display = 'none';
+        window.scrollTo(0, 0);
+        return;
+      }
+      const err = new Error('submit failed');
+      err.serverMessage = j.error;
+      throw err;
+    }
+    localStorage.setItem('s' + survey.id + '_done', '1');
+    try {
+      localStorage.removeItem('s' + survey.id + '_started');
+      localStorage.removeItem('s' + survey.id + '_draft');
+    } catch(e) {}
+    document.getElementById('main-form').style.display = 'none';
+    document.getElementById('suc-icon').textContent = survey.icon || '✅';
+    document.getElementById('success-wrap').style.display = 'flex';
+    window.scrollTo(0, 0);
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = T('submit_btn');
+    submitErr.innerHTML = `<p>${esc(e.serverMessage || T('err_generic'))}</p>
+      <p class="hint">Javoblaringiz brauzerda saqlanib turdi — yo'qolmaydi.</p>
+      <button type="submit">Qayta yuborish</button>`;
+    submitErr.style.display = 'block';
+    submitErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showErr() { hide('loading-wrap'); document.getElementById('error-wrap').style.display = 'flex'; }
+function hide(id) { document.getElementById(id).style.display = 'none'; }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+</script>
+
+<!-- VOICE ASSISTANT (accessibility) — additive voice control layer on top of the
+     already-rendered form; does not touch submitSurvey(), Firebase init, or the
+     question-rendering template. Mouse/keyboard users are unaffected unless
+     they click the mic button. -->
+<button type="button" class="va-btn" id="va-btn" aria-label="Ovozli yordamchi">🎙️</button>
+<div class="va-status" id="va-status" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  // Browser-native Web Speech API only. Uzbek (uz-UZ) TTS/STT support varies
+  // by browser; if there's no uz-UZ voice/recognizer the browser just uses its
+  // default fallback instead of failing, so we never block on availability.
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const btn = document.getElementById('va-btn');
+  const statusEl = document.getElementById('va-status');
+  let active = false, recognizer = null, errorCount = 0, currentQ = null;
+
+  const NUM_WORDS = {
+    'bir':1,'ikki':2,'uch':3,"to'rt":4,'to‘rt':4,'tort':4,'besh':5,
+    'olti':6,'yetti':7,'sakkiz':8,"to'qqiz":9,'to‘qqiz':9,'toqqiz':9
+  };
+
+  function setStatus(msg){
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('show', !!msg);
+  }
+  function pickVoice(){
+    try{
+      const voices = window.speechSynthesis.getVoices() || [];
+      return voices.find(v=>/^uz/i.test(v.lang)) || voices.find(v=>/^(ru|tr)/i.test(v.lang)) || null;
+    }catch(e){ return null; }
+  }
+  let currentAudio = null;
+  function speakBrowser(text, onend){
+    try{
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v){ u.voice = v; u.lang = v.lang; }
+      let done = false;
+      const finish = function(){ if (done) return; done = true; if (onend) onend(); };
+      u.onend = finish;
+      u.onerror = finish;
+      if (window.speechSynthesis.speaking || window.speechSynthesis.pending){
+        window.speechSynthesis.cancel();
+      }
+      try{ window.speechSynthesis.resume(); }catch(e2){}
+      setTimeout(function(){ window.speechSynthesis.speak(u); }, 50);
+    }catch(e){ if (onend) onend(); }
+  }
+  function speak(text, onend){
+    if (currentAudio){ try{ currentAudio.pause(); }catch(e){} currentAudio = null; }
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    fetch('/api/speak', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ text })
+    }).then(function(r){ if (!r.ok) throw new Error('tts-failed'); return r.blob(); })
+      .then(function(blob){
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        currentAudio = audio;
+        audio.onended = function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; if (onend) onend(); };
+        audio.onerror = function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; speakBrowser(text, onend); };
+        audio.play().catch(function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; speakBrowser(text, onend); });
+      })
+      .catch(function(){ speakBrowser(text, onend); });
+  }
+  function stopAll(){
+    active = false;
+    btn.classList.remove('listening');
+    setStatus('');
+    if (currentAudio){ try{ currentAudio.pause(); }catch(e){} currentAudio = null; }
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    if (recognizer) { try{ recognizer.stop(); }catch(e){} }
+  }
+  function startListening(){
+    if (!SR){ setStatus("Bu brauzerda ovozli buyruq qo'llab-quvvatlanmaydi"); return; }
+    errorCount = 0;
+    recognizer = new SR();
+    recognizer.lang = 'uz-UZ';
+    recognizer.continuous = false;
+    recognizer.interimResults = false;
+    recognizer.onresult = function(e){
+      const said = (e.results[0][0].transcript || '').toLowerCase().trim();
+      handleAnswer(said);
+    };
+    recognizer.onerror = function(ev){
+      // "no-speech" (silence timeout) and "aborted" are routine — they fire
+      // constantly on real devices between sentences and must NOT count
+      // toward the give-up limit, or a couple of pauses mid-survey silently
+      // kill the whole session. Only real failures count.
+      if (ev && (ev.error === 'no-speech' || ev.error === 'aborted')) return;
+      errorCount++;
+    };
+    recognizer.onend = function(){
+      if (active && errorCount < 8){ try{ recognizer.start(); }catch(e){} return; }
+      if (active){
+        // Giving up for real — must flip the visible/active state too,
+        // otherwise the mic button stays stuck in "listening" mode with a
+        // dead recognizer underneath, and the next tap just calls stopAll()
+        // instead of restarting (forcing a confusing double-press to recover).
+        active = false;
+        btn.classList.remove('listening');
+        setStatus("Ovoz aniqlanmadi. Mikrofon tugmasini qayta bosing.");
+      }
+    };
+    setStatus('Tinglayapman...');
+    try{ recognizer.start(); }catch(e){}
+  }
+
+  function normalize(s){
+    return String(s).toLowerCase()
+      .replace(/[ʻʼ’`]/g, "'")
+      .replace(/[^a-z0-9şğçüöи-я'\s]/gi, '')
+      .trim();
+  }
+
+  function firstUnansweredBlock(){
+    if (!survey || !survey.questions) return null;
+    for (const q of survey.questions){
+      const checked = document.querySelector(`input[name="q_${q.id}"]:checked`);
+      if (!checked) return q;
+    }
+    return null;
+  }
+
+  function askCurrentQuestion(){
+    const q = firstUnansweredBlock();
+    if (!active) return;
+    if (!q){
+      currentQ = null;
+      speak("Barcha savollar javoblandi. Yuborish uchun 'yubor' deng, yoki formani qo'lda tekshiring.", function(){
+        if (active) startListening();
+      });
+      return;
+    }
+    currentQ = q;
+    const block = document.getElementById('qb_' + q.id);
+    if (block) block.scrollIntoView({behavior:'smooth', block:'center'});
+    const idx = survey.questions.indexOf(q) + 1;
+    let text = idx + "-savol: " + q.text + ". Variantlar: ";
+    text += q.options.map((opt, i) => (i+1) + ' - ' + opt).join(', ');
+    speak(text, function(){ if (active) startListening(); });
+  }
+
+  function selectOption(q, opt){
+    const inputs = document.querySelectorAll(`input[name="q_${q.id}"]`);
+    for (const el of inputs){
+      if (el.value === opt){
+        el.checked = true;
+        el.dispatchEvent(new Event('change', {bubbles:true}));
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function matchOption(q, said){
+    const norm = normalize(said);
+    // Try number word / digit first
+    const digitMatch = norm.match(/\d+/);
+    let idx = null;
+    if (digitMatch) idx = parseInt(digitMatch[0], 10);
+    if (!idx){
+      for (const w in NUM_WORDS){
+        if (norm.includes(w)) { idx = NUM_WORDS[w]; break; }
+      }
+    }
+    if (idx && q.options[idx-1]) return q.options[idx-1];
+    // Fuzzy substring match against option text
+    let best = null;
+    q.options.forEach(opt => {
+      const optNorm = normalize(opt);
+      if (norm.includes(optNorm) || optNorm.includes(norm)) best = opt;
+    });
+    return best;
+  }
+
+  // AI fallback — only called when the free local matcher (number word /
+  // digit / substring fuzzy match) can't confidently pick an option, e.g.
+  // the respondent answered in a free, conversational way instead of a
+  // clear number or option word. Degrades silently to "tushunmadim" if the
+  // backend has no OpenAI key configured or the request fails.
+  async function aiMatchOption(q, said){
+    try{
+      const r = await fetch('/api/voice-match', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ transcript: said, options: q.options })
+      });
+      if (!r.ok) return null;
+      const j = await r.json();
+      return j.match || null;
+    }catch(e){ return null; }
+  }
+
+  async function handleAnswer(said){
+    if (said.includes("to'xta") || said.includes('to‘xta') || said.includes('tuxta') || said.includes('bekor')){
+      stopAll();
+      return;
+    }
+    if (said.includes('orqaga')){
+      askCurrentQuestion();
+      return;
+    }
+    if (said.includes('yubor') || said.includes("jo'nat") || said.includes('jonat') || said.includes('submit')){
+      if (!firstUnansweredBlock()){
+        speak('Yuborilmoqda');
+        try{ submitSurvey(); }catch(e){}
+      } else {
+        speak('Hali javob berilmagan savollar bor');
+        if (active) startListening();
+      }
+      return;
+    }
+    if (!currentQ){
+      askCurrentQuestion();
+      return;
+    }
+    let opt = matchOption(currentQ, said);
+    if (!opt){
+      setStatus("Aniqlashtiryapman...");
+      opt = await aiMatchOption(currentQ, said);
+    }
+    if (opt && selectOption(currentQ, opt)){
+      speak('Tanlandi: ' + opt, function(){ if (active) askCurrentQuestion(); });
+    } else {
+      speak("Tushunmadim, qaytadan ayting", function(){ if (active) startListening(); });
+    }
+  }
+
+  btn.addEventListener('click', function(){
+    if (active){ stopAll(); return; }
+    if (!survey){ setStatus("So'rovnoma hali yuklanmadi"); return; }
+    active = true;
+    btn.classList.add('listening');
+    setStatus("O'qiyapman...");
+    speak(survey.title + ". Ovozli yordamchi yoqildi.", function(){ if (active) askCurrentQuestion(); });
+  });
+})();
+</script>
+</body>
+</html>

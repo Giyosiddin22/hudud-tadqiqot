@@ -1,0 +1,20 @@
+{
+  "name": "htm-portal-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend for Hududiy Tadqiqotlar Markazi portal — serves the static site and exposes an OpenAI-backed AI analysis endpoint.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.5.2",
+    "express-session": "^1.18.0",
+    "helmet": "^8.3.0"
+  }
+}

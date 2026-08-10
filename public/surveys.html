@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So'rovnomalar — So'rovnoma Portali</title>
+<meta name="description" content="Surxondaryo viloyati bo'yicha faol ilmiy-ijtimoiy so'rovnomalar ro'yxati. Anonim va bir necha daqiqada to'ldiriladi.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="So'rovnoma Portali">
+<meta property="og:title" content="So'rovnomalar — So'rovnoma Portali">
+<meta property="og:description" content="Faol ilmiy-ijtimoiy so'rovnomalar ro'yxati. Anonim va bir necha daqiqada to'ldiriladi.">
+<meta property="og:image" content="/og-image.jpg">
+<meta property="og:locale" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#util-lang .ls-btn{color:#a9b6c9;font-weight:400}
+#util-lang .ls-btn.ls-on{color:#fff;font-weight:600}
+:root {
+  --bg: #ffffff;
+  --bg-2: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --line: #dde1e7;
+  --gold: #1c3f66;
+  --gold-bright: #2563a1;
+  --teal: #2f7a52;
+  --ink: #182233;
+  --muted: #5b6472;
+  --danger: #b3261e;
+  --white: #ffffff;
+  --text: var(--ink);
+  --text2: var(--muted);
+  --text3: #6b7480;
+  --border: var(--line);
+  --green: var(--teal);
+  --green2: var(--gold-bright);
+  --green-bg: #eaf3ee;
+  --shadow: none;
+  --shadow2: none;
+  --serif: 'PT Serif', serif;
+}
+body {
+  font-family: 'Noto Sans', system-ui, sans-serif; color: var(--text); min-height: 100vh;
+  background: var(--bg);
+}
+a { text-decoration: none; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.82); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 32px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); border-radius: 8px; display: grid; place-items: center; font-size: 15px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(30,58,138,.35); }
+.nav-name { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; }
+.nav-name span { font-size: 11px; font-weight: 500; color: var(--text3); display: block; }
+.nav-back { font-size: 13px; font-weight: 600; color: var(--text2); display: flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 100px; border: 1.5px solid var(--line); transition: all .2s; }
+.nav-back:hover { border-color: var(--gold); color: var(--gold-bright); }
+
+/* NAV — mega menu + mobile (shared with index.html/about.html for a consistent header) */
+.nav-center{display:flex;align-items:center;gap:2px;margin:0 auto}
+.nav-it{position:relative}
+.nav-link{display:flex;align-items:center;gap:5px;padding:7px 13px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--text2);background:none;border:none;transition:all .15s;white-space:nowrap;cursor:pointer}
+.nav-link:hover,.nav-it:hover>.nav-link{color:var(--gold-bright);background:var(--green-bg)}
+.nav-caret{font-size:9px;transition:transform .2s}
+.nav-it:hover .nav-caret{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:5px;min-width:200px;box-shadow:var(--shadow2);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .15s,transform .15s;z-index:200}
+.nav-it:hover .nav-drop{opacity:1;transform:translateY(0);pointer-events:auto}
+.dd-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--text2);transition:all .12s}
+.dd-item:hover{color:var(--gold-bright);background:var(--surface-2)}
+.dd-icon{font-size:13px;width:18px;text-align:center}
+.dd-hr{height:1px;background:var(--line);margin:4px 8px}
+.nav-burger{display:none;flex-direction:column;gap:4.5px;background:none;border:none;padding:11px 10px;flex-shrink:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+.nav-mob{display:none;position:fixed;top:116px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:14px 16px;z-index:299;flex-direction:column;gap:3px;box-shadow:var(--shadow2);max-height:calc(100vh - 116px);overflow-y:auto}
+.nav-mob.open{display:flex}
+.mob-link{display:flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:9px;font-size:14px;font-weight:600;color:var(--text2)}
+.mob-link:hover{color:var(--gold-bright);background:var(--surface-2)}
+.mob-group-label{font-size:10.5px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;padding:8px 14px 3px}
+.mob-sub{padding-left:10px}
+.mob-cta{margin-top:8px;padding:13px 11px;min-height:44px;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#ffffff;font-size:14px;font-weight:700;border:none;width:100%}
+@media(max-width:860px){
+  .nav-center{display:none}
+  .nav-burger{display:flex}
+  .nav-back{display:none}
+}
+
+/* FOOTER (shared with index.html/about.html) */
+footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:40px}
+.ft-top{max-width:1320px;margin:0 auto;padding:44px 24px 28px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+.ft-brand{display:flex;flex-direction:column;gap:12px}
+.ft-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--ink)}
+.ft-logo .ft-logo-ic{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex:none}
+.ft-desc{font-size:12.5px;line-height:1.65;color:var(--text3);max-width:34ch}
+.ft-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--text2);font-weight:800;margin:0 0 14px}
+.ft-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ft-col a{font-size:13px;color:var(--text3);text-decoration:none;transition:.15s}
+.ft-col a:hover{color:var(--gold)}
+.ft-contact li{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--text3);line-height:1.5}
+.ft-contact .ic{flex:none;opacity:.8}
+@media(max-width:860px){.ft-top{grid-template-columns:1fr 1fr;gap:28px 20px}}
+@media(max-width:520px){.ft-top{grid-template-columns:1fr}}
+.ft-bottom{border-top:1px solid var(--line)}
+.ft-bottom-in{max-width:1320px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft-bottom span,.ft-bottom a{font-size:12px;color:var(--text3)}
+
+.page-header {
+  position: relative; overflow: hidden;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+  padding: 44px 32px 38px;
+}
+.page-header-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text3); font-weight: 500; margin-bottom: 14px; }
+.breadcrumb a { color: var(--gold-bright); }
+.page-header h1 { font-family: var(--serif); font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 700; letter-spacing: -.3px; margin-bottom: 10px; color: var(--ink); }
+.page-header p { font-size: 14.5px; color: var(--text2); line-height: 1.65; max-width: 560px; }
+.header-meta { display: flex; align-items: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip {
+  display: flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); padding: 8px 15px; border-radius: 4px;
+}
+
+.main { max-width: 1100px; margin: 0 auto; padding: 36px 24px 80px; }
+
+.filters {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  padding: 12px;
+}
+.search-wrap { position: relative; flex: 1; min-width: 200px; }
+.search-wrap input {
+  width: 100%; padding: 12px 16px 12px 40px;
+  border: 1.5px solid var(--line); border-radius: 4px;
+  font-family: 'Noto Sans', sans-serif; font-size: 13.5px; color: var(--text);
+  background: #fff; outline: none; transition: border-color .2s;
+}
+.search-wrap input:focus { border-color: var(--gold); }
+.search-wrap input::placeholder { color: var(--text3); }
+.search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 14px; pointer-events: none; }
+.filter-btn {
+  padding: 10px 18px; border: 1.5px solid var(--line);
+  border-radius: 4px; font-family: 'Noto Sans', sans-serif;
+  font-size: 13px; font-weight: 700; color: var(--text2);
+  background: #fff; cursor: pointer; transition: all .2s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
+.filter-btn.active {
+  border-color: var(--gold); color: #fff;
+  background: var(--gold);
+}
+
+.surveys-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+.survey-card {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--clr, var(--gold));
+  border-radius: 4px; overflow: hidden;
+  transition: transform .2s;
+  display: flex; flex-direction: column;
+  cursor: pointer;
+}
+.survey-card:hover { transform: translateY(-3px); }
+.card-top { padding: 26px 24px 16px; flex: 1; }
+.card-icon-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.card-icon {
+  width: 56px; height: 56px; border-radius: 4px;
+  display: grid; place-items: center; font-size: 26px;
+}
+.card-status { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; background: var(--bg-2); padding: 5px 10px; border-radius: 4px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; }
+.card-title { font-size: 17px; font-weight: 800; letter-spacing: -.4px; margin-bottom: 6px; line-height: 1.3; color: var(--ink); }
+.card-subtitle { font-size: 12px; font-weight: 700; color: var(--clr, var(--text3)); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .03em; }
+.card-desc {
+  font-size: 13px; color: var(--text2); line-height: 1.65;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 14px; }
+.card-tag { font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 4px; background: var(--bg-2); color: var(--text3); border: 1px solid var(--line); }
+.card-bottom { padding: 16px 24px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; background: var(--bg-2); }
+.card-meta { display: flex; gap: 16px; }
+.card-meta-item { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; color: var(--text3); }
+.card-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 22px; border-radius: 4px; border: none;
+  font-family: 'Noto Sans', sans-serif; font-size: 13px; font-weight: 700;
+  color: #ffffff; cursor: pointer; transition: filter .2s;
+}
+.card-btn:hover { filter: brightness(1.1); }
+.done-badge {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 700; color: var(--teal);
+  background: var(--green-bg); padding: 8px 15px; border-radius: 4px;
+  border: 1px solid var(--teal);
+}
+
+.empty { text-align: center; padding: 64px 24px; color: var(--text3); }
+.empty span { font-size: 36px; display: block; margin-bottom: 12px; }
+.empty p { font-size: 14px; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 16px; }
+  .page-header { padding: 28px 16px 30px; }
+  .main { padding: 24px 16px 110px; }
+  .surveys-grid { grid-template-columns: 1fr; }
+  .filters { gap: 8px; }
+  .search-wrap { flex: 1 1 100%; min-width: 0; width: 100%; }
+  .filter-btn { min-height: 44px; padding: 9px 16px; display: inline-flex; align-items: center; }
+  .search-wrap input { min-height: 44px; }
+  .card-top { padding: 20px 20px 14px; }
+  .card-bottom { padding: 14px 20px; flex-wrap: wrap; gap: 10px; }
+  .card-meta { flex-wrap: wrap; row-gap: 6px; }
+  .card-btn, .done-badge { min-height: 44px; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0 12px; height: auto; min-height: 60px; flex-wrap: wrap; }
+  .nav-name { font-size: 12px; }
+  .page-header { padding: 22px 14px 26px; }
+  .page-header p { max-width: 100%; }
+  .header-meta { gap: 10px; }
+  .meta-chip { font-size: 11px; padding: 5px 10px; }
+  .main { padding: 20px 14px 120px; }
+  .filters { flex-direction: column; align-items: stretch; }
+  .search-wrap { order: -1; }
+  .filter-btn { flex: 1 1 auto; text-align: center; }
+  .surveys-grid { gap: 14px; }
+  .card-top { padding: 18px 16px 12px; }
+  .card-title { font-size: 15px; }
+  .card-desc { word-break: break-word; }
+  .card-bottom { padding: 12px 16px; }
+  .card-btn { padding: 9px 16px; }
+  .lang-sw { flex-wrap: nowrap; max-width: 100%; overflow-x: auto; }
+  .ls-btn, .ls-script { min-height: 32px; }
+  .va-btn { width: 50px; height: 50px; right: 14px; bottom: 14px; font-size: 21px; }
+  .va-status { right: 14px; bottom: 70px; max-width: calc(100vw - 28px); }
+}
+
+/* ── LANG SWITCHER ── */
+.lang-sw{display:flex;align-items:center;background:rgba(20,15,5,.03);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
+.ls-sep{width:1px;height:16px;background:var(--line);flex-shrink:0;margin:0 2px}
+.ls-btn{padding:4px 9px;border-radius:6px;border:none;font-family:'Noto Sans',sans-serif;font-size:11.5px;font-weight:700;color:var(--text3);background:transparent;cursor:pointer;transition:all .15s;letter-spacing:.3px}
+.ls-btn.ls-on{background:linear-gradient(135deg, var(--gold), var(--gold-bright));color:#ffffff;box-shadow:0 1px 3px rgba(20,15,5,.25)}
+.ls-btn:hover:not(.ls-on){color:var(--ink)}
+.ls-script{padding:3px 8px;border-radius:5px;border:none;font-family:'Noto Sans',sans-serif;font-size:11px;font-weight:700;color:var(--teal);background:transparent;cursor:pointer;transition:all .15s}
+.ls-script:hover{background:rgba(15,143,130,.12)}
+
+/* ── VOICE ASSISTANT ── */
+.va-btn{position:fixed;right:20px;bottom:20px;z-index:9999;width:56px;height:56px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#fff;font-size:24px;display:grid;place-items:center;
+  box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .15s,box-shadow .15s;}
+.va-btn:hover{transform:scale(1.08)}
+.va-btn:active{transform:scale(.96)}
+.va-btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.va-btn.listening{animation:va-pulse 1.4s infinite}
+@keyframes va-pulse{
+  0%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,.55)}
+  70%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 14px rgba(15,143,130,0)}
+  100%{box-shadow:0 6px 20px rgba(30,58,138,.4),0 0 0 0 rgba(15,143,130,0)}
+}
+@media(prefers-reduced-motion:reduce){.va-btn.listening{animation:none}}
+.va-status{position:fixed;right:20px;bottom:82px;z-index:9999;max-width:220px;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:6px 11px;font-size:11.5px;font-weight:600;color:var(--text2);
+  box-shadow:var(--shadow2);display:none}
+.va-status.show{display:block}
+.gov-nav-link{padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);border-right:1px solid var(--border)}
+.gov-nav-link:hover{color:var(--gold-bright)}
+@media(max-width:900px){.gov-nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<!-- TOP 3-COLOR STRIPE -->
+<div style="display:flex;height:4px;flex-shrink:0">
+  <div style="flex:1;background:var(--gold)"></div>
+  <div style="flex:1;background:var(--surface-2)"></div>
+  <div style="flex:1;background:var(--teal)"></div>
+</div>
+
+<!-- UTILITY BAR -->
+<div style="background:#0f2740">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <span style="font-size:12px;color:#a9b6c9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Surxondaryo viloyati ijtimoiy tadqiqotlar tizimi</span>
+    <span style="font-size:12px;color:#a9b6c9;display:flex;gap:8px;flex-shrink:0">
+      <a href="#" class="ls-btn" data-lang="uz-lat" onclick="LANG.set('uz-lat');return false">UZ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="uz-cyr" onclick="LANG.set('uz-cyr');return false">ЎЗ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="ru" onclick="LANG.set('ru');return false">RU</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="en" onclick="LANG.set('en');return false">EN</a>
+    </span>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header style="position:sticky;top:0;z-index:300;background:#fff">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px;border-bottom:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:12px;min-width:0">
+      <div style="width:42px;height:42px;border-radius:3px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+      </div>
+      <div style="min-width:0">
+        <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);white-space:nowrap">So'rovnoma Portali</div>
+        <div style="font-size:12px;color:var(--text2);white-space:nowrap">TerDU · Surxondaryo viloyati hokimligi</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <button type="button" onclick="location.href='index.html'" aria-label="Qidirish" style="width:38px;height:38px;border-radius:3px;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-burger" onclick="toggleMob()" style="border-radius:3px;border:1px solid var(--border)"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="gov-nav-links" style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)">
+    <a href="surveys.html" class="gov-nav-link" style="color:var(--gold-bright)">So'rovnomalar</a>
+    <a href="index.html#docs" class="gov-nav-link">Me'yoriy hujjatlar</a>
+    <a href="about.html" class="gov-nav-link">Loyiha haqida</a>
+    <a href="index.html" class="gov-nav-link">Yangiliklar</a>
+    <a href="index.html#aloqa" class="gov-nav-link" style="border-right:none">Aloqa</a>
+  </nav>
+</header>
+
+<div class="nav-mob" id="nav-mob">
+  <a href="surveys.html" class="mob-link" onclick="closeMob()">So'rovnomalar</a>
+  <a href="index.html#docs" class="mob-link" onclick="closeMob()">Me'yoriy hujjatlar</a>
+  <a href="about.html" class="mob-link" onclick="closeMob()">Loyiha haqida</a>
+  <a href="index.html" class="mob-link" onclick="closeMob()">Yangiliklar</a>
+  <a href="index.html#aloqa" class="mob-link" onclick="closeMob()">Aloqa</a>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="index.html" data-i18n="bc_home">Bosh sahifa</a>
+      <span>/</span>
+      <span data-i18n="bc_cur">So'rovnomalar</span>
+    </div>
+    <h1 data-i18n="surveys_h1">Tadqiqot so'rovnomalari</h1>
+    <p data-i18n="surveys_desc">Quyidagi so'rovnomalardan birini tanlang va ilmiy tadqiqotda ishtirok eting. Har bir so'rovnoma anonim va atigi bir necha daqiqa vaqt oladi.</p>
+    <div class="header-meta">
+      <div class="meta-chip" id="chip-count">📋 —</div>
+      <div class="meta-chip" id="chip-time">⏱ —</div>
+      <div class="meta-chip" data-i18n="chip_anon">🔒 Anonim</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="filters">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" data-i18n-ph="search_ph" placeholder="So'rovnoma nomini qidiring…" oninput="filterCards()">
+    </div>
+    <button class="filter-btn active" data-f="all" onclick="setFilter('all', this)" data-i18n="f_all">Barchasi</button>
+    <button class="filter-btn" data-f="faol" onclick="setFilter('faol', this)" data-i18n="f_active">Faol</button>
+    <button class="filter-btn" data-f="done" onclick="setFilter('done', this)" data-i18n="f_done">Bajarilgan</button>
+  </div>
+
+  <div class="surveys-grid" id="surveys-grid">
+    <div style="grid-column:1/-1;padding:48px;text-align:center;color:var(--text3);font-size:14px">Yuklanmoqda…</div>
+  </div>
+</div>
+
+<footer style="background:#0f2740;color:#c3cddb">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 24px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <div style="width:32px;height:32px;border-radius:3px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div>
+        <span style="font-family:var(--serif);font-size:15px;font-weight:700;color:#fff">Hududiy Tadqiqotlar Markazi</span>
+      </div>
+      <p style="font-size:13px;line-height:1.7;color:#a8b3c4;max-width:280px;margin:0">Surxondaryo viloyati aholisi o'rtasida o'tkaziladigan ilmiy-ijtimoiy so'rovnomalar uchun yagona raqamli platforma.</p>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#8695ab;text-transform:uppercase;margin-bottom:16px">Tezkor havolalar</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="index.html" style="font-size:14px;color:#c3cddb">Bosh sahifa</a>
+        <a href="surveys.html" style="font-size:14px;color:#c3cddb">So'rovnomalar</a>
+        <a href="about.html" style="font-size:14px;color:#c3cddb">Loyiha haqida</a>
+        <a href="index.html#docs" style="font-size:14px;color:#c3cddb">Me'yoriy hujjatlar</a>
+        <a href="index.html" style="font-size:14px;color:#c3cddb">Yangiliklar</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#8695ab;text-transform:uppercase;margin-bottom:16px">Yordam</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="faq.html" style="font-size:14px;color:#c3cddb">Tez-tez so'raladigan savollar</a>
+        <a href="methodology.html" style="font-size:14px;color:#c3cddb">Metodologiya</a>
+        <a href="privacy.html" style="font-size:14px;color:#c3cddb">Maxfiylik siyosati</a>
+        <a href="index.html#aloqa" style="font-size:14px;color:#c3cddb">Bog'lanish</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#8695ab;text-transform:uppercase;margin-bottom:16px">Aloqa</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#c3cddb">
+        <span>📍 Termiz shahri, "Barkamol avlod" ko'chasi 43-uy</span>
+        <span>📞 76 221 74 55 — Ishonch telefoni</span>
+        <span>📞 76 221 76 90</span>
+        <span>✉️ info@tersu.uz</span>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.12)">
+    <div style="max-width:1200px;margin:0 auto;padding:20px 24px;font-size:13px;color:#8695ab">© 2026 So'rovnoma Portali. Barcha huquqlar himoyalangan.</div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="data.js"></script>
+<script>
+function toggleMob(){document.getElementById('nav-mob').classList.toggle('open')}
+function closeMob(){document.getElementById('nav-mob').classList.remove('open')}
+document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.closest('#nav-mob'))closeMob()})
+
+let _allSurveys = [];
+let _activeFilter = 'all';
+
+const COLOR_STYLES = {
+  '#16a34a': { btn: '#0f8f82', bg: 'rgba(15,143,130,.14)', dot: '#0f8f82' },
+  '#2563eb': { btn: '#2b5fd9', bg: 'rgba(43,95,217,.14)', dot: '#2b5fd9' },
+  '#7c3aed': { btn: '#7c3aed', bg: 'rgba(124,58,237,.14)', dot: '#7c3aed' },
+  '#0891b2': { btn: '#0891b2', bg: 'rgba(8,145,178,.14)', dot: '#0891b2' },
+  '#f97316': { btn: '#c9600f', bg: 'rgba(201,96,15,.14)', dot: '#c9600f' },
+};
+
+function isDone(id) { return localStorage.getItem('s'+id+'_done') === '1'; }
+function escHtml(s) { return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+function buildCard(s) {
+  const style = COLOR_STYLES[s.color] || COLOR_STYLES['#16a34a'];
+  const done = isDone(s.id);
+  const T = k => (typeof LANG !== 'undefined' ? LANG.t(k) : k);
+  const qCount = s.questionCount != null ? s.questionCount : '—';
+  return `
+    <div class="survey-card" style="--clr:${style.btn}" data-id="${escHtml(s.id)}" data-title="${escHtml(s.title.toLowerCase())}" data-done="${done}" onclick="goSurvey('${s.id}')">
+      <div class="card-top">
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:${style.bg}">${escHtml(s.icon)}</div>
+          <div class="card-status" style="color:${style.btn}">
+            <div class="status-dot" style="background:${style.dot}"></div>
+            ${done ? T('f_done') : T('f_active')}
+          </div>
+        </div>
+        <div class="card-title">${escHtml(s.title)}</div>
+        <div class="card-subtitle">${escHtml(s.subtitle)}</div>
+        <div class="card-desc">${escHtml(s.description)}</div>
+        <div class="card-tags">
+          <span class="card-tag">${T('card_anon')}</span>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-meta">
+          <div class="card-meta-item">⏱ ${s.minutes} daqiqa</div>
+          <div class="card-meta-item">📋 ${qCount} savol</div>
+        </div>
+        ${done
+          ? `<div class="done-badge">${T('card_done')}</div>`
+          : `<button class="card-btn" style="background:${style.btn};--clr:${style.btn}" onclick="event.stopPropagation();goSurvey('${s.id}')">${T('card_start')}</button>`
+        }
+      </div>
+    </div>
+  `;
+}
+
+// Re-render cards when language changes
+window._onLangChange = function() {
+  if (_allSurveys.length) {
+    const grid = document.getElementById('surveys-grid');
+    grid.innerHTML = _allSurveys.map(buildCard).join('') +
+      `<div id="empty-msg" class="empty" style="display:none;grid-column:1/-1"><span>🔍</span><p data-i18n="empty">${typeof LANG!=='undefined'?LANG.t('empty'):'Hech narsa topilmadi'}</p></div>`;
+    filterCards();
+  }
+};
+
+function goSurvey(id) { location.href = 'survey.html?id=' + id; }
+
+function filterCards() {
+  const q = document.getElementById('search-input').value.toLowerCase();
+  document.querySelectorAll('.survey-card').forEach(card => {
+    const title = card.dataset.title;
+    const done = card.dataset.done === 'true';
+    const matchQ = title.includes(q);
+    // Every listed survey is open/active by definition (there's no "inactive
+    // survey" state in this system) — "Faol" just means "not yet completed".
+    const matchF = _activeFilter === 'all'
+      || (_activeFilter === 'done' && done)
+      || (_activeFilter === 'faol' && !done);
+    card.style.display = (matchQ && matchF) ? '' : 'none';
+  });
+  const anyVisible = [...document.querySelectorAll('.survey-card')].some(c => c.style.display !== 'none');
+  const empty = document.getElementById('empty-msg');
+  if (empty) empty.style.display = anyVisible ? 'none' : '';
+}
+
+function setFilter(f, btn) {
+  _activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterCards();
+}
+
+async function init() {
+  // Handle URL param from navbar dropdown
+  const urlStatus = new URLSearchParams(location.search).get('status');
+  if (urlStatus === 'active' || urlStatus === 'faol') {
+    _activeFilter = 'faol';
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.f === 'faol');
+    });
+  }
+
+  const grid = document.getElementById('surveys-grid');
+  try {
+    _allSurveys = await window.DB.list();
+    grid.innerHTML = _allSurveys.map(buildCard).join('') +
+      `<div id="empty-msg" class="empty" style="display:none;grid-column:1/-1"><span>🔍</span><p>Hech narsa topilmadi</p></div>`;
+
+    const countEl = document.getElementById('chip-count');
+    const timeEl = document.getElementById('chip-time');
+    if (countEl) countEl.textContent = `📋 ${_allSurveys.length} ta so'rovnoma`;
+    if (timeEl) {
+      const mins = _allSurveys.map(s => s.minutes).filter(m => typeof m === 'number');
+      if (mins.length) {
+        const mn = Math.min(...mins), mx = Math.max(...mins);
+        timeEl.textContent = mn === mx ? `⏱ ${mn} daqiqa` : `⏱ ${mn}–${mx} daqiqa`;
+      } else {
+        timeEl.textContent = '⏱ —';
+      }
+    }
+  } catch(e) {
+    grid.innerHTML = '<div style="grid-column:1/-1;padding:48px;text-align:center;color:var(--text3)">Yuklanmadi. Sahifani yangilang.</div>';
+  }
+
+  if (new URLSearchParams(location.search).get('focus') === 'search') {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) searchInput.focus();
+  }
+}
+init();
+</script>
+
+<!-- VOICE ASSISTANT (accessibility) -->
+<button type="button" class="va-btn" id="va-btn" aria-label="Ovozli yordamchi">🎙️</button>
+<div class="va-status" id="va-status" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  // Browser-native Web Speech API only. Uzbek (uz-UZ) TTS/STT support varies
+  // by browser; if unavailable the browser silently falls back to a default
+  // voice/locale for speech synthesis (still useful), and we feature-detect
+  // SpeechRecognition before attempting voice input.
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const btn = document.getElementById('va-btn');
+  const statusEl = document.getElementById('va-status');
+  let active = false, recognizer = null, errorCount = 0;
+
+  const NUM_WORDS = {
+    'bir':1,'ikki':2,'uch':3,"to'rt":4,'to‘rt':4,'tort':4,'besh':5,
+    'olti':6,'yetti':7,'sakkiz':8,"to'qqiz":9,'to‘qqiz':9,'toqqiz':9
+  };
+
+  function setStatus(msg){
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('show', !!msg);
+  }
+  function pickVoice(){
+    try{
+      const voices = window.speechSynthesis.getVoices() || [];
+      return voices.find(v=>/^uz/i.test(v.lang)) || voices.find(v=>/^(ru|tr)/i.test(v.lang)) || null;
+    }catch(e){ return null; }
+  }
+  let currentAudio = null;
+  function speakBrowser(text, onend){
+    try{
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v){ u.voice = v; u.lang = v.lang; }
+      let done = false;
+      const finish = function(){ if (done) return; done = true; if (onend) onend(); };
+      u.onend = finish;
+      u.onerror = finish;
+      if (window.speechSynthesis.speaking || window.speechSynthesis.pending){
+        window.speechSynthesis.cancel();
+      }
+      try{ window.speechSynthesis.resume(); }catch(e2){}
+      setTimeout(function(){ window.speechSynthesis.speak(u); }, 50);
+    }catch(e){ if (onend) onend(); }
+  }
+  function speak(text, onend){
+    if (currentAudio){ try{ currentAudio.pause(); }catch(e){} currentAudio = null; }
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    fetch('/api/speak', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ text })
+    }).then(function(r){ if (!r.ok) throw new Error('tts-failed'); return r.blob(); })
+      .then(function(blob){
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        currentAudio = audio;
+        audio.onended = function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; if (onend) onend(); };
+        audio.onerror = function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; speakBrowser(text, onend); };
+        audio.play().catch(function(){ URL.revokeObjectURL(url); if (currentAudio===audio) currentAudio=null; speakBrowser(text, onend); });
+      })
+      .catch(function(){ speakBrowser(text, onend); });
+  }
+  function stopAll(){
+    active = false;
+    btn.classList.remove('listening');
+    setStatus('');
+    if (currentAudio){ try{ currentAudio.pause(); }catch(e){} currentAudio = null; }
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    if (recognizer) { try{ recognizer.stop(); }catch(e){} }
+  }
+  function startListening(){
+    if (!SR){ setStatus("Bu brauzerda ovozli buyruq qo'llab-quvvatlanmaydi"); return; }
+    errorCount = 0;
+    recognizer = new SR();
+    recognizer.lang = 'uz-UZ';
+    recognizer.continuous = false;
+    recognizer.interimResults = false;
+    recognizer.onresult = function(e){
+      const said = (e.results[0][0].transcript || '').toLowerCase().trim();
+      handleCommand(said);
+    };
+    recognizer.onerror = function(ev){
+      if (ev && (ev.error === 'no-speech' || ev.error === 'aborted')) return;
+      errorCount++;
+    };
+    recognizer.onend = function(){
+      if (active && errorCount < 8){ try{ recognizer.start(); }catch(e){} return; }
+      if (active){
+        active = false;
+        btn.classList.remove('listening');
+        setStatus("Ovoz aniqlanmadi. Mikrofon tugmasini qayta bosing.");
+      }
+    };
+    setStatus('Tinglayapman...');
+    try{ recognizer.start(); }catch(e){}
+  }
+
+  function parseIndex(said){
+    const digitMatch = said.match(/\d+/);
+    if (digitMatch) return parseInt(digitMatch[0], 10);
+    for (const w in NUM_WORDS){
+      if (said.includes(w)) return NUM_WORDS[w];
+    }
+    return null;
+  }
+
+  function handleCommand(said){
+    if (said.includes("to'xta") || said.includes('to‘xta') || said.includes('tuxta') || said.includes('yop')){
+      stopAll();
+      return;
+    }
+    const idx = parseIndex(said);
+    if (idx && _allSurveys && _allSurveys[idx-1]){
+      const s = _allSurveys[idx-1];
+      active = false;
+      if (recognizer) { try{ recognizer.stop(); }catch(e){} }
+      // Same fix as index.html: let the confirmation finish before navigating,
+      // instead of cancelling it mid-sentence.
+      speak(s.title + ' ochilmoqda', function(){ location.href = 'survey.html?id=' + s.id; });
+    }
+  }
+
+  btn.addEventListener('click', function(){
+    if (active){ stopAll(); return; }
+    active = true;
+    btn.classList.add('listening');
+    setStatus("O'qiyapman...");
+    const list = _allSurveys || [];
+    let text = "So'rovnomalar sahifasi. Jami " + list.length + " ta so'rovnoma mavjud. ";
+    list.forEach((s, i) => { text += (i+1) + ' - ' + s.title + '. '; });
+    text += "Boshlash uchun so'rovnoma raqamini ayting, masalan bir, ikki.";
+    // Wait for the whole list to finish being read before opening the mic —
+    // previously the mic started listening from the very first word, so the
+    // recognizer was capturing silence/background noise (and burning through
+    // its error-retry budget) for the entire duration of the announcement.
+    speak(text, function(){ if (active) startListening(); });
+  });
+})();
+</script>
+</body>
+</html>

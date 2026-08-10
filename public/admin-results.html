@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So'rovnoma natijalari — Admin Panel</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg: #ffffff;
+  --bg-2: #f7f5ef;
+  --surface: #ffffff;
+  --surface-2: #f3efe4;
+  --line: rgba(20,15,5,.10);
+  --gold: #1e3a8a;
+  --gold-bright: #3b5fd9;
+  --teal: #0f8f82;
+  --ink: #1c1a17;
+  --muted: #6b6455;
+  --danger: #c0392b;
+  --white:var(--surface);--text:var(--ink);--text2:#3c372f;--text3:var(--muted);
+  --border:var(--line);--border2:rgba(20,15,5,.06);
+  --green:var(--teal);--gbg:rgba(15,143,130,.12);
+  --blue:#2563eb;--orange:var(--gold);--purple:#7c5cd6;--teal2:var(--teal);--red:var(--danger);
+  --sidebar:var(--bg-2);--sidebar3:rgba(20,15,5,.08);
+  --shadow:0 1px 3px rgba(20,15,5,.06),0 8px 24px rgba(20,15,5,.07);
+  --r:12px;
+}
+body{font-family:'Inter',sans-serif;background:
+  radial-gradient(1200px 600px at 15% -10%, rgba(30,58,138,.06), transparent 60%),
+  radial-gradient(1000px 500px at 100% 0%, rgba(15,143,130,.06), transparent 55%),
+  var(--bg);color:var(--text);height:100vh;overflow:hidden;display:flex}
+a{text-decoration:none;color:inherit}
+button{font-family:'Inter',sans-serif;cursor:pointer}
+
+/* ── SIDEBAR ── */
+.adm-sidebar{width:220px;flex-shrink:0;background:var(--sidebar);border-right:1px solid var(--line);display:flex;flex-direction:column;height:100vh;overflow-y:auto}
+.adm-logo{padding:18px 16px 12px;border-bottom:1px solid var(--sidebar3)}
+.adm-logo-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:8px;box-shadow:0 4px 14px rgba(59,95,217,.35)}
+.adm-logo-title{font-size:13px;font-weight:800;color:var(--ink);letter-spacing:-.2px}
+.adm-logo-sub{font-size:10px;color:var(--text3);margin-top:1px}
+.adm-nav{flex:1;padding:10px 0}
+.adm-nav-section{margin-bottom:6px}
+.adm-nav-head{font-size:9px;font-weight:700;color:#9a917d;letter-spacing:.8px;padding:10px 16px 4px;text-transform:uppercase}
+.adm-nav-item{display:flex;align-items:center;gap:9px;padding:8px 16px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .15s;border-left:2px solid transparent}
+.adm-nav-item:hover{color:var(--ink);background:rgba(20,15,5,.04)}
+.adm-nav-item.active{color:#1e3a8a;background:rgba(30,58,138,.12);border-left-color:var(--gold);font-weight:600}
+.adm-nav-item span.ni{font-size:14px;flex-shrink:0}
+.adm-sidebar-bottom{padding:12px 16px;border-top:1px solid var(--sidebar3);display:flex;flex-direction:column;gap:4px}
+.adm-sb-btn{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;font-size:12px;font-weight:500;color:var(--muted);background:transparent;border:none;cursor:pointer;transition:all .15s;text-align:left}
+.adm-sb-btn:hover{background:rgba(20,15,5,.05);color:var(--ink)}
+.adm-sb-btn.logout:hover{background:rgba(192,57,43,.12);color:var(--danger)}
+
+/* ── MAIN ── */
+.adm-main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+
+/* ── TOPBAR ── */
+.adm-topbar{height:56px;background:var(--bg-2);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 20px;gap:12px;flex-shrink:0}
+.tb-back{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--text2);background:none;border:none;cursor:pointer;padding:6px 10px;border-radius:8px;transition:all .15s}
+.tb-back:hover{background:var(--surface-2);color:var(--ink)}
+.tb-divider{width:1px;height:20px;background:var(--line)}
+.tb-title{font-size:14px;font-weight:700;color:var(--ink);flex:1}
+.tb-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;background:rgba(45,212,191,.14);color:var(--teal);border:1px solid rgba(45,212,191,.35)}
+.tb-exports{display:flex;gap:6px}
+.tb-btn{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;border:1.5px solid var(--line);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s}
+.tb-btn:hover{border-color:var(--gold);color:var(--gold-bright)}
+.tb-btn.primary{background:linear-gradient(135deg,var(--gold),#2d4db2);border-color:var(--gold);color:#ffffff}
+.tb-btn.primary:hover{background:var(--gold-bright)}
+
+/* ── CONTENT ── */
+.adm-content{flex:1;overflow-y:auto;padding:16px 18px 32px}
+
+/* ── SURVEY INFO BANNER ── */
+.survey-banner{background:linear-gradient(160deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)}
+.sb-icon{width:44px;height:44px;border-radius:10px;background:rgba(59,95,217,.14);border:1px solid rgba(59,95,217,.3);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.sb-info{flex:1}
+.sb-name{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.sb-meta{font-size:12px;color:var(--text3);display:flex;gap:14px;flex-wrap:wrap}
+.sb-meta span{display:flex;align-items:center;gap:4px}
+.sb-progress{width:180px;flex-shrink:0;text-align:right}
+.sb-pct{font-size:22px;font-weight:900;color:var(--gold-bright);font-variant-numeric:tabular-nums}
+.sb-pct-lbl{font-size:11px;color:var(--text3)}
+.sb-bar-wrap{height:6px;background:rgba(20,15,5,.07);border-radius:100px;margin-top:4px}
+.sb-bar-fill{height:6px;border-radius:100px;background:linear-gradient(90deg,var(--gold),var(--gold-bright))}
+
+/* ── STAT CARDS ── */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.sc{background:var(--surface);border-radius:var(--r);padding:14px;border:1px solid var(--line);box-shadow:var(--shadow);transition:border-color .15s}
+.sc:hover{border-color:rgba(59,95,217,.35)}
+.sc-lbl{font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px}
+.sc-val{font-size:22px;font-weight:800;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.sc-sub{font-size:11px;color:var(--text3);margin-top:3px}
+.sc-up{color:var(--teal);font-weight:700}
+.sc-gauge{display:flex;align-items:center;gap:8px;margin-top:4px}
+
+/* ── SECTION TITLE ── */
+.sec-title{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sec-title span{font-size:11px;font-weight:500;color:var(--text3)}
+
+/* ── QUESTIONS GRID ── */
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.q-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.q-card-head{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:10px}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#ffffff;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.q-text{font-size:13px;font-weight:700;color:var(--ink);line-height:1.45}
+.q-body{padding:12px 14px}
+.q-total{font-size:11px;color:var(--text3);margin-bottom:10px}
+
+/* horizontal bar */
+.opt-row{margin-bottom:9px}
+.opt-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.opt-name{font-size:12px;font-weight:500;color:var(--text2);flex:1;padding-right:8px;line-height:1.35}
+.opt-stats{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.opt-pct{font-size:12px;font-weight:700;color:var(--ink);min-width:34px;text-align:right;font-variant-numeric:tabular-nums}
+.opt-cnt{font-size:10px;color:var(--text3);font-variant-numeric:tabular-nums}
+.bar-track{height:8px;background:rgba(20,15,5,.06);border-radius:100px;overflow:hidden}
+.bar-fill{height:8px;border-radius:100px;transition:width .4s ease}
+
+/* ── CHARTS ROW ── */
+.charts-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
+.chart-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.chart-head{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.chart-title{font-size:13px;font-weight:700;color:var(--ink)}
+.chart-sub{font-size:11px;color:var(--text3)}
+.chart-body{padding:12px 14px}
+
+/* pie chart */
+.pie-wrap{display:flex;align-items:center;gap:16px;padding:8px 0}
+.pie-legend{display:flex;flex-direction:column;gap:7px;flex:1}
+.pie-leg-item{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text2)}
+.pie-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.pie-leg-pct{font-weight:700;color:var(--ink);margin-left:auto;font-variant-numeric:tabular-nums}
+
+/* district table */
+.dist-table{width:100%;border-collapse:collapse}
+.dist-table th{font-size:10px;font-weight:700;color:var(--text3);padding:6px 8px;text-align:left;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.3px}
+.dist-table td{padding:8px;font-size:12px;color:var(--text2);border-bottom:1px solid var(--border2);font-variant-numeric:tabular-nums}
+.dist-table tr:last-child td{border-bottom:none}
+.dist-table tr:hover td{background:rgba(20,15,5,.03)}
+.dist-rank{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#ffffff;background:var(--muted)}
+.dist-rank.r1{background:linear-gradient(135deg,var(--gold),var(--gold-bright));box-shadow:0 0 0 2px rgba(30,58,138,.25);color:#ffffff}
+.dist-rank.r2{background:#a6a196}
+.dist-rank.r3{background:#c98a4a}
+.mini-bar{height:5px;background:rgba(20,15,5,.07);border-radius:100px;margin-top:3px}
+.mini-bar-f{height:5px;border-radius:100px;background:var(--teal)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:#d8d2c4;border-radius:100px}
+
+/* ── MOBILE MENU TOGGLE + BACKDROP ── */
+.adm-tb-menu{display:none;font-size:18px;cursor:pointer;color:var(--text2);background:none;border:none;padding:8px;border-radius:8px;flex-shrink:0}
+.adm-tb-menu:hover{background:var(--surface-2)}
+.adm-backdrop{display:none;position:fixed;inset:0;background:rgba(20,15,5,.45);z-index:1999}
+.adm-backdrop.show{display:block}
+
+/* ── RESPONSIVE: TABLET ── */
+@media(max-width:1024px){
+  .stat-row{grid-template-columns:repeat(3,1fr)}
+  .q-grid{grid-template-columns:1fr}
+  .charts-row{grid-template-columns:1fr}
+  .charts-row .chart-card{grid-column:span 1 !important}
+}
+
+/* ── RESPONSIVE: SIDEBAR COLLAPSE (phones + narrow tablets) ── */
+@media(max-width:900px){
+  body{overflow-x:hidden}
+  .adm-sidebar{
+    position:fixed;left:-100%;top:0;transition:left .25s;z-index:2000;height:100vh;
+    box-shadow:0 0 30px rgba(20,15,5,.3);
+  }
+  .adm-sidebar.open{left:0}
+  .adm-tb-menu{display:inline-flex;align-items:center;justify-content:center}
+  .adm-nav-item{padding:11px 16px;min-height:40px}
+  .adm-sb-btn{padding:10px 12px;min-height:38px}
+}
+
+/* ── RESPONSIVE: PHONES ── */
+@media(max-width:600px){
+  .adm-content{padding:12px 10px 28px}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .survey-banner{flex-wrap:wrap}
+  .sb-progress{width:100%;text-align:left}
+  .sb-bar-wrap{margin-bottom:2px}
+  .adm-topbar{padding:0 10px;gap:8px;flex-wrap:wrap;height:auto;min-height:56px;padding-top:8px;padding-bottom:8px}
+  .tb-title{font-size:13px;min-width:0}
+  .tb-exports{flex-wrap:wrap;gap:5px;width:100%;justify-content:flex-start}
+  .tb-btn{padding:7px 10px;font-size:11px}
+  .chart-card[style*="grid-column:span 2"]{grid-column:span 1 !important}
+  .dist-table th,.dist-table td{white-space:nowrap}
+}
+@media(max-width:430px){
+  .stat-row{grid-template-columns:1fr 1fr}
+  .sb-meta{gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="adm-sidebar">
+  <div class="adm-logo">
+    <div class="adm-logo-icon">📋</div>
+    <div class="adm-logo-title">Admin Panel</div>
+    <div class="adm-logo-sub">So'rovnoma Portali</div>
+  </div>
+  <nav class="adm-nav">
+    <div class="adm-nav-section">
+      <div class="adm-nav-head">ASOSIY</div>
+      <div class="adm-nav-item" onclick="location.href='admin.html'"><span class="ni">⊞</span> Umumiy ko'rinish</div>
+    </div>
+    <div class="adm-nav-section">
+      <div class="adm-nav-head">SO'ROVNOMALAR</div>
+      <div class="adm-nav-item active"><span class="ni">📋</span> So'rovnomalar</div>
+      <div class="adm-nav-item"><span class="ni">💬</span> Savollar banki</div>
+      <div class="adm-nav-item"><span class="ni">📝</span> Javoblar</div>
+      <div class="adm-nav-item"><span class="ni">📂</span> Yarim qolgan javoblar</div>
+    </div>
+    <div class="adm-nav-section">
+      <div class="adm-nav-head">NATIJALAR VA TAHLIL</div>
+      <div class="adm-nav-item"><span class="ni">📊</span> Natijalar va hisobotlar</div>
+      <div class="adm-nav-item"><span class="ni">🗺️</span> Hududlar statistikasi</div>
+      <div class="adm-nav-item"><span class="ni">📡</span> Qamrov monitoringi</div>
+    </div>
+    <div class="adm-nav-section">
+      <div class="adm-nav-head">FOYDALANUVCHILAR</div>
+      <div class="adm-nav-item"><span class="ni">👤</span> Foydalanuvchilar</div>
+      <div class="adm-nav-item"><span class="ni">🔑</span> Rollar va ruxsatlar</div>
+    </div>
+    <div class="adm-nav-section">
+      <div class="adm-nav-head">TIZIM BOSHQARUVI</div>
+      <div class="adm-nav-item"><span class="ni">🔔</span> Xabarlar va e'lonlar</div>
+      <div class="adm-nav-item"><span class="ni">🌐</span> Tillar boshqaruvi</div>
+      <div class="adm-nav-item"><span class="ni">⚙️</span> Sozlamalar</div>
+      <div class="adm-nav-item"><span class="ni">📋</span> Audit log</div>
+    </div>
+  </nav>
+  <div class="adm-sidebar-bottom">
+    <button class="adm-sb-btn" onclick="location.href='index.html'">🌐 Saytga qaytish</button>
+    <button class="adm-sb-btn logout" onclick="fetch('/api/auth/logout',{method:'POST',headers:{'X-Requested-With':'XMLHttpRequest'}}).finally(()=>location.href='admin.html')">🔴 Chiqish</button>
+  </div>
+</aside>
+
+<!-- MOBILE SIDEBAR BACKDROP -->
+<div class="adm-backdrop" id="adm-backdrop"></div>
+
+<!-- MAIN -->
+<div class="adm-main">
+
+  <!-- TOPBAR -->
+  <div class="adm-topbar">
+    <button class="adm-tb-menu" id="adm-tb-menu" aria-label="Menyu">☰</button>
+    <button class="tb-back" onclick="location.href='admin.html'">← Orqaga</button>
+    <div class="tb-divider"></div>
+    <div class="tb-title" id="tb-title">Yuklanmoqda...</div>
+    <span class="tb-badge" id="tb-badge" style="display:none">—</span>
+    <div class="tb-exports">
+      <button class="tb-btn">📄 PDF</button>
+      <button class="tb-btn">📊 Excel</button>
+      <button class="tb-btn primary">📤 Export</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="adm-content">
+
+    <!-- SURVEY INFO BANNER -->
+    <div class="survey-banner">
+      <div class="sb-icon" id="sb-icon">📋</div>
+      <div class="sb-info">
+        <div class="sb-name" id="sb-name">Yuklanmoqda...</div>
+        <div class="sb-meta">
+          <span>❓ Savollar: <span id="meta-qcount">—</span> ta</span>
+          <span>📝 Jami javob: <span id="meta-rcount">—</span> ta</span>
+          <span>⏰ Taxminiy vaqt: <span id="meta-minutes">—</span> daqiqa</span>
+        </div>
+      </div>
+      <div class="sb-progress">
+        <div class="sb-pct" id="sb-last-time" style="font-size:14px">—</div>
+        <div class="sb-pct-lbl">Oxirgi javob</div>
+      </div>
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="stat-row">
+      <div class="sc">
+        <div class="sc-lbl">Jami javoblar</div>
+        <div class="sc-val" style="color:var(--green)" id="stat-total">—</div>
+        <div class="sc-sub">so'rovnoma yaratilgandan beri</div>
+      </div>
+      <div class="sc">
+        <div class="sc-lbl">Bugungi javoblar</div>
+        <div class="sc-val" style="color:var(--orange)" id="stat-today">—</div>
+        <div class="sc-sub">bugun kelib tushgan</div>
+      </div>
+      <div class="sc">
+        <div class="sc-lbl">Oxirgi javob</div>
+        <div class="sc-val" style="color:var(--purple)" id="stat-last">—</div>
+        <div class="sc-sub">eng so'nggi topshirilgan</div>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW: real daily trend from actual response timestamps -->
+    <div class="sec-title">Umumiy tahlil <span>so'nggi 14 kun, haqiqiy ma'lumot</span></div>
+    <div class="charts-row" style="grid-template-columns:1fr">
+      <div class="chart-card">
+        <div class="chart-head">
+          <div>
+            <div class="chart-title">Kunlik javoblar dinamikasi</div>
+            <div class="chart-sub">So'nggi 14 kun</div>
+          </div>
+        </div>
+        <div class="chart-body">
+          <canvas id="trend-chart" style="width:100%;height:160px;display:block"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="sec-title">Savollar bo'yicha natijalar <span id="q-sec-sub">—</span></div>
+    <div class="q-grid" id="q-grid-real"></div>
+
+    <!-- DISTRICT BREAKDOWN (faqat hudud savoli mavjud bo'lsa ko'rinadi) -->
+    <div id="dist-section" style="display:none">
+      <div class="sec-title">Hududlar bo'yicha ishtirok <span id="dist-sec-sub">—</span></div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow-x:auto;margin-bottom:14px">
+        <table class="dist-table" style="min-width:420px">
+          <thead>
+            <tr>
+              <th style="width:30px">#</th>
+              <th>Tuman nomi</th>
+              <th>Javoblar</th>
+              <th style="min-width:120px">Ulush</th>
+            </tr>
+          </thead>
+          <tbody id="dist-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /adm-content -->
+</div><!-- /adm-main -->
+
+<script>
+/* auth check — real backend session (admin.html no longer uses sessionStorage) */
+(async function(){
+  try{
+    const r=await fetch('/api/auth/me');
+    const j=await r.json();
+    if(!j.loggedIn) location.href='admin.html';
+  }catch(e){ location.href='admin.html'; }
+})();
+
+/* ── MOBILE SIDEBAR TOGGLE ── */
+(function(){
+  const sidebar=document.querySelector('.adm-sidebar');
+  const menuBtn=document.getElementById('adm-tb-menu');
+  const backdrop=document.getElementById('adm-backdrop');
+  if(!sidebar||!menuBtn||!backdrop)return;
+  function openMenu(){sidebar.classList.add('open');backdrop.classList.add('show')}
+  function closeMenu(){sidebar.classList.remove('open');backdrop.classList.remove('show')}
+  menuBtn.addEventListener('click',()=>{
+    sidebar.classList.contains('open')?closeMenu():openMenu();
+  });
+  backdrop.addEventListener('click',closeMenu);
+  sidebar.querySelectorAll('.adm-nav-item,.adm-sb-btn').forEach(el=>el.addEventListener('click',closeMenu));
+})();
+
+/* ── REAL DATA: fetch survey + responses, then render everything ── */
+function escHtml(s){
+  return String(s==null?'':s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function apiFetch(url,opts){
+  opts=Object.assign({},opts);
+  opts.headers=Object.assign({},opts.headers,{'X-Requested-With':'XMLHttpRequest'});
+  return fetch(url,opts);
+}
+function relTimeFrom(iso){
+  const diffMs=Date.now()-new Date(iso).getTime();
+  const min=Math.floor(diffMs/60000);
+  if(min<1) return 'hozirgina';
+  if(min<60) return min+' daqiqa oldin';
+  const hr=Math.floor(min/60);
+  if(hr<24) return hr+' soat oldin';
+  const day=Math.floor(hr/24);
+  if(day===1) return 'kecha';
+  return day+' kun oldin';
+}
+function isSameDay(iso, ref){
+  const d=new Date(iso);
+  return d.getFullYear()===ref.getFullYear() && d.getMonth()===ref.getMonth() && d.getDate()===ref.getDate();
+}
+
+let trendData=[0], trendLabs=[''];
+
+async function loadResults(){
+  const params=new URLSearchParams(location.search);
+  const id=params.get('id');
+  const content=document.querySelector('.adm-content');
+  if(!id){
+    content.innerHTML='<div class="chart-card" style="padding:24px;text-align:center;color:var(--text3)">So\'rovnoma tanlanmagan. <a href="admin.html" style="color:var(--gold-bright);font-weight:600">Admin panelga qaytish</a></div>';
+    return;
+  }
+  const [surveyRes, responsesRes] = await Promise.all([
+    fetch('/api/surveys/'+encodeURIComponent(id)),
+    apiFetch('/api/surveys/'+encodeURIComponent(id)+'/responses')
+  ]);
+  if(!surveyRes.ok){
+    content.innerHTML='<div class="chart-card" style="padding:24px;text-align:center;color:var(--text3)">So\'rovnoma topilmadi. <a href="admin.html" style="color:var(--gold-bright);font-weight:600">Admin panelga qaytish</a></div>';
+    return;
+  }
+  const survey=await surveyRes.json();
+  const responses=responsesRes.ok?await responsesRes.json():[];
+
+  document.title=survey.title+' — Natijalar';
+  document.getElementById('tb-title').textContent=survey.title;
+  const badge=document.getElementById('tb-badge');
+  badge.textContent=String(survey.id).startsWith('c_')?'Maxsus':'Tayyor';
+  badge.style.display='';
+  document.getElementById('sb-icon').textContent=survey.icon||'📋';
+  document.getElementById('sb-name').textContent=survey.title;
+  document.getElementById('meta-qcount').textContent=(survey.questions||[]).length;
+  document.getElementById('meta-rcount').textContent=responses.length;
+  document.getElementById('meta-minutes').textContent=survey.minutes||'—';
+
+  const last=responses.length?responses.reduce((a,b)=>new Date(a.submittedAt)>new Date(b.submittedAt)?a:b):null;
+  document.getElementById('sb-last-time').textContent=last?relTimeFrom(last.submittedAt):'—';
+  document.getElementById('stat-total').textContent=responses.length;
+  const today=new Date();
+  document.getElementById('stat-today').textContent=responses.filter(r=>isSameDay(r.submittedAt,today)).length;
+  document.getElementById('stat-last').textContent=last?relTimeFrom(last.submittedAt):'—';
+
+  // 14-day real daily counts
+  const days=[];
+  for(let i=13;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); days.push(d); }
+  trendData=days.map(d=>responses.filter(r=>isSameDay(r.submittedAt,d)).length);
+  trendLabs=days.map(d=>String(d.getDate()).padStart(2,'0')+'-'+['yan','fev','mar','apr','may','iyun','iyul','avg','sen','okt','noy','dek'][d.getMonth()]);
+
+  // Questions: real per-option tally from actual answers
+  const qgrid=document.getElementById('q-grid-real');
+  document.getElementById('q-sec-sub').textContent=responses.length+' ta javob asosida';
+  if(!responses.length){
+    qgrid.innerHTML='<div class="chart-card" style="padding:20px;text-align:center;color:var(--text3);grid-column:1/-1">Hali birorta javob kelib tushmagan.</div>';
+  } else {
+    const palette=['#16a34a','#2563eb','#f59e0b','#7c3aed','#0d9488','#dc2626','#0891b2','#a855f7','#ea580c','#4d7c0f','#be185d','#0369a1'];
+    // dq1 (hudud) already has its own dedicated district table below — skip it
+    // here to avoid showing the same 14-district list twice.
+    const gridQuestions=(survey.questions||[]).filter(q=>q.id!=='dq1');
+    qgrid.innerHTML=gridQuestions.map((q,qi)=>{
+      const tally={};
+      let answered=0;
+      responses.forEach(r=>{
+        const v=r.answers?r.answers[q.id]:undefined;
+        if(v===undefined || v===null || v==='') return;
+        answered++;
+        const vals=Array.isArray(v)?v:[v];
+        vals.forEach(item=>{ if(item!==undefined && item!==null && item!=='') tally[item]=(tally[item]||0)+1; });
+      });
+      // Show every defined option (even ones nobody picked yet, at 0%) so the
+      // chart's shape reflects the question itself, not just whichever single
+      // answer happens to exist so far. Free-text ("Boshqa — ...") answers
+      // don't match a predefined option string, so they're appended after.
+      const definedOpts=(q.options||[]).map(opt=>[opt, tally[opt]||0]);
+      const extraOpts=Object.entries(tally).filter(([k])=>!(q.options||[]).includes(k));
+      const allOpts=[...definedOpts, ...extraOpts];
+      const rows=allOpts.map(([opt,cnt],i)=>{
+        const pct=answered?Math.round(cnt/answered*100):0;
+        return `<div class="opt-row">
+          <div class="opt-label-row"><span class="opt-name">${escHtml(opt)}</span><span class="opt-stats"><span class="opt-pct">${pct}%</span><span class="opt-cnt">${cnt} ta</span></span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${palette[i%palette.length]}"></div></div>
+        </div>`;
+      }).join('');
+      return `<div class="q-card">
+        <div class="q-card-head">
+          <span class="q-num">${qi+1}</span>
+          <span class="q-text">${escHtml(q.text)}</span>
+        </div>
+        <div class="q-body">
+          <div class="q-total">${answered} javob</div>
+          ${rows || '<div style="color:var(--text3);font-size:12px">Bu savolga hali javob yo\'q.</div>'}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // District breakdown — only if this survey has a "Hududingizni tanlang" (dq1) question
+  const distQ=(survey.questions||[]).find(q=>q.id==='dq1');
+  if(distQ && responses.length){
+    const tally={};
+    distQ.options.forEach(d=>{ tally[d]=0; });
+    responses.forEach(r=>{
+      const v=r.answers?r.answers['dq1']:undefined;
+      if(v!==undefined && v in tally) tally[v]++;
+    });
+    const total=Object.values(tally).reduce((a,b)=>a+b,0);
+    const sorted=Object.entries(tally).sort((a,b)=>b[1]-a[1]);
+    document.getElementById('dist-section').style.display='';
+    document.getElementById('dist-sec-sub').textContent=distQ.options.length+' tuman';
+    const tbody=document.getElementById('dist-tbody');
+    tbody.innerHTML=sorted.map(([name,count],i)=>{
+      const pct=total?Math.round(count/total*100):0;
+      const rankCls=i===0?'r1':i===1?'r2':i===2?'r3':'';
+      return `<tr>
+        <td><span class="dist-rank ${rankCls}">${i+1}</span></td>
+        <td style="font-weight:600">${escHtml(name)}</td>
+        <td style="font-weight:700">${count}</td>
+        <td>
+          <div style="font-size:11px;font-weight:700;margin-bottom:3px">${pct}%</div>
+          <div class="mini-bar"><div class="mini-bar-f" style="width:${pct}%"></div></div>
+        </td>
+      </tr>`;
+    }).join('');
+  }
+
+  drawTrendChart();
+}
+
+/* ── TREND CHART (real data, populated by loadResults) ── */
+function drawTrendChart(){
+  const c=document.getElementById('trend-chart');
+  if(!c)return;
+  const data=trendData, labs=trendLabs;
+  const dpr=window.devicePixelRatio||1;
+  const W=c.offsetWidth||500, H=160;
+  c.width=W*dpr; c.height=H*dpr;
+  const ctx=c.getContext('2d'); ctx.scale(dpr,dpr);
+  const pL=10,pR=10,pT=20,pB=28;
+  const iW=W-pL-pR, iH=H-pT-pB;
+  const mn=0, mx=Math.max(...data)*1.15;
+  const px=i=>pL+(i/(data.length-1))*iW;
+  const py=v=>pT+iH-((v-mn)/(mx-mn))*iH;
+  // grid
+  [0,.25,.5,.75,1].forEach(f=>{
+    const y=pT+f*iH;
+    ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+iW,y);
+    ctx.strokeStyle='rgba(20,15,5,.08)';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle='#6b6455';ctx.font='9px Inter';ctx.textAlign='right';
+    ctx.fillText(Math.round(mx*(1-f)),pL-2,y+3);
+  });
+  // gradient fill
+  const grad=ctx.createLinearGradient(0,pT,0,pT+iH);
+  grad.addColorStop(0,'rgba(30,58,138,.45)');grad.addColorStop(1,'rgba(30,58,138,0)');
+  ctx.beginPath();
+  data.forEach((v,i)=>{
+    const x=px(i),y=py(v);
+    if(i===0)ctx.moveTo(x,y);
+    else{const ppx=px(i-1),ppy=py(data[i-1]);ctx.bezierCurveTo((ppx+x)/2,ppy,(ppx+x)/2,y,x,y);}
+  });
+  ctx.lineTo(px(data.length-1),pT+iH);ctx.lineTo(px(0),pT+iH);ctx.closePath();
+  ctx.fillStyle=grad;ctx.fill();
+  // line
+  ctx.beginPath();
+  data.forEach((v,i)=>{
+    const x=px(i),y=py(v);
+    if(i===0)ctx.moveTo(x,y);
+    else{const ppx=px(i-1),ppy=py(data[i-1]);ctx.bezierCurveTo((ppx+x)/2,ppy,(ppx+x)/2,y,x,y);}
+  });
+  ctx.strokeStyle='#1e3a8a';ctx.lineWidth=2;ctx.stroke();
+  // dots + labels
+  data.forEach((v,i)=>{
+    const x=px(i),y=py(v);
+    const isLast=i===data.length-1;
+    ctx.beginPath();ctx.arc(x,y,isLast?4.5:3,0,Math.PI*2);
+    ctx.fillStyle=isLast?'#3b5fd9':'#ffffff';ctx.fill();
+    ctx.strokeStyle=isLast?'#3b5fd9':'#1e3a8a';ctx.lineWidth=2;ctx.stroke();
+    if(isLast){ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.strokeStyle='rgba(30,58,138,.3)';ctx.lineWidth=2;ctx.stroke();}
+    ctx.fillStyle='#3c372f';ctx.font='600 9px Inter';ctx.textAlign='center';
+    ctx.fillText(v,x,y-7);
+    if(i%2===0){ctx.fillStyle='#6b6455';ctx.font='8px Inter';ctx.fillText(labs[i],x,H-5);}
+  });
+}
+
+loadResults();
+</script>
+</body>
+</html>

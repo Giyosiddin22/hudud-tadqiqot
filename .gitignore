@@ -1,0 +1,9 @@
+node_modules/
+.env
+server/data/db.json
+server/data/backups/
+server/server.log
+server/server.pid
+*.log
+Sorovnoma Portali.html
+.claude/
