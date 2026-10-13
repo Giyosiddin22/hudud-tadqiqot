@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const DB_PATH = path.join(__dirname, 'data', 'db.json');
+// Seed fayllar kod bilan birga keladi; db.json va zaxiralar DATA_DIR da (Render'da doimiy disk).
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'data');
+const DB_PATH = path.join(DATA_DIR, 'db.json');
 const SEED_PATH = path.join(__dirname, 'data', 'seed-surveys.json');
 const DEFAULT_PASSWORD = 'admin2026';
 
@@ -69,7 +71,34 @@ let state = fs.existsSync(DB_PATH)
   delete state.auth;
 }
 
-const BACKUP_DIR = path.join(__dirname, 'data', 'backups');
+// One-time seed of the built-in education surveys (data/*-surveys.json, e.g.
+// MTT and Maktab). Each survey id is recorded in state.meta.seededIds once
+// added, so an admin who later deletes one doesn't see it come back on restart,
+// while a newly shipped survey in these files still gets added.
+{
+  const dataDir = path.join(__dirname, 'data');
+  state.meta = state.meta || {};
+  const seeded = new Set(state.meta.seededIds || []);
+  const have = new Set(state.surveys.map(s => s.id));
+  let changed = false;
+  const files = fs.readdirSync(dataDir).filter(f => f.endsWith('-surveys.json') && f !== 'seed-surveys.json').sort();
+  for (const f of files) {
+    for (const s of JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf8'))) {
+      // Older databases used a single mttSeeded flag: treat those MTT ids as already seeded.
+      if (state.meta.mttSeeded && String(s.id).startsWith('mtt_')) seeded.add(s.id);
+      if (seeded.has(s.id)) continue;
+      if (!have.has(s.id)) { state.surveys.push(s); have.add(s.id); }
+      seeded.add(s.id);
+      changed = true;
+    }
+  }
+  if (changed) {
+    state.meta.seededIds = [...seeded];
+    if (fs.existsSync(DB_PATH)) fs.writeFileSync(DB_PATH, JSON.stringify(state, null, 2));
+  }
+}
+
+const BACKUP_DIR = path.join(DATA_DIR, 'backups');
 const BACKUP_MIN_INTERVAL_MS = 5 * 60 * 1000; // throttle: at most one backup snapshot every 5 minutes
 const MAX_BACKUPS = 20;
 let lastBackupAt = 0;

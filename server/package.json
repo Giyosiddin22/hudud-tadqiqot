@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "node local.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -16,5 +16,8 @@
     "express-rate-limit": "^8.5.2",
     "express-session": "^1.18.0",
     "helmet": "^8.3.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

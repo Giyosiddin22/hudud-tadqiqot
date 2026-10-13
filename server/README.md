@@ -51,6 +51,15 @@ yangi parol darhol serverda saqlanadi.
 
 ## Muhim eslatmalar
 
+- Render xizmati: `https://hudud-tadqiqot-1.onrender.com`.
+- Deploy manbasi: `Giyosiddin22/hudud-tadqiqot`, `main` tarmog'i.
+- Render Root Directory bo'sh qoldiriladi; build: `cd server && npm ci --omit=dev`,
+  start: `cd server && node index.js`, health check: `/`.
+- Render muhiti: `NODE_VERSION=24`, `NODE_ENV=production`, `TRUST_PROXY=1`.
+- Free tarifidagi fayllar qayta deploy yoki restartda saqlanmaydi. Javoblarni
+  doimiy saqlash uchun persistent disk va unga mos `DATA_DIR` kerak:
+  https://render.com/docs/disks. Pullik tarifga avtomatik o'tilmaydi.
+
 - `.env` fayli hech qachon git'ga qo'shilmaydi — kalit/sirlar faqat sizning
   kompyuteringizda qoladi.
 - OpenAI kaliti sozlanmagan bo'lsa, faqat "AI xulosa" tugmasi ishlamaydi —

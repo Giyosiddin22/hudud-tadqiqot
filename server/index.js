@@ -86,7 +86,7 @@ const loginLimiter = rateLimit({
 });
 const responseLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 soat
-  limit: 5, // bitta IP'dan soatiga 5 ta javob — bir kishi uchun yetarli, botlarga to'siq
+  limit: Number(process.env.RESPONSE_RATE_LIMIT) || 5, // bitta IP'dan soatiga 5 ta javob — bir kishi uchun yetarli, botlarga to'siq
   standardHeaders: true,
   legacyHeaders: false,
   message: { error: 'Juda ko\'p so\'rovnoma yuborildi. Birozdan so\'ng qayta urining.' }
@@ -363,9 +363,19 @@ app.delete('/api/surveys/:id', requirePerm("So'rovnoma yaratish"), (req, res) =>
 function answersAreValid(survey, answers) {
   if (!Object.keys(answers).length) return false;
   const byId = new Map((survey.questions || []).map(q => [q.id, q]));
+  // Written-answer questions are required unless the survey marks them optional.
+  for (const q of survey.questions || []) {
+    if (q.type !== 'text' || q.required === false) continue;
+    const v = answers[q.id];
+    if (typeof v !== 'string' || !v.trim()) return false;
+  }
   for (const [qid, val] of Object.entries(answers)) {
     const q = byId.get(qid);
     if (!q) return false;
+    if (q.type === 'text') {
+      if (typeof val !== 'string' || !val.trim() || val.length > 1000) return false;
+      continue;
+    }
     const vals = Array.isArray(val) ? val : [val];
     if (q.type !== 'checkbox' && vals.length > 1) return false;
     for (const v of vals) {
