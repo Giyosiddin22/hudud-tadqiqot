@@ -1,0 +1,1745 @@
+[
+  {
+    "id": "mtt_1",
+    "title": "МТТ ходимларининг меҳнат шароити",
+    "subtitle": "Сурхондарё вилояти МТТ ходимлари ўртасида аноним сўровнома",
+    "description": "Сурхондарё вилояти мактабгача таълим ташкилотлари ходимларининг меҳнат шароитини ўрганиш бўйича аноним сўровнома. Сўровнома тўлиқ аноним: Ф.И.Ш. ва телефон рақами ёзилмайди, жавоблар фақат умумлаштирилган ҳолда таҳлил қилинади.",
+    "icon": "🏫",
+    "color": "#2563eb",
+    "bg": "#e8effd",
+    "minutes": 4,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_1_q1",
+        "text": "Ҳудуд (туман/шаҳар)",
+        "type": "radio",
+        "tag": "Ҳудудий",
+        "tagStyle": "gray",
+        "options": [
+          "Ангор тумани",
+          "Бандихон тумани",
+          "Бойсун тумани",
+          "Денов тумани",
+          "Жарқўрғон тумани",
+          "Музработ тумани",
+          "Олтинсой тумани",
+          "Қумқўрғон тумани",
+          "Сариосиё тумани",
+          "Термиз тумани",
+          "Узун тумани",
+          "Шеробод тумани",
+          "Шўрчи тумани",
+          "Қизириқ тумани",
+          "Термиз шаҳри"
+        ]
+      },
+      {
+        "id": "mtt_1_mfy",
+        "text": "Маҳалла (МФЙ)",
+        "type": "text",
+        "tag": "Ҳудудий",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_1_q2",
+        "text": "МТТ тури",
+        "type": "radio",
+        "tag": "Ҳудудий",
+        "tagStyle": "gray",
+        "options": [
+          "Давлат МТТ",
+          "Нодавлат МТТ",
+          "Оилавий МТТ"
+        ]
+      },
+      {
+        "id": "mtt_1_q3",
+        "text": "Сизнинг МТТдаги лавозимингиз қайси тоифага киради?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "Тарбиячи",
+          "Тарбиячи ёрдамчиси",
+          "Методист",
+          "Психолог/логопед",
+          "Тиббиёт ходими",
+          "Ошхона/хўжалик ходими",
+          "Бошқа"
+        ]
+      },
+      {
+        "id": "mtt_1_q4",
+        "text": "Иш жойингиздаги умумий меҳнат шароитини қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Мутлақо қониқарсиз",
+          "2 — Қониқарсиз",
+          "3 — Қониқарли",
+          "4 — Яхши",
+          "5 — Жуда яхши"
+        ]
+      },
+      {
+        "id": "mtt_1_q5",
+        "text": "Гуруҳ хоналари, мебель, иш жиҳозлари ва зарур воситалар билан таъминланганликни қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Мутлақо қониқарсиз",
+          "2 — Қониқарсиз",
+          "3 — Қониқарли",
+          "4 — Яхши",
+          "5 — Жуда яхши"
+        ]
+      },
+      {
+        "id": "mtt_1_q6",
+        "text": "Иситиш/совитиш, ичимлик суви, санитария-гигиена ва маиший шароитларни қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Мутлақо қониқарсиз",
+          "2 — Қониқарсиз",
+          "3 — Қониқарли",
+          "4 — Яхши",
+          "5 — Жуда яхши"
+        ]
+      },
+      {
+        "id": "mtt_1_q7",
+        "text": "Кундалик иш юкламасини қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "Жуда енгил",
+          "Меъёрда",
+          "Бироз юқори",
+          "Юқори",
+          "Ҳаддан ташқари юқори"
+        ]
+      },
+      {
+        "id": "mtt_1_q8",
+        "text": "Лавозим вазифангизга кирмайдиган қўшимча ишлар сизга қай даражада юкланади?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "Ҳеч қачон",
+          "Камдан-кам",
+          "Баъзида",
+          "Тез-тез",
+          "Доимий равишда"
+        ]
+      },
+      {
+        "id": "mtt_1_q9",
+        "text": "Ҳужжатбозлик ва ҳисоботлар асосий ишингизни бажаришга қай даражада халақит беради?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "Умуман халақит бермайди",
+          "Кам",
+          "Ўртача",
+          "Сезиларли",
+          "Жуда кучли"
+        ]
+      },
+      {
+        "id": "mtt_1_q10",
+        "text": "МТТда ходимлар сони мавжуд иш ҳажмини бажариш учун етарлими?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "Тўлиқ етарли",
+          "Асосан етарли",
+          "Қисман етарли",
+          "Етарли эмас",
+          "Жуда етарли эмас"
+        ]
+      },
+      {
+        "id": "mtt_1_q11",
+        "text": "Иш ҳақи, устама ва қўшимча тўловларни меҳнат ҳажмига нисбатан қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "Жуда яхши",
+          "Яхши",
+          "Қониқарли",
+          "Қониқарсиз",
+          "Жуда қониқарсиз"
+        ]
+      },
+      {
+        "id": "mtt_1_q12",
+        "text": "МТТ раҳбариятининг ходимларга муносабати, вазифаларни адолатли тақсимлаши ва таклифларни эшитиш даражасини баҳоланг.",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Мутлақо қониқарсиз",
+          "2 — Қониқарсиз",
+          "3 — Қониқарли",
+          "4 — Яхши",
+          "5 — Жуда яхши"
+        ]
+      },
+      {
+        "id": "mtt_1_q13",
+        "text": "Иш жойида меҳнат муҳофазаси, хавфсизлик ва дам олиш/таътил ҳуқуқларининг таъминланишини қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Мутлақо қониқарсиз",
+          "2 — Қониқарсиз",
+          "3 — Қониқарли",
+          "4 — Яхши",
+          "5 — Жуда яхши"
+        ]
+      },
+      {
+        "id": "mtt_1_q14",
+        "text": "Малака ошириш, аттестация, методик ёрдам ва касбий ривожланиш имкониятларини қандай баҳолайсиз?",
+        "type": "radio",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Мутлақо қониқарсиз",
+          "2 — Қониқарсиз",
+          "3 — Қониқарли",
+          "4 — Яхши",
+          "5 — Жуда яхши"
+        ]
+      },
+      {
+        "id": "mtt_1_muammo",
+        "text": "Сизнингча, МТТ ходимларининг меҳнат шароитидаги энг муҳим 3 та муаммо нималар ва уларни ҳал қилиш учун қандай таклиф берасиз? (1) Муаммо ва таклиф; (2) Муаммо ва таклиф; (3) Муаммо ва таклиф.",
+        "type": "text",
+        "tag": "МТТ",
+        "tagStyle": "gray",
+        "options": []
+      }
+    ]
+  },
+  {
+    "id": "mtt_2",
+    "title": "MTTda ovqatlanish tizimi",
+    "subtitle": "MTTda bolalar ovqatlanishini oʻrganish boʻyicha anonim soʻrovnoma",
+    "description": "MTTda bolalar ovqatlanishini tashkil etish holati, mahsulotlar sifati, sanitariya-gigiyena talablari, oshxona taʼminoti va mavjud muammolarni aniqlash maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami koʻrsatilmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "🍎",
+    "color": "#16a34a",
+    "bg": "#e6f5ec",
+    "minutes": 4,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_2_q1",
+        "text": "Hudud (tuman/shahar)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "mtt_2_mfy",
+        "text": "Mahalla (MFY)",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_2_q2",
+        "text": "MTT turi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Davlat",
+          "Nodavlat",
+          "Oilaviy",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_2_q3",
+        "text": "Respondent lavozimi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Rahbar",
+          "Tarbiyachi",
+          "Oshxona xodimi",
+          "Tibbiyot xodimi",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_2_q4",
+        "text": "MTTda bolalar uchun ovqatlanish kun davomida belgilangan tartib va vaqt asosida tashkil etilganmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq tashkil etilgan",
+          "Qisman",
+          "Qoniqarsiz",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "mtt_2_q5",
+        "text": "Taomnoma (menyu) bolalarning yoshi va ovqatlanish ehtiyojlariga mos deb hisoblaysizmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq mos",
+          "Asosan mos",
+          "Qisman mos",
+          "Mos emas"
+        ]
+      },
+      {
+        "id": "mtt_2_q6",
+        "text": "Oziq-ovqat mahsulotlarining sifati va yangiligini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz"
+        ]
+      },
+      {
+        "id": "mtt_2_q7",
+        "text": "Amalda berilayotgan taomlar tasdiqlangan kunlik menyuga qay darajada muvofiq?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimo muvofiq",
+          "Koʻp hollarda muvofiq",
+          "Baʼzida farq qiladi",
+          "Koʻpincha muvofiq emas"
+        ]
+      },
+      {
+        "id": "mtt_2_q8",
+        "text": "Bolalarga berilayotgan porsiya hajmi yetarli deb hisoblaysizmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Yetarli",
+          "Asosan yetarli",
+          "Kam",
+          "Haddan tashqari koʻp"
+        ]
+      },
+      {
+        "id": "mtt_2_q9",
+        "text": "Bolalar orasida ayrim mahsulotlarga allergiya, parhez yoki tibbiy cheklovlar boʻlganda alohida yondashuv taʼminlanadimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimo",
+          "Koʻpincha",
+          "Baʼzida",
+          "Taʼminlanmaydi",
+          "Bunday holat boʻlmagan"
+        ]
+      },
+      {
+        "id": "mtt_2_q10",
+        "text": "Oshxona va ovqatlanish joylarining sanitariya-gigiyena holatini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz"
+        ]
+      },
+      {
+        "id": "mtt_2_q11",
+        "text": "Oshxona zarur jihozlar (sovutgich, plita, idishlar, saqlash vositalari va boshqalar) bilan qay darajada taʼminlangan?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq taʼminlangan",
+          "Asosan taʼminlangan",
+          "Qisman",
+          "Jiddiy yetishmovchilik bor"
+        ]
+      },
+      {
+        "id": "mtt_2_q12",
+        "text": "Oziq-ovqat mahsulotlarini qabul qilish, saqlash va ishlatishda belgilangan talablarga rioya etiladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimo",
+          "Koʻpincha",
+          "Baʼzida",
+          "Rioya etilmaydi",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "mtt_2_q13",
+        "text": "Oziq-ovqat mahsulotlarini yetkazib berishda kechikish, mahsulot yetishmasligi yoki sifati bilan bogʻliq muammolar qanchalik uchraydi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Uchramaydi",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Tez-tez",
+          "Doimiy"
+        ]
+      },
+      {
+        "id": "mtt_2_q14",
+        "text": "Ovqatlanish jarayoni ustidan ichki nazorat (mahsulot sifati, menyu, sanitariya, tayyor taom nazorati) yetarli darajada olib boriladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq",
+          "Asosan",
+          "Qisman",
+          "Yetarli emas",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "mtt_2_q15",
+        "text": "Bolalar tayyor taomlarni qay darajada isteʼmol qiladi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Yaxshi isteʼmol qiladi",
+          "Asosan isteʼmol qiladi",
+          "Ayrim taomlarni isteʼmol qilmaydi",
+          "Koʻp taomlar qolib ketadi"
+        ]
+      },
+      {
+        "id": "mtt_2_muammo",
+        "text": "Sizningcha, MTTda ovqatlanish tizimidagi eng asosiy muammo nima va uni yaxshilash uchun qanday taklif berasiz?",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      }
+    ]
+  },
+  {
+    "id": "mtt_3",
+    "title": "MTTda taʼlim-tarbiya jarayoni",
+    "subtitle": "MTTda taʼlim-tarbiya jarayonini oʻrganish boʻyicha anonim soʻrovnoma",
+    "description": "Maktabgacha taʼlim tashkilotida taʼlim-tarbiya jarayonining amaldagi holati, mavjud muammolar va ularni yaxshilash boʻyicha takliflarni aniqlash maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami talab qilinmaydi, javoblar faqat umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "📚",
+    "color": "#7c3aed",
+    "bg": "#f1eafd",
+    "minutes": 5,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_3_q1",
+        "text": "Hudud (tuman/shahar)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "mtt_3_q2",
+        "text": "Mahalla (MFY)",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_3_q3",
+        "text": "MTT turi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Davlat",
+          "Nodavlat",
+          "Oilaviy",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_3_q4",
+        "text": "Respondent lavozimi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Tarbiyachi",
+          "Metodist",
+          "Tarbiyachi yordamchisi",
+          "Psixolog",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_3_q5",
+        "text": "MTTda taʼlim-tarbiya jarayonining umumiy sifatini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "mtt_3_q6",
+        "text": "Amaldagi taʼlim dasturi va mashgʻulotlar mazmuni bolalarning yoshi va rivojlanish ehtiyojlariga qay darajada mos?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq mos",
+          "Asosan mos",
+          "Qisman mos",
+          "Kam mos",
+          "Umuman mos emas"
+        ]
+      },
+      {
+        "id": "mtt_3_q7",
+        "text": "Tarbiyachilar mashgʻulotlarni samarali oʻtkazish uchun zarur metodik qoʻllanma va resurslar bilan qay darajada taʼminlangan?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq",
+          "Yetarli",
+          "Qisman",
+          "Yetarli emas",
+          "Umuman taʼminlanmagan"
+        ]
+      },
+      {
+        "id": "mtt_3_q8",
+        "text": "MTTda didaktik materiallar, oʻyinchoqlar va rivojlantiruvchi vositalarning holati qanday?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Yetarli va zamonaviy",
+          "Yetarli",
+          "Qisman yetarli",
+          "Yetishmaydi",
+          "Juda kam"
+        ]
+      },
+      {
+        "id": "mtt_3_q9",
+        "text": "Guruhdagi bolalar soni tarbiyachiga har bir bola bilan individual ishlash imkonini beradimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq beradi",
+          "Asosan beradi",
+          "Qisman",
+          "Deyarli bermaydi",
+          "Umuman bermaydi"
+        ]
+      },
+      {
+        "id": "mtt_3_q10",
+        "text": "Bolalarning nutqiy, aqliy, jismoniy, ijtimoiy va ijodiy rivojlanishini kuzatish va baholash ishlari qay darajada yoʻlga qoʻyilgan?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Amalda yoʻlga qoʻyilmagan"
+        ]
+      },
+      {
+        "id": "mtt_3_q11",
+        "text": "Taʼlim-tarbiya jarayonida zamonaviy pedagogik usullar va oʻyin texnologiyalaridan foydalanish darajasini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimiy",
+          "Tez-tez",
+          "Baʼzida",
+          "Kamdan-kam",
+          "Foydalanilmaydi"
+        ]
+      },
+      {
+        "id": "mtt_3_q12",
+        "text": "Alohida taʼlim ehtiyoji boʻlgan bolalar bilan ishlash uchun MTTda sharoit va mutaxassislar yetarlimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman",
+          "Yetarli emas",
+          "Bunday imkoniyat yoʻq"
+        ]
+      },
+      {
+        "id": "mtt_3_q13",
+        "text": "Ota-onalar taʼlim-tarbiya jarayoni va bolaning rivojlanishi haqida yetarli maʼlumot oladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimiy va toʻliq",
+          "Yetarli",
+          "Qisman",
+          "Kam",
+          "Deyarli maʼlumot berilmaydi"
+        ]
+      },
+      {
+        "id": "mtt_3_q14",
+        "text": "Tarbiyachilarga metodist va rahbariyat tomonidan metodik yordam, maslahat va amaliy koʻmak qay darajada koʻrsatiladi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimiy",
+          "Yetarli",
+          "Baʼzida",
+          "Kamdan-kam",
+          "Umuman koʻrsatilmaydi"
+        ]
+      },
+      {
+        "id": "mtt_3_q15",
+        "text": "Taʼlim-tarbiya jarayoniga eng koʻp salbiy taʼsir qilayotgan omilni belgilang.",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Bolalar soni koʻpligi",
+          "Kadr yetishmasligi",
+          "Metodik vositalar kamligi",
+          "Jihozlar yetishmasligi",
+          "Ortiqcha hisobot/hujjatbozlik",
+          "Ota-onalar bilan hamkorlik muammosi",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_3_q16",
+        "text": "Sizningcha, taʼlim-tarbiya sifatini oshirish uchun birinchi navbatda qaysi chora zarur?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Kadrlar malakasini oshirish",
+          "Guruhlarda bolalar sonini maqbullashtirish",
+          "Metodik bazani kuchaytirish",
+          "Zamonaviy jihoz va vositalar bilan taʼminlash",
+          "Mutaxassislar sonini koʻpaytirish",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_3_q17",
+        "text": "MTTda taʼlim-tarbiya jarayonini yaxshilash boʻyicha eng muhim taklifingizni yozing:",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      }
+    ]
+  },
+  {
+    "id": "mtt_4",
+    "title": "MTTda ota-onalar bilan munosabat",
+    "subtitle": "MTT xodimlari uchun ota-onalar bilan munosabatni oʻrganish boʻyicha anonim soʻrovnoma",
+    "description": "MTTda ota-onalar bilan hamkorlik, muloqot, murojaat va nizolarni hal etish holatini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami talab qilinmaydi, javoblar faqat umumlashtirilgan tahlil uchun qoʻllaniladi.",
+    "icon": "🤝",
+    "color": "#0891b2",
+    "bg": "#e5f5f9",
+    "minutes": 5,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_4_q1",
+        "text": "Hudud (tuman/shahar)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "mtt_4_q2",
+        "text": "Mahalla (MFY)",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_4_q3",
+        "text": "MTT turi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Davlat",
+          "Nodavlat",
+          "Oilaviy",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_4_q4",
+        "text": "Respondent lavozimi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Tarbiyachi",
+          "Yordamchi tarbiyachi",
+          "Metodist",
+          "Psixolog",
+          "Rahbar",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_4_q5",
+        "text": "Ota-onalar bilan kundalik muloqotning umumiy holatini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q6",
+        "text": "Ota-onalarga bolaning rivojlanishi, xulqi va kundalik holati haqida yetarli va oʻz vaqtida maʼlumot beriladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Koʻpincha",
+          "Doimo"
+        ]
+      },
+      {
+        "id": "mtt_4_q7",
+        "text": "Ota-onalar tarbiyachi va MTT xodimlarining kasbiy tavsiyalariga qay darajada amal qiladi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q8",
+        "text": "Ota-onalar yigʻilishi, suhbat va boshqa hamkorlik tadbirlarida ishtirok faolligini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q9",
+        "text": "Ota-onalarning asossiz talablari yoki xodimning ish jarayoniga ortiqcha aralashuvi qay darajada uchraydi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Tez-tez",
+          "Doimo"
+        ]
+      },
+      {
+        "id": "mtt_4_q10",
+        "text": "Ota-onalar tomonidan qoʻpol muomala, bosim yoki haqoratli munosabat holatlari uchraydimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Tez-tez",
+          "Doimo"
+        ]
+      },
+      {
+        "id": "mtt_4_q11",
+        "text": "Ota-onalarning murojaat va shikoyatlari MTT rahbariyati tomonidan xolis va oʻz vaqtida koʻrib chiqiladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q12",
+        "text": "Ota-onalar bilan nizoli vaziyatlar yuzaga kelganda, xodim rahbariyatdan yetarli amaliy va huquqiy qoʻllab-quvvatlash oladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q13",
+        "text": "Ota-onalar bilan muloqot qilish uchun mavjud kanallar (yigʻilish, telefon, messenjer, shaxsiy suhbat) samaralimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q14",
+        "text": "Ota-onalar bolaning davomati, kun tartibi, shaxsiy gigiyenasi va MTT ichki tartib-qoidalariga qay darajada masʼuliyat bilan yondashadi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_4_q15",
+        "text": "Ota-onalar bilan ishlash sizga asosiy taʼlim-tarbiya vazifalarini bajarishga qoʻshimcha yuklama keltirib chiqaradimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Umuman yoʻq",
+          "Kam",
+          "Oʻrtacha",
+          "Sezilarli",
+          "Juda katta"
+        ]
+      },
+      {
+        "id": "mtt_4_q16",
+        "text": "Sizningcha, ota-onalar bilan munosabatda eng koʻp uchraydigan muammolar qaysilar? (bir nechta javobni belgilash mumkin)",
+        "type": "checkbox",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Muloqot yetishmasligi",
+          "Asossiz talablar",
+          "Shikoyatlar koʻpligi",
+          "Bolaning davomati",
+          "Tarbiya masalasida kelishmovchilik",
+          "Xodimga hurmatsiz munosabat",
+          "Ota-onaning tadbirlarda sust ishtiroki",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_4_q17",
+        "text": "Ota-onalar va MTT xodimlari oʻrtasidagi hamkorlikni yaxshilash uchun qanday aniq taklif bergan boʻlardingiz?",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      }
+    ]
+  },
+  {
+    "id": "mtt_5",
+    "title": "MTT xodimlarining taklif va tashabbuslari",
+    "subtitle": "MTT xodimlarining taklif va tashabbuslarini oʻrganish boʻyicha anonim soʻrovnoma",
+    "description": "MTT xodimlarining tashkilot faoliyatini yaxshilashga qaratilgan taklif va tashabbuslarini aniqlash maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami talab qilinmaydi, javoblar faqat umumlashtirilgan tahlil uchun ishlatiladi.",
+    "icon": "💡",
+    "color": "#c9600f",
+    "bg": "#fdf0e4",
+    "minutes": 5,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_5_q1",
+        "text": "Hudud (tuman/shahar)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "mtt_5_q2",
+        "text": "Mahalla (MFY)",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_5_q3",
+        "text": "MTT turi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Davlat MTT",
+          "Nodavlat MTT",
+          "Oilaviy MTT",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_5_q4",
+        "text": "Respondent lavozimi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Tarbiyachi",
+          "Yordamchi tarbiyachi",
+          "Metodist",
+          "Psixolog",
+          "Tibbiyot xodimi",
+          "Xoʻjalik/oshxona xodimi",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_5_q5",
+        "text": "Sizda MTT faoliyatini yaxshilash boʻyicha taklif yoki yangi gʻoyalar paydo boʻlib turadimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Tez-tez",
+          "Doimiy"
+        ]
+      },
+      {
+        "id": "mtt_5_q6",
+        "text": "Oʻz taklif va tashabbuslaringizni rahbariyatga erkin bayon qila olasizmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Umuman yoʻq",
+          "Kam hollarda",
+          "Qisman",
+          "Koʻp hollarda",
+          "Toʻliq"
+        ]
+      },
+      {
+        "id": "mtt_5_q7",
+        "text": "Rahbariyat xodimlar tomonidan bildirilgan takliflarga qay darajada eʼtibor beradi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Umuman eʼtibor bermaydi",
+          "Kam",
+          "Oʻrtacha",
+          "Yaxshi",
+          "Juda yaxshi"
+        ]
+      },
+      {
+        "id": "mtt_5_q8",
+        "text": "Sizning takliflaringiz amaliyotga joriy etilgan holatlar boʻlganmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "1-marta",
+          "2–3-marta",
+          "Bir necha marta",
+          "Muntazam"
+        ]
+      },
+      {
+        "id": "mtt_5_q9",
+        "text": "Yangi tashabbus koʻrsatgan xodimlar ragʻbatlantiriladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Umuman yoʻq",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Koʻp hollarda",
+          "Doimiy"
+        ]
+      },
+      {
+        "id": "mtt_5_q10",
+        "text": "Tashabbuslarni amalga oshirishga asosiy toʻsiq nimada?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Mablagʻ yetishmasligi",
+          "Rahbariyat qoʻllab-quvvatlamasligi",
+          "Vaqt yetishmasligi",
+          "Hujjatbozlik",
+          "Kadr/resurs yetishmasligi",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_5_q11",
+        "text": "Qaysi yoʻnalishda xodimlar tashabbuslari eng koʻp qoʻllab-quvvatlanishi kerak?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Taʼlim-tarbiya",
+          "Ovqatlanish",
+          "Moddiy-texnik baza",
+          "Ota-onalar bilan ishlash",
+          "Raqamlashtirish",
+          "Xavfsizlik",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_5_q12",
+        "text": "MTTda xodimlarning gʻoya va takliflarini muntazam yigʻish uchun alohida mexanizm (takliflar qutisi, onlayn shakl, yigʻilish) mavjudmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Yoʻq",
+          "Qisman",
+          "Mavjud, lekin samarasiz",
+          "Mavjud va ishlaydi"
+        ]
+      },
+      {
+        "id": "mtt_5_q13",
+        "text": "Xodimlar tashabbuslarini amalga oshirish uchun kichik grant, ragʻbat puli yoki moddiy qoʻllab-quvvatlash kerak deb hisoblaysizmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Yoʻq",
+          "Qisman",
+          "Ha",
+          "Juda zarur"
+        ]
+      },
+      {
+        "id": "mtt_5_q14",
+        "text": "Xodimlarning tashabbuskorligini oshirish uchun eng muhim omil qaysi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Rahbariyat qoʻllab-quvvatlashi",
+          "Moddiy ragʻbat",
+          "Erkin fikr bildirish muhiti",
+          "Malaka oshirish",
+          "Zarur resurslar",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_5_q15",
+        "text": "Sizningcha, MTT faoliyatida birinchi navbatda qaysi muammoni xodimlar tashabbusi orqali hal qilish mumkin?",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_5_q16",
+        "text": "MTT faoliyatini yaxshilash boʻyicha eng muhim amaliy taklifingizni yozing.",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_5_q17",
+        "text": "Ushbu taklifni amalga oshirish qaysi darajadagi masʼullar ishtirokini talab qiladi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "MTT rahbariyati",
+          "Tuman/shahar boʻlimi",
+          "Viloyat boshqarmasi",
+          "Respublika darajasi",
+          "Hamkor tashkilot/homiy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mtt_6",
+    "title": "MTTda bolalar xavfsizligi va sogʻligʻi",
+    "subtitle": "MTTda bolalar xavfsizligi va sogʻligʻini oʻrganish boʻyicha anonim soʻrovnoma",
+    "description": "MTTda bolalar xavfsizligi va sogʻligʻini taʼminlash holatini oʻrganish, mavjud muammolarni aniqlash hamda amaliy takliflar ishlab chiqish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami talab qilinmaydi, javoblar faqat umumlashtirilgan tahlil uchun foydalaniladi.",
+    "icon": "🛡️",
+    "color": "#16a34a",
+    "bg": "#e6f5ec",
+    "minutes": 5,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_6_q1",
+        "text": "Hudud (tuman/shahar)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "mtt_6_q2",
+        "text": "Mahalla (MFY)",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_6_q3",
+        "text": "MTT turi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Davlat",
+          "Nodavlat",
+          "Oilaviy nodavlat",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_6_q4",
+        "text": "Respondent lavozimi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Tarbiyachi",
+          "Yordamchi tarbiyachi",
+          "Metodist",
+          "Tibbiyot xodimi",
+          "Rahbar",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_6_q5",
+        "text": "MTT hududi va binolari bolalar uchun qay darajada xavfsiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda xavfsiz",
+          "Xavfsiz",
+          "Qoniqarli",
+          "Xavfsiz emas",
+          "Juda xavfli"
+        ]
+      },
+      {
+        "id": "mtt_6_q6",
+        "text": "Guruh xonalari, yoʻlaklar va zinapoyalarda jarohat olish xavfini keltirib chiqaruvchi holatlar mavjudmi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Yoʻq",
+          "Kamdan-kam",
+          "Baʼzida",
+          "Tez-tez",
+          "Doimiy"
+        ]
+      },
+      {
+        "id": "mtt_6_q7",
+        "text": "Bolalar oʻyin maydonchalari va oʻyin jihozlarining texnik holatini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "mtt_6_q8",
+        "text": "MTTda kirish-chiqish va begonalarning hududga kirishini nazorat qilish tizimi yetarlimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman",
+          "Yetarli emas",
+          "Umuman nazorat yoʻq"
+        ]
+      },
+      {
+        "id": "mtt_6_q9",
+        "text": "Yongʻin xavfsizligi vositalari va evakuatsiya yoʻlaklari talabga javob beradimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq javob beradi",
+          "Asosan javob beradi",
+          "Qisman",
+          "Javob bermaydi",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "mtt_6_q10",
+        "text": "Xodimlar favqulodda holatlarda bolalarni evakuatsiya qilish va birinchi yordam koʻrsatish boʻyicha yetarli tayyorgarlikka egami?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq",
+          "Yetarli",
+          "Qisman",
+          "Yetarli emas",
+          "Umuman tayyor emas"
+        ]
+      },
+      {
+        "id": "mtt_6_q11",
+        "text": "MTTda tibbiyot xodimi va birinchi tibbiy yordam vositalari bilan taʼminlanganlik holati qanday?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq taʼminlangan",
+          "Yetarli",
+          "Qisman",
+          "Yetarli emas",
+          "Mavjud emas"
+        ]
+      },
+      {
+        "id": "mtt_6_q12",
+        "text": "Bolalarning sogʻligʻini kundalik nazorat qilish va kasallik alomatlari aniqlanganda chora koʻrish tizimi qanday ishlaydi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Umuman yoʻlga qoʻyilmagan"
+        ]
+      },
+      {
+        "id": "mtt_6_q13",
+        "text": "MTTda sanitariya-gigiyena talablariga rioya qilinishi qay darajada?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq rioya qilinadi",
+          "Asosan",
+          "Qisman",
+          "Kam rioya qilinadi",
+          "Rioya qilinmaydi"
+        ]
+      },
+      {
+        "id": "mtt_6_q14",
+        "text": "Ichimlik suvi, hojatxona, qoʻl yuvish joylari va shaxsiy gigiyena vositalari bilan taʼminlanganlikni qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "mtt_6_q15",
+        "text": "Bolalar ovqatlanishida sanitariya va oziq-ovqat xavfsizligi talablariga rioya qilinadimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doim",
+          "Koʻp hollarda",
+          "Baʼzida",
+          "Kamdan-kam",
+          "Umuman rioya qilinmaydi"
+        ]
+      },
+      {
+        "id": "mtt_6_q16",
+        "text": "Sizningcha, bolalar xavfsizligi va sogʻligʻiga eng katta xavf tugʻdirayotgan omillar qaysilar? (bir nechta javobni belgilash mumkin)",
+        "type": "checkbox",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Bino va jihozlar holati",
+          "Sanitariya muammolari",
+          "Tibbiy nazorat yetishmasligi",
+          "Ovqatlanish xavfsizligi",
+          "Xodimlar yetishmasligi",
+          "Kirish-chiqish nazorati",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_6_q17",
+        "text": "Bolalar xavfsizligi va sogʻligʻini yaxshilash uchun eng muhim amaliy taklifingizni yozing:",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      }
+    ]
+  },
+  {
+    "id": "mtt_7",
+    "title": "MTTga ota-onalar munosabati",
+    "subtitle": "MTTga ota-onalar munosabatini oʻrganish boʻyicha anonim soʻrovnoma",
+    "description": "Maktabgacha taʼlim tashkiloti faoliyati, taʼlim-tarbiya sifati, tarbiyachilar munosabati, xavfsizlik, ovqatlanish va ota-onalar bilan hamkorlik holatini oʻrganish maqsadida ota-onalar uchun oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami talab qilinmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "👨‍👩‍👧",
+    "color": "#2563eb",
+    "bg": "#e8effd",
+    "minutes": 5,
+    "isCustom": true,
+    "group": "talim",
+    "category": "mtt",
+    "questions": [
+      {
+        "id": "mtt_7_q1",
+        "text": "Hudud (tuman/shahar)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "mtt_7_q2",
+        "text": "Mahalla (MFY)",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "mtt_7_q3",
+        "text": "MTT turi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Davlat",
+          "Nodavlat",
+          "Oilaviy nodavlat",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_7_q4",
+        "text": "Farzandingiz qatnaydigan guruh",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Kichik",
+          "Oʻrta",
+          "Katta",
+          "Tayyorlov"
+        ]
+      },
+      {
+        "id": "mtt_7_q5",
+        "text": "Farzandingiz qatnaydigan MTT faoliyatidan umumiy qoniqish darajangizni baholang.",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman"
+        ]
+      },
+      {
+        "id": "mtt_7_q6",
+        "text": "Tarbiyachi va boshqa pedagog xodimlarning farzandingizga mehribon, hurmatli va eʼtiborli munosabatini baholang.",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman"
+        ]
+      },
+      {
+        "id": "mtt_7_q7",
+        "text": "MTTdagi taʼlim-tarbiya mashgʻulotlarining sifati va farzandingiz rivojlanishiga taʼsiridan qay darajada qoniqasiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman"
+        ]
+      },
+      {
+        "id": "mtt_7_q8",
+        "text": "Farzandingizning MTTga borish istagi va u yerdagi muhitga moslashuvini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Oʻrtacha",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "mtt_7_q9",
+        "text": "Tarbiyachi tomonidan farzandingizning rivojlanishi, xulqi va kunlik holati haqida sizga yetarli axborot beriladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimo",
+          "Koʻpincha",
+          "Baʼzida",
+          "Kamdan-kam",
+          "Umuman berilmaydi"
+        ]
+      },
+      {
+        "id": "mtt_7_q10",
+        "text": "MTT rahbariyati va xodimlari ota-onalarning fikr, taklif va murojaatlariga qay darajada eʼtibor beradi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman"
+        ]
+      },
+      {
+        "id": "mtt_7_q11",
+        "text": "MTTda bolalar xavfsizligi (kirish-chiqish nazorati, oʻyin maydonchalari, yongʻin va boshqa xavfsizlik choralari)ni qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman"
+        ]
+      },
+      {
+        "id": "mtt_7_q12",
+        "text": "MTTdagi tozalik, sanitariya-gigiyena va bolalar uchun yaratilgan maishiy sharoitlardan qay darajada qoniqasiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman"
+        ]
+      },
+      {
+        "id": "mtt_7_q13",
+        "text": "Farzandingiz uchun tashkil etilgan ovqatlanish sifati, menyu xilma-xilligi va porsiya miqdorini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman",
+          "Baholay olmayman"
+        ]
+      },
+      {
+        "id": "mtt_7_q14",
+        "text": "MTTdagi toʻlovlar, qoʻshimcha xarajatlar va moliyaviy masalalar haqidagi axborot siz uchun qay darajada tushunarli va shaffof?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqmayman",
+          "2 — Qoniqmayman",
+          "3 — Oʻrtacha",
+          "4 — Qoniqaman",
+          "5 — Toʻliq qoniqaman",
+          "Tegishli emas"
+        ]
+      },
+      {
+        "id": "mtt_7_q15",
+        "text": "Muammo yoki shikoyat bilan murojaat qilganingizda, masala oʻz vaqtida va adolatli hal etiladimi?",
+        "type": "radio",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Doimo",
+          "Koʻpincha",
+          "Baʼzida",
+          "Kamdan-kam",
+          "Hech qachon",
+          "Murojaat qilmaganman"
+        ]
+      },
+      {
+        "id": "mtt_7_q16",
+        "text": "Sizningcha, MTTda birinchi navbatda hal qilinishi kerak boʻlgan 3 ta asosiy muammoni belgilang.",
+        "type": "checkbox",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": [
+          "Taʼlim-tarbiya sifati",
+          "Kadrlar yetishmasligi",
+          "Bolalar xavfsizligi",
+          "Ovqatlanish",
+          "Tozalik va sanitariya",
+          "Bino/jihozlar holati",
+          "Ota-onalar bilan axborot almashinuvi",
+          "Guruhlarda bolalar soni koʻpligi",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "mtt_7_q17",
+        "text": "MTT faoliyatini yaxshilash, bolalar uchun sharoitni yanada qulay qilish boʻyicha taklif va mulohazalaringizni yozing.",
+        "type": "text",
+        "tag": "MTT",
+        "tagStyle": "gray",
+        "options": []
+      }
+    ]
+  }
+]

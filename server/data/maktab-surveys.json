@@ -1,0 +1,1981 @@
+[
+  {
+    "id": "maktab_1",
+    "title": "Maktabda taʼlim sifati va dars jarayoni",
+    "subtitle": "Maktab oʻquvchilari uchun anonim soʻrovnoma",
+    "description": "Maktabda taʼlim sifati, darslarning mazmunli va tushunarli tashkil etilishi hamda oʻquvchilar uchun yaratilgan taʼlim muhitini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "📖",
+    "color": "#7c3aed",
+    "bg": "#f1eafd",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_1_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_1_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_1_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_1_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_1_q5",
+        "text": "Sinf",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ]
+      },
+      {
+        "id": "maktab_1_q6",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻgʻil bola",
+          "Qiz bola",
+          "Javob berishni istamayman"
+        ]
+      },
+      {
+        "id": "maktab_1_q7",
+        "text": "Oʻqituvchilar dars mavzularini sizga qay darajada tushunarli qilib tushuntiradi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Oʻrtacha",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "maktab_1_q8",
+        "text": "Darslarda yangi mavzuni tushunishingiz uchun misollar, mashqlar va amaliy topshiriqlar yetarli qoʻllaniladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman qoʻllanilmaydi"
+        ]
+      },
+      {
+        "id": "maktab_1_q9",
+        "text": "Darslarda savol berish va tushunmagan joyingizni qayta soʻrash imkoniyati bormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_1_q10",
+        "text": "Oʻqituvchilar siz tushunmagan mavzuni qayta tushuntirib berishga tayyormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_1_q11",
+        "text": "Darslarda faqat oʻqituvchi gapiradimi yoki oʻquvchilar ham faol ishtirok etadimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻquvchilar juda faol ishtirok etadi",
+          "Koʻpincha ishtirok etadi",
+          "Baʼzan ishtirok etadi",
+          "Kam ishtirok etadi",
+          "Asosan oʻqituvchi gapiradi"
+        ]
+      },
+      {
+        "id": "maktab_1_q12",
+        "text": "Darslarda zamonaviy usullar — taqdimot, video, kompyuter, interaktiv topshiriq, tajriba va koʻrgazmali vositalardan foydalaniladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman foydalanilmaydi"
+        ]
+      },
+      {
+        "id": "maktab_1_q13",
+        "text": "Oʻqituvchilar uy vazifalarini sizga tushunarli va bajarish mumkin boʻlgan darajada beradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_1_q14",
+        "text": "Oʻqituvchilar siz bajargan topshiriq va nazorat ishlaridagi xatolaringizni tushuntirib beradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman tushuntirmaydi"
+        ]
+      },
+      {
+        "id": "maktab_1_q15",
+        "text": "Sizningcha, maktabdagi baholar oʻquvchining haqiqiy bilimini adolatli aks ettiradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq aks ettiradi",
+          "Asosan aks ettiradi",
+          "Qisman",
+          "Kam holatda",
+          "Umuman aks ettirmaydi"
+        ]
+      },
+      {
+        "id": "maktab_1_q16",
+        "text": "Darslarda barcha oʻquvchilarga bir xil munosabat qilinadimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_1_q17",
+        "text": "Maktabda olayotgan bilimlaringiz kelajakdagi oʻqishingiz va kasb tanlashingiz uchun foydali deb hisoblaysizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda foydali",
+          "Foydali",
+          "Qisman foydali",
+          "Kam foydali",
+          "Umuman foydali emas"
+        ]
+      },
+      {
+        "id": "maktab_1_q18",
+        "text": "Qaysi fan yoki fanlarni oʻzlashtirishda eng koʻp qiyinchilikka duch kelasiz? (bir nechta javobni belgilash mumkin)",
+        "type": "checkbox",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Matematika",
+          "Fizika",
+          "Kimyo",
+          "Biologiya",
+          "Ona tili va adabiyot",
+          "Xorijiy til",
+          "Tarix",
+          "Informatika",
+          "Boshqa",
+          "Hech birida qiyinchilik yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_1_q19",
+        "text": "Sizningcha, maktabda taʼlim sifati va dars jarayonini yaxshilash uchun eng avvalo nima oʻzgarishi kerak?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_1_q20",
+        "text": "Maktabingizdagi taʼlim sifatiga 1 dan 5 gacha baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maktab_2",
+    "title": "Oʻqituvchilarning kasbiy mahorati va munosabati",
+    "subtitle": "Oʻquvchilar uchun anonim soʻrovnoma",
+    "description": "Maktabda oʻqituvchilarning dars oʻtish mahorati, oʻquvchilar bilan muloqoti, adolatli munosabati hamda taʼlim jarayonidagi pedagogik yondashuvini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "👨‍🏫",
+    "color": "#0891b2",
+    "bg": "#e5f5f9",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_2_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_2_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_2_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_2_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_2_q5",
+        "text": "Sinf",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "7-sinf",
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ]
+      },
+      {
+        "id": "maktab_2_q6",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻgʻil bola",
+          "Qiz bola"
+        ]
+      },
+      {
+        "id": "maktab_2_q7",
+        "text": "Oʻqituvchilar oʻz fanini yaxshi bilishi va mavzuni tushunarli tushuntirishiga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "maktab_2_q8",
+        "text": "Oʻqituvchilar darsni qiziqarli va oʻquvchilarni faol ishtirok etishga undaydigan tarzda tashkil qiladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q9",
+        "text": "Oʻqituvchilar oʻquvchilar tushunmagan mavzularni qayta tushuntirib berishga tayyormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q10",
+        "text": "Oʻqituvchilar dars jarayonida barcha oʻquvchilarga teng va adolatli munosabatda boʻladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q11",
+        "text": "Oʻqituvchilar oʻquvchilarning fikrini tinglaydimi va savollariga hurmat bilan javob beradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q12",
+        "text": "Oʻqituvchilar oʻquvchilar bilan muloqotda xushmuomala va hurmatli munosabatda boʻladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q13",
+        "text": "Oʻqituvchilar oʻquvchini boshqalar oldida haqorat qilish, kamsitish yoki obroʻsizlantirish holatlariga yoʻl qoʻyadimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Juda kam",
+          "Baʼzan",
+          "Tez-tez",
+          "Juda tez-tez"
+        ]
+      },
+      {
+        "id": "maktab_2_q14",
+        "text": "Oʻqituvchilar oʻquvchilarning qobiliyati va bilim darajasidagi farqlarni hisobga olib ishlaydimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q15",
+        "text": "Oʻqituvchilar yaxshi oʻqigan yoki faol ishtirok etgan oʻquvchilarni ragʻbatlantiradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q16",
+        "text": "Oʻqituvchilar past natija koʻrsatayotgan oʻquvchilarga qoʻshimcha yordam va tushuntirish beradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q17",
+        "text": "Oʻqituvchilar baho qoʻyishda shaxsiy munosabatdan emas, oʻquvchining bilimi va bajargan ishidan kelib chiqadimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_2_q18",
+        "text": "Sizningcha, oʻqituvchilarda qaysi jihatni kuchaytirish eng muhim?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Fan boʻyicha bilim va kasbiy mahoratni",
+          "Darsni tushunarli oʻtishni",
+          "Zamonaviy oʻqitish usullaridan foydalanishni",
+          "Oʻquvchilar bilan muloqot madaniyatini",
+          "Adolatli baholashni",
+          "Oʻquvchilarga individual yondashishni",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_2_q19",
+        "text": "Oʻqituvchilarning kasbiy mahorati va oʻquvchilarga munosabatini yaxshilash uchun qanday taklifingiz bor?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_2_q20",
+        "text": "Maktabingizda oʻqituvchilarning kasbiy mahorati va oʻquvchilarga munosabatiga 1 dan 5 gacha umumiy baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maktab_3",
+    "title": "Oʻquvchilar xavfsizligi va psixologik muhit",
+    "subtitle": "Oʻquvchilar uchun anonim soʻrovnoma",
+    "description": "Maktabda oʻquvchilarning oʻzini xavfsiz his qilishi, oʻzaro hurmat, bulling va kamsitish holatlari, psixologik qoʻllab-quvvatlash hamda murojaat qilish imkoniyatlarini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "🛡️",
+    "color": "#16a34a",
+    "bg": "#e6f5ec",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_3_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_3_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_3_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_3_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_3_q5",
+        "text": "Sinf",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "7-sinf",
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ]
+      },
+      {
+        "id": "maktab_3_q6",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻgʻil bola",
+          "Qiz bola"
+        ]
+      },
+      {
+        "id": "maktab_3_q7",
+        "text": "Maktabda oʻzingizni qanchalik xavfsiz his qilasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda xavfsiz",
+          "Xavfsiz",
+          "Qisman xavfsiz",
+          "Kam xavfsiz",
+          "Umuman xavfsiz emas"
+        ]
+      },
+      {
+        "id": "maktab_3_q8",
+        "text": "Dars vaqtida va tanaffuslarda maktab xodimlari oʻquvchilar xavfsizligini yetarli nazorat qiladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_3_q9",
+        "text": "Maktabda oʻquvchilar oʻrtasida masxara qilish, laqab qoʻyish, haqorat qilish yoki kamsitish holatlarini uchratasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Juda kam",
+          "Baʼzan",
+          "Tez-tez",
+          "Juda tez-tez"
+        ]
+      },
+      {
+        "id": "maktab_3_q10",
+        "text": "Maktabda oʻquvchilar oʻrtasida turtishish, urishish, qoʻrqitish yoki kuch ishlatish holatlarini uchratasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Juda kam",
+          "Baʼzan",
+          "Tez-tez",
+          "Juda tez-tez"
+        ]
+      },
+      {
+        "id": "maktab_3_q11",
+        "text": "Sinfdoshlaringiz va boshqa oʻquvchilar sizga hurmat bilan munosabat qiladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_3_q12",
+        "text": "Oʻqituvchilar va maktab xodimlari oʻquvchilar bilan muloqotda hurmatli va xotirjam munosabatda boʻladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_3_q13",
+        "text": "Maktabda tashqi koʻrinish, oilaviy sharoit, oʻqish darajasi, jins yoki boshqa xususiyatlar sababli kamsitish holatlari boʻladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Hech qachon",
+          "Juda kam",
+          "Baʼzan",
+          "Tez-tez",
+          "Juda tez-tez"
+        ]
+      },
+      {
+        "id": "maktab_3_q14",
+        "text": "Agar sizga nisbatan nohaq munosabat, bulling yoki tazyiq boʻlsa, kimga murojaat qilishni bilasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Ha, aniq bilaman",
+          "Asosan bilaman",
+          "Qisman bilaman",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "maktab_3_q15",
+        "text": "Muammo yoki xavotiringiz boʻlganda sinf rahbari, psixolog, oʻqituvchi yoki maktab rahbariyatiga erkin murojaat qila olasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman murojaat qila olmayman"
+        ]
+      },
+      {
+        "id": "maktab_3_q16",
+        "text": "Maktabdagi psixolog yoki boshqa masʼul xodimlar oʻquvchilarning muammolarini tinglab, amaliy yordam beradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Ha, yetarlicha",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Bu xizmat haqida bilmayman"
+        ]
+      },
+      {
+        "id": "maktab_3_q17",
+        "text": "Maktabda oʻquvchilarning shaxsiy fikri va murojaatlari maxfiy saqlanishiga ishonasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq ishonaman",
+          "Asosan ishonaman",
+          "Qisman ishonaman",
+          "Ishonmayman",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "maktab_3_q18",
+        "text": "Sizningcha, maktabda oʻquvchilar xavfsizligi va sogʻlom psixologik muhitni taʼminlash uchun eng muhim chora qaysi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Bulling va zoʻravonlikka qarshi nazoratni kuchaytirish",
+          "Maktab psixologi faoliyatini kuchaytirish",
+          "Oʻqituvchi va oʻquvchilar oʻrtasida hurmatli muloqotni kuchaytirish",
+          "Oʻquvchilar murojaatini anonim qabul qilish imkoniyatini yaratish",
+          "Tanaffus va maktab hududida nazoratni kuchaytirish",
+          "Ota-ona, maktab va oʻquvchi hamkorligini kuchaytirish",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_3_q19",
+        "text": "Maktabda oʻzingizni yanada xavfsiz va xotirjam his qilishingiz uchun nimani oʻzgartirish yoki yaxshilashni taklif qilasiz?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_3_q20",
+        "text": "Maktabingizdagi xavfsizlik va psixologik muhitga 1 dan 5 gacha umumiy baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maktab_4",
+    "title": "Maktabda ovqatlanish tizimi",
+    "subtitle": "Maktab oʻquvchilari va xodimlari uchun anonim soʻrovnoma",
+    "description": "Maktab oshxonasining holati, taomlar sifati va narxi, sanitariya-gigiyena talablariga rioya etilishi, xizmat koʻrsatish darajasi hamda mahsulotlar xavfsizligi boʻyicha oʻquvchilar va xodimlarning fikrini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar faqat umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "🍽️",
+    "color": "#c9600f",
+    "bg": "#fdf0e4",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_4_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_4_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_4_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_4_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_4_q5",
+        "text": "Respondent toifasi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻquvchi",
+          "Oʻqituvchi",
+          "Maktab maʼmuriyati",
+          "Texnik/xizmat koʻrsatuvchi xodim",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_4_q6",
+        "text": "Agar oʻquvchi boʻlsangiz, sinfingiz (faqat oʻquvchilar uchun)",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "7-sinf",
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ],
+        "required": false
+      },
+      {
+        "id": "maktab_4_q7",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Erkak/oʻgʻil bola",
+          "Ayol/qiz bola"
+        ]
+      },
+      {
+        "id": "maktab_4_q8",
+        "text": "Maktab oshxonasi yoki bufetidan qanchalik tez-tez foydalanasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har kuni",
+          "Haftasiga 3–4-marta",
+          "Haftasiga 1–2-marta",
+          "Kamdan-kam",
+          "Umuman foydalanmayman"
+        ]
+      },
+      {
+        "id": "maktab_4_q9",
+        "text": "Maktab oshxonasining umumiy tozaligi va sanitariya holatini qanday baholaysiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "maktab_4_q10",
+        "text": "Taomlarning mazasi va umumiy sifatidan qay darajada qoniqasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq qoniqaman",
+          "Asosan qoniqaman",
+          "Qisman qoniqaman",
+          "Qoniqmayman",
+          "Umuman qoniqmayman"
+        ]
+      },
+      {
+        "id": "maktab_4_q11",
+        "text": "Taomlar yetarlicha issiq va yangi tayyorlangan holda taqdim etiladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_4_q12",
+        "text": "Maktab oshxonasidagi taomlar turi va assortimenti yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Juda kam"
+        ]
+      },
+      {
+        "id": "maktab_4_q13",
+        "text": "Taom va mahsulotlar narxini ularning sifati va hajmiga nisbatan qanday baholaysiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda maqbul",
+          "Maqbul",
+          "Oʻrtacha",
+          "Qimmat",
+          "Juda qimmat"
+        ]
+      },
+      {
+        "id": "maktab_4_q14",
+        "text": "Oshxonada mahsulotlarni saqlash va taom tayyorlashda tozalik qoidalariga rioya qilinadi deb hisoblaysizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Ha, toʻliq",
+          "Asosan",
+          "Qisman",
+          "Kam holatda",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_4_q15",
+        "text": "Oshxona xodimlarining shaxsiy gigiyena qoidalariga (toza maxsus kiyim, qoʻl tozaligi va boshqalar) rioya qilishiga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Bilmayman/kuzatmaganman"
+        ]
+      },
+      {
+        "id": "maktab_4_q16",
+        "text": "Sotilayotgan oziq-ovqat va ichimliklarning yaroqlilik muddati hamda xavfsizligiga ishonasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq ishonaman",
+          "Asosan ishonaman",
+          "Qisman ishonaman",
+          "Ishonmayman",
+          "Bilmayman"
+        ]
+      },
+      {
+        "id": "maktab_4_q17",
+        "text": "Oshxonada ovqatlanish uchun sharoitlar — stol-stullar, idishlar, navbat tartibi va xizmat koʻrsatish — qay darajada qulay?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda qulay",
+          "Qulay",
+          "Qoniqarli",
+          "Noqulay",
+          "Juda noqulay"
+        ]
+      },
+      {
+        "id": "maktab_4_q18",
+        "text": "Maktab oshxonasida sogʻlom ovqatlanish talablariga mos mahsulotlar (meva, sabzavot, sut mahsulotlari, toza ichimlik suvi va h.k.) yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_4_q19",
+        "text": "Sizningcha, maktabda ovqatlanish tizimida birinchi navbatda nimani yaxshilash kerak?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Taom sifatini",
+          "Taom turlarini va assortimentini",
+          "Narxlarni",
+          "Oshxona tozaligi va sanitariyasini",
+          "Xizmat koʻrsatish madaniyatini",
+          "Mahsulotlar xavfsizligi nazoratini",
+          "Navbat va ovqatlanish sharoitini",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_4_q20",
+        "text": "Maktabda ovqatlanish tizimini yaxshilash boʻyicha qanday taklifingiz bor?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_4_q21",
+        "text": "Maktabingizdagi ovqatlanish tizimiga 1 dan 5 gacha umumiy baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maktab_5",
+    "title": "Baholash tizimi va bilimlarni xolis baholash",
+    "subtitle": "Oʻquvchilar uchun anonim soʻrovnoma",
+    "description": "Maktabda oʻquvchilar bilimini baholash tizimining adolatliligi, baholash mezonlarining tushunarliligi, nazorat ishlarining sifati hamda baholash natijalari boʻyicha oʻquvchilarga fikr-mulohaza berilishini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "📝",
+    "color": "#2563eb",
+    "bg": "#e8effd",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_5_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_5_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_5_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_5_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_5_q5",
+        "text": "Sinf",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "7-sinf",
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ]
+      },
+      {
+        "id": "maktab_5_q6",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻgʻil bola",
+          "Qiz bola"
+        ]
+      },
+      {
+        "id": "maktab_5_q7",
+        "text": "Oʻqituvchilar nazorat ishi, test, ogʻzaki soʻrov yoki boshqa topshiriqdan oldin baholash mezonlarini tushuntiradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman tushuntirmaydi"
+        ]
+      },
+      {
+        "id": "maktab_5_q8",
+        "text": "Sizningcha, qoʻyilayotgan baholar sizning haqiqiy bilim va koʻnikmalaringizni qay darajada aks ettiradi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq aks ettiradi",
+          "Asosan aks ettiradi",
+          "Qisman aks ettiradi",
+          "Kam aks ettiradi",
+          "Umuman aks ettirmaydi"
+        ]
+      },
+      {
+        "id": "maktab_5_q9",
+        "text": "Oʻqituvchilar bir xil natija koʻrsatgan oʻquvchilarga bir xil va adolatli baho qoʻyadimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_5_q10",
+        "text": "Baholashda oʻquvchining shaxsiy munosabati, tanish-bilishlik yoki boshqa omillar taʼsir qilmaydi, deb hisoblaysizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq qoʻshilaman",
+          "Qoʻshilaman",
+          "Qisman qoʻshilaman",
+          "Qoʻshilmayman",
+          "Umuman qoʻshilmayman"
+        ]
+      },
+      {
+        "id": "maktab_5_q11",
+        "text": "Nazorat ishlari va test savollari darsda oʻtilgan mavzularga mos keladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman mos kelmaydi"
+        ]
+      },
+      {
+        "id": "maktab_5_q12",
+        "text": "Oʻqituvchilar nazorat ishi, test yoki topshiriq natijalarini oʻz vaqtida maʼlum qiladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_5_q13",
+        "text": "Baho qoʻyilgandan keyin oʻqituvchi xatolaringizni tushuntirib, nimani yaxshilash kerakligini aytadimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman aytmaydi"
+        ]
+      },
+      {
+        "id": "maktab_5_q14",
+        "text": "Siz qoʻyilgan bahoning nima uchun shunday qoʻyilganini tushuna olasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman tushunmayman"
+        ]
+      },
+      {
+        "id": "maktab_5_q15",
+        "text": "Agar qoʻyilgan bahoga norozi boʻlsangiz, oʻqituvchidan izoh soʻrash yoki natijani qayta koʻrib chiqishni soʻrash imkoniyati bormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Ha, bemalol",
+          "Koʻpincha bor",
+          "Baʼzan bor",
+          "Juda qiyin",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_5_q16",
+        "text": "Oʻqituvchilar faqat yakuniy natijani emas, balki darsdagi faollik, mustaqil fikrlash va topshiriqlarni bajarish jarayonini ham hisobga oladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman hisobga olmaydi"
+        ]
+      },
+      {
+        "id": "maktab_5_q17",
+        "text": "Sizningcha, bir fan boʻyicha turli baholash usullari — test, yozma ish, ogʻzaki javob, amaliy topshiriq va loyihalardan foydalanish yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Umuman yetarli emas"
+        ]
+      },
+      {
+        "id": "maktab_5_q18",
+        "text": "Baholash tizimini yanada adolatli va tushunarli qilish uchun eng muhim chora qaysi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Baholash mezonlarini oldindan aniq tushuntirish",
+          "Barcha oʻquvchilarga bir xil talab qoʻyish",
+          "Nazorat ishlarini dars mavzulariga mos tuzish",
+          "Har bir baho boʻyicha izoh va fikr-mulohaza berish",
+          "Norozi boʻlganda bahoni qayta koʻrib chiqish imkoniyatini yaratish",
+          "Turli baholash usullaridan foydalanish",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_5_q19",
+        "text": "Maktabda baholash tizimi va bilimlarni xolis baholashni yaxshilash boʻyicha qanday taklifingiz bor?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_5_q20",
+        "text": "Maktabingizda bilimlarni baholash tizimining adolatliligiga 1 dan 5 gacha umumiy baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maktab_6",
+    "title": "Toʻgaraklar, sport, iqtidor va kasbga yoʻnaltirish",
+    "subtitle": "Oʻquvchilar uchun anonim soʻrovnoma",
+    "description": "Maktabda toʻgaraklar va sport mashgʻulotlarining tashkil etilishi, oʻquvchilarning iqtidorini aniqlash va qoʻllab-quvvatlash, fan olimpiadalari va tanlovlarda ishtirok etish imkoniyatlari hamda kasbga yoʻnaltirish holatini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "🏅",
+    "color": "#c9600f",
+    "bg": "#fdf0e4",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_6_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_6_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_6_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_6_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_6_q5",
+        "text": "Sinf",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "7-sinf",
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ]
+      },
+      {
+        "id": "maktab_6_q6",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻgʻil bola",
+          "Qiz bola"
+        ]
+      },
+      {
+        "id": "maktab_6_q7",
+        "text": "Maktabingizda siz qiziqadigan toʻgarak yoki qoʻshimcha mashgʻulotlar yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Kam",
+          "Umuman yetarli emas"
+        ]
+      },
+      {
+        "id": "maktab_6_q8",
+        "text": "Siz hozir maktabdagi biror toʻgarak, sport seksiyasi yoki qoʻshimcha mashgʻulotda qatnashasizmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Ha, muntazam qatnashaman",
+          "Baʼzan qatnashaman",
+          "Qatnashishni xohlayman, lekin imkoniyat yoʻq",
+          "Qatnashmayman"
+        ]
+      },
+      {
+        "id": "maktab_6_q9",
+        "text": "Toʻgarak va sport mashgʻulotlarining vaqti darslaringizga mos va qulay tashkil etilganmi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda qulay",
+          "Qulay",
+          "Qisman qulay",
+          "Noqulay",
+          "Juda noqulay"
+        ]
+      },
+      {
+        "id": "maktab_6_q10",
+        "text": "Toʻgarak va sport mashgʻulotlarini olib boruvchi ustozlarning bilim va mahoratiga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Baholay olmayman"
+        ]
+      },
+      {
+        "id": "maktab_6_q11",
+        "text": "Maktabda sport bilan shugʻullanish uchun maydon, zal va zarur jihozlar yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_6_q12",
+        "text": "Maktab oʻquvchilarning fan, sport, sanʼat, til, axborot texnologiyalari yoki boshqa sohalardagi iqtidorini aniqlashga yetarli eʼtibor beradimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_6_q13",
+        "text": "Iqtidorli oʻquvchilarni qoʻllab-quvvatlash uchun qoʻshimcha mashgʻulot, ustoz yordami yoki maxsus tayyorgarlik tashkil etiladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman tashkil etilmaydi"
+        ]
+      },
+      {
+        "id": "maktab_6_q14",
+        "text": "Fan olimpiadalari, sport musobaqalari, tanlov va koʻriklarda ishtirok etish imkoniyatlari siz uchun ochiq va adolatlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq ochiq va adolatli",
+          "Asosan adolatli",
+          "Qisman adolatli",
+          "Kam holatda adolatli",
+          "Umuman adolatli emas"
+        ]
+      },
+      {
+        "id": "maktab_6_q15",
+        "text": "Maktabda sizga oʻz qiziqish va qobiliyatingizga mos keladigan kasblar haqida maʼlumot beriladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Muntazam beriladi",
+          "Koʻpincha beriladi",
+          "Baʼzan beriladi",
+          "Kamdan-kam beriladi",
+          "Umuman berilmaydi"
+        ]
+      },
+      {
+        "id": "maktab_6_q16",
+        "text": "Kasb tanlashda maktab psixologi, sinf rahbari yoki boshqa oʻqituvchilardan maslahat olish imkoniyatingiz bormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Ha, yetarlicha",
+          "Koʻpincha bor",
+          "Baʼzan bor",
+          "Juda kam",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_6_q17",
+        "text": "Maktabda turli kasblar, oliy va professional taʼlim muassasalari, mehnat bozori va kelajak kasblari haqida uchrashuv yoki tadbirlar oʻtkaziladimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Muntazam",
+          "Koʻpincha",
+          "Baʼzan",
+          "Kamdan-kam",
+          "Umuman oʻtkazilmaydi"
+        ]
+      },
+      {
+        "id": "maktab_6_q18",
+        "text": "Sizningcha, maktabda qaysi yoʻnalishni birinchi navbatda kuchaytirish kerak?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Fan toʻgaraklarini",
+          "Sport seksiyalarini",
+          "Sanʼat va ijodiy toʻgaraklarni",
+          "IT va robototexnika toʻgaraklarini",
+          "Xorijiy til toʻgaraklarini",
+          "Olimpiada va tanlovlarga tayyorgarlikni",
+          "Kasbga yoʻnaltirish ishlarini",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_6_q19",
+        "text": "Maktabda toʻgaraklar, sport, iqtidorni qoʻllab-quvvatlash va kasbga yoʻnaltirish ishlarini yaxshilash uchun qanday taklifingiz bor?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_6_q20",
+        "text": "Maktabingizda toʻgaraklar, sport, iqtidorni qoʻllab-quvvatlash va kasbga yoʻnaltirish ishlariga 1 dan 5 gacha umumiy baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maktab_7",
+    "title": "Maktabning moddiy-texnik bazasi",
+    "subtitle": "Oʻquvchilar uchun anonim soʻrovnoma",
+    "description": "Maktabdagi sinf xonalari, mebel va jihozlar, yoritish, isitish va sovitish, kompyuter va internet imkoniyatlari, laboratoriya va kutubxona, sport infratuzilmasi, ichimlik suvi, sanitariya-gigiyena sharoitlari hamda umumiy moddiy-texnik taʼminlanganlik holatini oʻrganish maqsadida oʻtkaziladigan anonim soʻrovnoma. F.I.Sh. va telefon raqami soʻralmaydi, javoblar umumlashtirilgan holda tahlil qilinadi.",
+    "icon": "🏫",
+    "color": "#0f8f82",
+    "bg": "#e6f5f3",
+    "minutes": 6,
+    "isCustom": true,
+    "group": "talim",
+    "category": "maktab",
+    "questions": [
+      {
+        "id": "maktab_7_q1",
+        "text": "Hudud",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_7_q2",
+        "text": "Tuman/shahar",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Angor tumani",
+          "Bandixon tumani",
+          "Boysun tumani",
+          "Denov tumani",
+          "Jarqoʻrgʻon tumani",
+          "Muzrabot tumani",
+          "Oltinsoy tumani",
+          "Qumqoʻrgʻon tumani",
+          "Sariosiyo tumani",
+          "Termiz tumani",
+          "Uzun tumani",
+          "Sherobod tumani",
+          "Shoʻrchi tumani",
+          "Qiziriq tumani",
+          "Termiz shahri"
+        ]
+      },
+      {
+        "id": "maktab_7_q3",
+        "text": "Mahalla",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_7_q4",
+        "text": "Maktab raqami",
+        "type": "text",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_7_q5",
+        "text": "Sinf",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "7-sinf",
+          "8-sinf",
+          "9-sinf",
+          "10-sinf",
+          "11-sinf"
+        ]
+      },
+      {
+        "id": "maktab_7_q6",
+        "text": "Jinsi",
+        "type": "radio",
+        "tag": "Umumiy",
+        "tagStyle": "gray",
+        "options": [
+          "Oʻgʻil bola",
+          "Qiz bola"
+        ]
+      },
+      {
+        "id": "maktab_7_q7",
+        "text": "Sinf xonalarining umumiy holati va taʼmiriga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "maktab_7_q8",
+        "text": "Sinf xonalaridagi parta, stul, doska va boshqa jihozlar yetarli va foydalanishga yaroqlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli va soz",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Koʻp qismi yaroqsiz"
+        ]
+      },
+      {
+        "id": "maktab_7_q9",
+        "text": "Sinf xonalarida yoritish sharoiti dars qilish uchun yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Yetarli emas",
+          "Juda yomon"
+        ]
+      },
+      {
+        "id": "maktab_7_q10",
+        "text": "Qish mavsumida sinf xonalari yetarlicha isitiladimi, issiq mavsumda esa shamollatish yoki sovitish imkoniyati bormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim yetarli",
+          "Koʻpincha yetarli",
+          "Baʼzan yetarli",
+          "Kamdan-kam yetarli",
+          "Umuman yetarli emas"
+        ]
+      },
+      {
+        "id": "maktab_7_q11",
+        "text": "Maktabda kompyuterlar va boshqa raqamli qurilmalar oʻquvchilar uchun yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_7_q12",
+        "text": "Maktabda internet sifati va undan taʼlim maqsadlarida foydalanish imkoniyatiga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Internet mavjud emas yoki foydalanib boʻlmaydi"
+        ]
+      },
+      {
+        "id": "maktab_7_q13",
+        "text": "Fizika, kimyo, biologiya va boshqa fanlar uchun laboratoriya xonalari hamda zarur jihozlar yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Laboratoriya imkoniyati yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_7_q14",
+        "text": "Maktab kutubxonasida darsliklar, badiiy va qoʻshimcha adabiyotlar yetarlimi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Toʻliq yetarli",
+          "Asosan yetarli",
+          "Qisman yetarli",
+          "Yetarli emas",
+          "Kutubxonadan foydalanish imkoniyati yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_7_q15",
+        "text": "Sport zali, sport maydoni va sport jihozlarining holatiga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz yoki mavjud emas"
+        ]
+      },
+      {
+        "id": "maktab_7_q16",
+        "text": "Maktabda toza ichimlik suvidan doimiy foydalanish imkoniyati bormi?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Har doim bor",
+          "Koʻpincha bor",
+          "Baʼzan bor",
+          "Kamdan-kam bor",
+          "Umuman yoʻq"
+        ]
+      },
+      {
+        "id": "maktab_7_q17",
+        "text": "Maktab hojatxonalari va qoʻl yuvish joylarining tozaligi hamda jihozlanganligiga qanday baho berasiz?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Juda yaxshi",
+          "Yaxshi",
+          "Qoniqarli",
+          "Qoniqarsiz",
+          "Juda qoniqarsiz"
+        ]
+      },
+      {
+        "id": "maktab_7_q18",
+        "text": "Sizningcha, maktabning moddiy-texnik bazasini yaxshilashda qaysi yoʻnalishga birinchi navbatda eʼtibor qaratish kerak?",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "Sinf xonalarini taʼmirlash va mebel bilan taʼminlash",
+          "Isitish, sovitish va yoritish tizimlarini yaxshilash",
+          "Kompyuter va internet taʼminotini kuchaytirish",
+          "Laboratoriya va fan jihozlarini yangilash",
+          "Kutubxona fondini boyitish",
+          "Sport infratuzilmasini yaxshilash",
+          "Ichimlik suvi va sanitariya sharoitlarini yaxshilash",
+          "Boshqa"
+        ]
+      },
+      {
+        "id": "maktab_7_q19",
+        "text": "Maktabning moddiy-texnik bazasini yaxshilash boʻyicha qanday taklifingiz bor?",
+        "type": "text",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": []
+      },
+      {
+        "id": "maktab_7_q20",
+        "text": "Maktabingizning umumiy moddiy-texnik taʼminlanganligiga 1 dan 5 gacha baho bering.",
+        "type": "radio",
+        "tag": "Maktab",
+        "tagStyle": "gray",
+        "options": [
+          "1 — Juda qoniqarsiz",
+          "2 — Qoniqarsiz",
+          "3 — Qoniqarli",
+          "4 — Yaxshi",
+          "5 — Juda yaxshi"
+        ]
+      }
+    ]
+  }
+]
