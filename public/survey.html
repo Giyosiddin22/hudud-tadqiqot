@@ -142,6 +142,8 @@ a{text-decoration:none;color:inherit}
   outline:none;transition:border-color .15s;
 }
 .opt-free:focus{border-color:var(--teal)}
+.q-text-input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1.5px solid rgba(15,143,130,.4);font-size:14px;font-family:inherit;color:var(--text);background:var(--surface,#fff);outline:none;resize:vertical;min-height:84px;transition:border-color .15s}
+.q-text-input:focus{border-color:var(--teal)}
 .opt-hint{font-size:11px;color:var(--muted);margin-top:6px;font-style:italic}
 
 /* ── SUBMIT BAR ── */
@@ -272,8 +274,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- UTILITY BAR -->
 <div style="background:#0f2740">
-  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <span style="font-size:12px;color:#a9b6c9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Surxondaryo viloyati ijtimoiy tadqiqotlar tizimi</span>
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:flex-end;gap:16px">
     <span style="font-size:12px;color:#a9b6c9;display:flex;gap:8px;flex-shrink:0">
       <a href="#" class="ls-btn" data-lang="uz-lat" onclick="LANG.set('uz-lat');return false">UZ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="uz-cyr" onclick="LANG.set('uz-cyr');return false">ЎЗ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="ru" onclick="LANG.set('ru');return false">RU</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="en" onclick="LANG.set('en');return false">EN</a>
     </span>
@@ -326,7 +327,7 @@ a{text-decoration:none;color:inherit}
   <div class="success-inner">
     <span class="suc-icon" id="suc-icon">✅</span>
     <h2 data-i18n="success_title">Rahmat!</h2>
-    <p data-i18n="success_msg">Javoblaringiz muvaffaqiyatli saqlandi.<br>Ishtirokingiz ilmiy tadqiqotga muhim hissa bo'ladi.</p>
+    <p data-i18n="success_msg">Javoblaringiz muvaffaqiyatli saqlandi.</p>
     <div class="suc-btns">
       <button class="suc-main" onclick="location.href='surveys.html'" data-i18n="btn_other">Boshqa so'rovnomalar →</button>
       <button class="suc-out" onclick="location.href='index.html'" data-i18n="btn_home">Bosh sahifa</button>
@@ -355,8 +356,9 @@ a{text-decoration:none;color:inherit}
 let survey = null;
 
 const rawId = new URLSearchParams(location.search).get('id');
-const surveyId = rawId && rawId.startsWith('c_') ? rawId : parseInt(rawId);
-if (!surveyId || (typeof surveyId === 'number' && isNaN(surveyId))) showErr(); else loadSurvey();
+// Ids are legacy numbers ("1"), custom ("c_...") or seeded ("mtt_1").
+const surveyId = rawId && /^[A-Za-z0-9_-]+$/.test(rawId) ? rawId : null;
+if (!surveyId) showErr(); else loadSurvey();
 
 async function loadSurvey() {
   try {
@@ -378,7 +380,7 @@ async function loadSurvey() {
 // the label as-is.
 function isOpenOption(opt) {
   const n = String(opt).toLowerCase().replace(/[ʻ‘’']/g, "'");
-  return /o'zingiz yozing|fikringizni qoldiring|^boshqa$|^boshqa\s*\(/.test(n);
+  return /o'zingiz yozing|fikringizni qoldiring|^boshqa$|^boshqa\s*\(|^бошқа$/.test(n);
 }
 
 function renderForm() {
@@ -409,7 +411,7 @@ function renderForm() {
         <span class="q-text">${esc(q.text)}${q.required === false ? ' <span style="font-weight:400;color:var(--text3);font-size:12px">(ixtiyoriy)</span>' : ''}</span>
       </legend>
       <div class="opts">
-        ${q.options.map(opt => {
+        ${q.type === 'text' ? `<textarea class="q-text-input" name="q_${q.id}" rows="3" maxlength="1000" placeholder="Javobingizni shu yerga yozing..."></textarea>` : q.options.map(opt => {
           const open = isOpenOption(opt);
           const inputType = q.type === 'checkbox' ? 'checkbox' : 'radio';
           return `
@@ -461,15 +463,18 @@ function renderForm() {
     updateProgress();
   });
   list.addEventListener('input', e => {
-    if (!e.target.classList.contains('opt-free')) return;
-    e.target.closest('.q-block').classList.remove('err');
+    const isText = e.target.classList.contains('q-text-input');
+    if (!isText && !e.target.classList.contains('opt-free')) return;
+    const block = e.target.closest('.q-block');
+    block.classList.remove('err');
+    if (isText) block.classList.toggle('answered', !!e.target.value.trim());
     updateProgress();
   });
 
   // Restore any in-progress draft saved before an accidental reload/close.
   restoreDraft();
   list.addEventListener('change', saveDraft);
-  list.addEventListener('input', e => { if (e.target.classList.contains('opt-free')) saveDraft(); });
+  list.addEventListener('input', e => { if (e.target.classList.contains('opt-free') || e.target.classList.contains('q-text-input')) saveDraft(); });
 
   document.getElementById('survey-form').addEventListener('submit', e => {
     e.preventDefault();
@@ -485,6 +490,11 @@ function saveDraft() {
   if (!survey) return;
   const draft = {};
   survey.questions.forEach(q => {
+    if (q.type === 'text') {
+      const ta = document.querySelector(`textarea[name="q_${q.id}"]`);
+      if (ta && ta.value.trim()) draft[q.id + '_text'] = ta.value;
+      return;
+    }
     const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)].map(el => el.value);
     if (checked.length) draft[q.id] = checked;
     const free = document.querySelector(`#qb_${q.id} .opt-free`);
@@ -499,6 +509,11 @@ function restoreDraft() {
   if (!draft) return;
   Object.keys(draft).forEach(key => {
     if (key.endsWith('_free')) return;
+    if (key.endsWith('_text')) {
+      const ta = document.querySelector(`textarea[name="q_${key.slice(0, -5)}"]`);
+      if (ta) { ta.value = draft[key]; ta.closest('.q-block').classList.add('answered'); }
+      return;
+    }
     const values = draft[key];
     values.forEach(v => {
       const input = document.querySelector(`input[name="q_${key}"][value="${CSS.escape(v)}"]`);
@@ -518,6 +533,10 @@ function updateProgress() {
   if (!survey || !survey.questions) return;
   const total = survey.questions.length;
   const answered = survey.questions.filter(q => {
+    if (q.type === 'text') {
+      const ta = document.querySelector(`textarea[name="q_${q.id}"]`);
+      return !!(ta && ta.value.trim());
+    }
     const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)];
     if (!checked.length) return false;
     return checked.every(el => {
@@ -542,8 +561,22 @@ async function submitSurvey() {
   let errCount = 0;
 
   survey.questions.forEach(q => {
-    const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)];
     const block = document.getElementById('qb_' + q.id);
+    if (q.type === 'text') {
+      const ta = document.querySelector(`textarea[name="q_${q.id}"]`);
+      const typed = ta ? ta.value.trim() : '';
+      if (!typed) {
+        if (q.required === false) { block.classList.remove('err'); return; }
+        block.classList.add('err');
+        errCount++;
+        if (!firstErr) firstErr = block;
+        return;
+      }
+      answers[q.id] = typed;
+      block.classList.remove('err');
+      return;
+    }
+    const checked = [...document.querySelectorAll(`input[name="q_${q.id}"]:checked`)];
     if (!checked.length) {
       if (q.required === false) { block.classList.remove('err'); return; }
       block.classList.add('err');
@@ -755,6 +788,7 @@ function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').re
   function firstUnansweredBlock(){
     if (!survey || !survey.questions) return null;
     for (const q of survey.questions){
+      if (q.type === 'text') continue; // written answers are typed by hand, not by voice
       const checked = document.querySelector(`input[name="q_${q.id}"]:checked`);
       if (!checked) return q;
     }

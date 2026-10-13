@@ -271,6 +271,17 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:40px}
 .gov-nav-link{padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);border-right:1px solid var(--border)}
 .gov-nav-link:hover{color:var(--gold-bright)}
 @media(max-width:900px){.gov-nav-links{display:none}}
+
+.choose{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin:8px 0 24px}
+.choose-btn{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:32px 28px;background:#fff;border:1px solid var(--border);border-radius:4px;cursor:pointer;text-align:left;font-family:inherit;transition:border-color .2s,box-shadow .2s,transform .2s}
+.choose-btn:hover{border-color:var(--gold-bright);box-shadow:0 8px 24px rgba(15,39,64,.08);transform:translateY(-2px)}
+.choose-btn .ci{font-size:38px;line-height:1}
+.choose-btn .ct{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.choose-btn .cd{font-size:14px;color:var(--text2);line-height:1.6}
+.crumbs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 20px;font-size:14px;color:var(--text2)}
+.crumbs a{color:var(--gold-bright);cursor:pointer;text-decoration:none}
+.view-title{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--text);margin:0 0 6px}
+.view-sub{font-size:14px;color:var(--text2);margin:0 0 20px}
 </style>
 </head>
 <body>
@@ -284,8 +295,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:40px}
 
 <!-- UTILITY BAR -->
 <div style="background:#0f2740">
-  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <span style="font-size:12px;color:#a9b6c9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Surxondaryo viloyati ijtimoiy tadqiqotlar tizimi</span>
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:flex-end;gap:16px">
     <span style="font-size:12px;color:#a9b6c9;display:flex;gap:8px;flex-shrink:0">
       <a href="#" class="ls-btn" data-lang="uz-lat" onclick="LANG.set('uz-lat');return false">UZ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="uz-cyr" onclick="LANG.set('uz-cyr');return false">ЎЗ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="ru" onclick="LANG.set('ru');return false">RU</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="en" onclick="LANG.set('en');return false">EN</a>
     </span>
@@ -328,24 +338,41 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:40px}
   <a href="index.html#aloqa" class="mob-link" onclick="closeMob()">Aloqa</a>
 </div>
 
-<div class="page-header">
-  <div class="page-header-inner">
-    <div class="breadcrumb">
-      <a href="index.html" data-i18n="bc_home">Bosh sahifa</a>
-      <span>/</span>
-      <span data-i18n="bc_cur">So'rovnomalar</span>
-    </div>
-    <h1 data-i18n="surveys_h1">Tadqiqot so'rovnomalari</h1>
-    <p data-i18n="surveys_desc">Quyidagi so'rovnomalardan birini tanlang va ilmiy tadqiqotda ishtirok eting. Har bir so'rovnoma anonim va atigi bir necha daqiqa vaqt oladi.</p>
-    <div class="header-meta">
-      <div class="meta-chip" id="chip-count">📋 —</div>
-      <div class="meta-chip" id="chip-time">⏱ —</div>
-      <div class="meta-chip" data-i18n="chip_anon">🔒 Anonim</div>
+<div class="main">
+  <div id="crumbs" class="crumbs" style="display:none"></div>
+
+  <div id="choose-view" style="display:none">
+    <h1 class="view-title">So'rovnoma turini tanlang</h1>
+    <p class="view-sub">Ishtirok etmoqchi bo'lgan so'rovnoma yo'nalishini belgilang.</p>
+    <div class="choose">
+      <button type="button" class="choose-btn" onclick="goView('talim')">
+        <span class="ci">🎓</span><span class="ct">Ta'limga oid so'rovnoma</span>
+        <span class="cd">Maktabgacha ta'lim va boshqa ta'lim yo'nalishlari bo'yicha so'rovnomalar.</span>
+      </button>
+      <button type="button" class="choose-btn" onclick="goView('ijtimoiy')">
+        <span class="ci">👥</span><span class="ct">Ijtimoiy so'rovnoma</span>
+        <span class="cd">Aholining turmush sharoiti va ijtimoiy masalalari bo'yicha so'rovnomalar.</span>
+      </button>
     </div>
   </div>
-</div>
 
-<div class="main">
+  <div id="talim-view" style="display:none">
+    <h1 class="view-title">Ta'limga oid so'rovnomalar</h1>
+    <p class="view-sub">Kategoriyani tanlang.</p>
+    <div class="choose">
+      <button type="button" class="choose-btn" onclick="goView('talim','mtt')">
+        <span class="ci">🏫</span><span class="ct">MTT</span>
+        <span class="cd">Maktabgacha ta'lim tashkiloti — 7 ta mavzu bo'yicha alohida so'rovnomalar.</span>
+      </button>
+      <button type="button" class="choose-btn" onclick="goView('talim','maktab')">
+        <span class="ci">🎒</span><span class="ct">Maktab</span>
+        <span class="cd">Umumiy o'rta ta'lim maktablari bo'yicha so'rovnomalar.</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="list-view" style="display:none">
+  <h1 class="view-title" id="list-title"></h1>
   <div class="filters">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
@@ -358,6 +385,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:40px}
 
   <div class="surveys-grid" id="surveys-grid">
     <div style="grid-column:1/-1;padding:48px;text-align:center;color:var(--text3);font-size:14px">Yuklanmoqda…</div>
+  </div>
   </div>
 </div>
 
@@ -471,6 +499,13 @@ window._onLangChange = function() {
   }
 };
 
+function goView(g, cat) {
+  let q = [];
+  if (g) q.push('g=' + g);
+  if (cat) q.push('cat=' + cat);
+  location.href = 'surveys.html' + (q.length ? '?' + q.join('&') : '');
+}
+
 function goSurvey(id) { location.href = 'survey.html?id=' + id; }
 
 function filterCards() {
@@ -510,9 +545,48 @@ async function init() {
 
   const grid = document.getElementById('surveys-grid');
   try {
-    _allSurveys = await window.DB.list();
+    const params = new URLSearchParams(location.search);
+    const g = params.get('g'), cat = params.get('cat');
+    const show = id => { const el = document.getElementById(id); if (el) el.style.display = ''; };
+    const crumbs = document.getElementById('crumbs');
+    const crumb = (...parts) => {
+      crumbs.innerHTML = parts.join(' <span>›</span> ');
+      crumbs.style.display = '';
+    };
+    const home = "<a onclick='goView()'>So'rovnomalar</a>";
+    const talim = "<a onclick='goView(\"talim\")'>Ta'limga oid</a>";
+
+    // Landing: the two top-level choices (skipped when a ?status= filter link is used).
+    if (!g && !urlStatus) { show('choose-view'); return; }
+    const TALIM_CATS = {
+      mtt: { name: 'MTT', title: "MTT — maktabgacha ta'lim tashkiloti" },
+      maktab: { name: 'Maktab', title: "Maktab — umumiy o'rta ta'lim maktablari" }
+    };
+    if (g === 'talim' && !TALIM_CATS[cat]) { crumb(home, "Ta'limga oid"); show('talim-view'); return; }
+
+    const all = await window.DB.list();
+    const isTalim = s => s.group === 'talim';
+    let titleText = "So'rovnomalar";
+    if (g === 'talim') {
+      _allSurveys = all.filter(s => isTalim(s) && s.category === cat);
+      titleText = TALIM_CATS[cat].title;
+      crumb(home, talim, TALIM_CATS[cat].name);
+    } else if (g === 'ijtimoiy') {
+      _allSurveys = all.filter(s => !isTalim(s));
+      titleText = "Ijtimoiy so'rovnomalar";
+      crumb(home, 'Ijtimoiy');
+    } else {
+      _allSurveys = all;
+    }
+    document.getElementById('list-title').textContent = titleText;
+    show('list-view');
     grid.innerHTML = _allSurveys.map(buildCard).join('') +
       `<div id="empty-msg" class="empty" style="display:none;grid-column:1/-1"><span>🔍</span><p>Hech narsa topilmadi</p></div>`;
+    if (!_allSurveys.length) {
+      const em = document.getElementById('empty-msg');
+      em.querySelector('p').textContent = "Bu kategoriyada hozircha so'rovnomalar yo'q.";
+      em.style.display = '';
+    }
 
     const countEl = document.getElementById('chip-count');
     const timeEl = document.getElementById('chip-time');

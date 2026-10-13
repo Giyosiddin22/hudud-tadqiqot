@@ -452,6 +452,19 @@ async function loadResults(){
     // here to avoid showing the same 14-district list twice.
     const gridQuestions=(survey.questions||[]).filter(q=>q.id!=='dq1');
     qgrid.innerHTML=gridQuestions.map((q,qi)=>{
+      if(q.type==='text'){
+        const texts=responses.map(r=>r.answers?r.answers[q.id]:undefined).filter(v=>typeof v==='string' && v.trim());
+        return `<div class="q-card">
+        <div class="q-card-head">
+          <span class="q-num">${qi+1}</span>
+          <span class="q-text">${escHtml(q.text)}</span>
+        </div>
+        <div class="q-body">
+          <div class="q-total">${texts.length} javob</div>
+          ${texts.length?texts.map(t=>`<div style="padding:8px 10px;margin-bottom:6px;background:var(--bg-2,#f6f7f9);border-radius:6px;font-size:13px;line-height:1.5;white-space:pre-wrap">${escHtml(t)}</div>`).join(''):"<div style='color:var(--text3);font-size:12px'>Bu savolga hali javob yo'q.</div>"}
+        </div>
+      </div>`;
+      }
       const tally={};
       let answered=0;
       responses.forEach(r=>{

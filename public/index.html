@@ -479,6 +479,13 @@ nav.home-nav .nav-utility{display:flex;align-items:center;gap:8px}
 .gov-nav-links{display:flex}
 .gov-nav-link{padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);border-right:1px solid var(--border)}
 .gov-nav-link:hover{color:var(--gold-bright)}
+.gov-nav-dropdown{position:relative;display:flex;align-items:stretch}
+.gov-nav-dropdown>.gov-nav-link{font-family:inherit;background:transparent;border:0;cursor:pointer}
+.gov-nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--border);z-index:310}
+.gov-nav-dropdown.open .gov-nav-dropdown-menu{display:flex;flex-direction:column}
+.gov-nav-dropdown-menu a{padding:13px 16px;font-size:13px;color:var(--text);white-space:nowrap;border-bottom:1px solid var(--border)}
+.gov-nav-dropdown-menu a:last-child{border-bottom:none}
+.gov-nav-dropdown-menu a:hover{color:var(--gold-bright);background:var(--bg-2)}
 .gov-btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--gold);padding:14px 24px;border-radius:3px;font-size:15px;font-weight:700}
 .gov-btn-primary:hover{background:#e8edf3}
 .gov-btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:14px 24px;border-radius:3px;font-size:15px;font-weight:600}
@@ -512,8 +519,7 @@ nav.home-nav .nav-utility{display:flex;align-items:center;gap:8px}
 
 <!-- UTILITY BAR -->
 <div style="background:var(--primary-dark, #0f2740)">
-  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <span style="font-size:12px;color:#a9b6c9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" data-i18n="home_util_bar">Surxondaryo viloyati ijtimoiy tadqiqotlar tizimi</span>
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:flex-end;gap:16px">
     <span style="font-size:12px;display:flex;gap:8px;flex-shrink:0" id="util-lang">
       <a href="#" class="ls-btn" data-lang="uz-lat" onclick="pickLang('uz-lat');return false">UZ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="uz-cyr" onclick="pickLang('uz-cyr');return false">ЎЗ</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="ru" onclick="pickLang('ru');return false">RU</a><span style="color:#3d5170">|</span><a href="#" class="ls-btn" data-lang="en" onclick="pickLang('en');return false">EN</a>
     </span>
@@ -540,7 +546,13 @@ nav.home-nav .nav-utility{display:flex;align-items:center;gap:8px}
     </div>
   </div>
   <nav class="gov-nav-links" style="max-width:1200px;margin:0 auto;padding:0 24px;align-items:center;justify-content:center;border-bottom:1px solid var(--border)">
-    <a href="surveys.html" class="gov-nav-link" data-i18n="nav_surveys">So'rovnomalar</a>
+    <div class="gov-nav-dropdown" id="gov-surveys-dropdown">
+      <button type="button" class="gov-nav-link" data-i18n="nav_surveys" onclick="toggleSurveysDropdown(event)">So'rovnomalar</button>
+      <div class="gov-nav-dropdown-menu">
+        <a href="surveys.html?category=education">Ta'limga oid so'rovnomalar</a>
+        <a href="surveys.html?category=social">Ijtimoiy so'rovnomalar</a>
+      </div>
+    </div>
     <a href="#docs" class="gov-nav-link" data-i18n="nav_docs">Me'yoriy hujjatlar</a>
     <a href="about.html" class="gov-nav-link" data-i18n="nav_about">Loyiha haqida</a>
     <a href="#" class="gov-nav-link" data-i18n="nav_news" onclick="document.getElementById('gov-news').scrollIntoView({behavior:'smooth'});return false">Yangiliklar</a>
@@ -550,6 +562,8 @@ nav.home-nav .nav-utility{display:flex;align-items:center;gap:8px}
 
 <div class="nav-mob" id="nav-mob">
   <a href="surveys.html" class="mob-link" data-i18n="nav_surveys" onclick="closeMob()">So'rovnomalar</a>
+  <a href="surveys.html?category=education" class="mob-link" style="padding-left:28px" onclick="closeMob()">Ta'limga oid so'rovnomalar</a>
+  <a href="surveys.html?category=social" class="mob-link" style="padding-left:28px" onclick="closeMob()">Ijtimoiy so'rovnomalar</a>
   <a href="#docs" class="mob-link" data-i18n="nav_docs" onclick="closeMob()">Me'yoriy hujjatlar</a>
   <a href="about.html" class="mob-link" data-i18n="nav_about" onclick="closeMob()">Loyiha haqida</a>
   <a href="#" class="mob-link" data-i18n="nav_news" onclick="closeMob();document.getElementById('gov-news').scrollIntoView({behavior:'smooth'})">Yangiliklar</a>
@@ -769,6 +783,13 @@ document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.clo
 
 // Language links (utility bar)
 function pickLang(lc){ if(typeof LANG!=='undefined') LANG.set(lc); }
+function toggleSurveysDropdown(e){
+  e.stopPropagation();
+  document.getElementById('gov-surveys-dropdown').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('#gov-surveys-dropdown')) document.getElementById('gov-surveys-dropdown')?.classList.remove('open');
+});
 
 // ── ANNOUNCEMENTS (admin panelda boshqariladi, backenddan olinadi) ──
 function escHtml(s){
