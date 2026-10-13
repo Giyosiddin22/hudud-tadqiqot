@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: hudud-tadqiqot-1
+    runtime: node
+    plan: free
+    buildCommand: cd server && npm ci --omit=dev
+    startCommand: cd server && node index.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: RESPONSE_RATE_LIMIT
+        value: "30"
+      - key: OPENAI_API_KEY
+        sync: false

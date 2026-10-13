@@ -1,9 +1,20 @@
-node_modules/
+# Sirlar va ma'lumotlar
 .env
+server/.env
 server/data/db.json
+server/data/db.json.tmp-*
 server/data/backups/
-server/server.log
-server/server.pid
+
+# Bog'liqliklar, loglar
+node_modules/
 *.log
-Sorovnoma Portali.html
+*.pid
+
+# Deployga kerak bo'lmagan fayllar
 .claude/
+.claudeignore
+screenshots/
+xatolik/
+Sorovnoma Portali.html
+bosh-sahifa-izoh.md
+Renderga yuklash/
